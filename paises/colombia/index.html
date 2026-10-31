@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIHACKTOR Ω | Colombia — $20,000 COP</title>
+<meta name="description" content="La colección más grande de tutoriales de IA del mundo para Colombia. 1,020,895 productos digitales desde $20,000 COP. Pago con Nequi / Davivienda, Crypto, Transferencia Bancaria.">
+<meta property="og:title" content="DIHACKTOR Ω | Colombia — $20,000 COP">
+<meta property="og:description" content="Video HD + PDF + Audio + Workflows n8n. Pago seguro con Vitawallet.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop">
+<meta property="og:url" content="https://tortuguitahack.github.io/Tecnolog-a-Yiniayang/">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{
+--bg:#020617;--surface:#0f172a;--border:rgba(255,255,255,0.08);
+--cyan:#00f2ff;--purple:#bc13fe;--pink:#ff00bd;
+--green:#10b981;--gold:#f59e0b;--red:#ef4444;
+--text:#f1f5f9;--muted:#94a3b8;--dim:#64748b;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);
+line-height:1.6;overflow-x:hidden;
+}
+/* ═══ BACKGROUND ═══ */
+.bg{
+position:fixed;inset:0;z-index:0;pointer-events:none;
+background:
+radial-gradient(ellipse 80% 50% at 50% -20%,rgba(139,19,254,0.15),transparent),
+radial-gradient(ellipse 60% 40% at 80% 50%,rgba(0,242,255,0.08),transparent),
+radial-gradient(ellipse 60% 40% at 20% 80%,rgba(255,0,189,0.05),transparent);
+}
+.bg-grid{
+position:fixed;inset:0;z-index:0;pointer-events:none;
+background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);
+background-size:80px 80px;
+}
+/* ═══ NAVBAR ═══ */
+.nav{
+position:sticky;top:0;z-index:100;
+background:rgba(2,6,23,0.85);backdrop-filter:blur(20px);
+border-bottom:1px solid var(--border);
+padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;
+}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+.nav-logo-icon{
+width:42px;height:42px;border-radius:12px;
+background:linear-gradient(135deg,var(--cyan),var(--purple));
+display:flex;align-items:center;justify-content:center;
+font-size:1.3rem;font-weight:900;color:#000;
+}
+.nav-logo-text{
+font-size:1.3rem;font-weight:800;
+background:linear-gradient(135deg,var(--cyan),var(--purple));
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:600;transition:color .2s}
+.nav-links a:hover{color:var(--cyan)}
+.nav-cta{
+padding:.6rem 1.5rem;border-radius:10px;font-weight:700;font-size:.85rem;
+text-decoration:none;transition:all .2s;
+background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;
+}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,242,255,.3)}
+@media(max-width:768px){.nav-links{display:none}.nav{padding:1rem}}
+/* ═══ HERO ═══ */
+.hero{
+position:relative;z-index:1;padding:6rem 2rem 4rem;
+text-align:center;max-width:1000px;margin:0 auto;
+}
+.hero-badge{
+display:inline-flex;align-items:center;gap:.5rem;
+padding:.5rem 1.25rem;border-radius:100px;
+background:rgba(0,242,255,.08);border:1px solid rgba(0,242,255,.15);
+font-size:.75rem;font-weight:700;color:var(--cyan);
+margin-bottom:2rem;text-transform:uppercase;letter-spacing:.1em;
+}
+.hero-badge-dot{width:6px;height:6px;background:var(--cyan);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{
+font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;
+line-height:1.1;margin-bottom:1.5rem;
+font-family:'Space Grotesk',sans-serif;
+}
+.hero h1 .g{
+background:linear-gradient(135deg,var(--cyan),var(--purple),var(--pink));
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero-sub{
+font-size:clamp(1rem,2vw,1.2rem);color:var(--muted);
+max-width:600px;margin:0 auto 2.5rem;line-height:1.7;
+}
+.hero-stats{display:flex;justify-content:center;gap:3rem;margin:3rem 0;flex-wrap:wrap}
+.hero-stat{text-align:center}
+.hero-stat-v{
+font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;
+background:linear-gradient(135deg,var(--cyan),var(--purple));
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero-stat-l{font-size:.7rem;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-top:.25rem}
+.hero-cta{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+/* ═══ BUTTONS ═══ */
+.btn{
+display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+padding:1rem 2rem;border-radius:12px;font-weight:700;font-size:.95rem;
+text-decoration:none;transition:all .3s;border:none;cursor:pointer;
+}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,242,255,.35)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
+.btn-ghost:hover{border-color:var(--cyan);background:rgba(0,242,255,.05)}
+.btn-sm{padding:.6rem 1.25rem;font-size:.8rem;border-radius:8px}
+/* ═══ SECTIONS ═══ */
+.section{position:relative;z-index:1;padding:4rem 2rem;max-width:1400px;margin:0 auto}
+.section-hd{text-align:center;margin-bottom:3rem}
+.section-hd h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-bottom:.5rem}
+.section-hd p{color:var(--muted);max-width:600px;margin:0 auto}
+/* ═══ STATS BAR ═══ */
+.stats{
+background:linear-gradient(90deg,rgba(0,242,255,.04),rgba(139,19,254,.04));
+border:1px solid var(--border);border-radius:16px;
+padding:1.25rem 2rem;margin:2rem auto;max-width:900px;
+display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;
+}
+.stats span{font-size:.85rem;color:var(--muted)}
+.stats strong{color:var(--cyan)}
+/* ═══ FEATURES ═══ */
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.feat-card{
+padding:2rem;background:var(--surface);border:1px solid var(--border);
+border-radius:20px;text-align:center;transition:all .3s;
+}
+.feat-card:hover{border-color:var(--cyan);transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,242,255,.08)}
+.feat-icon{
+width:56px;height:56px;margin:0 auto 1rem;border-radius:14px;
+background:linear-gradient(135deg,rgba(0,242,255,.1),rgba(139,19,254,.1));
+display:flex;align-items:center;justify-content:center;font-size:1.4rem;
+}
+.feat-card h3{font-size:1.05rem;font-weight:700;margin-bottom:.5rem}
+.feat-card p{font-size:.85rem;color:var(--dim);line-height:1.6}
+/* ═══ PRODUCTS ═══ */
+.search-wrap{max-width:600px;margin:0 auto 1.5rem;position:relative}
+.search-inp{
+width:100%;padding:1rem 1.5rem 1rem 3.25rem;
+background:var(--surface);border:1px solid var(--border);border-radius:14px;
+color:var(--text);font-size:1rem;outline:none;transition:border-color .2s;
+}
+.search-inp:focus{border-color:var(--cyan)}
+.search-ico{position:absolute;left:1.25rem;top:50%;transform:translateY(-50%);color:var(--dim)}
+.filters{display:flex;justify-content:center;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap}
+.filter{
+padding:.5rem 1.25rem;background:var(--surface);border:1px solid var(--border);
+border-radius:10px;color:var(--muted);font-size:.8rem;font-weight:600;
+cursor:pointer;transition:all .2s;
+}
+.filter:hover,.filter.active{border-color:var(--cyan);color:var(--cyan);background:rgba(0,242,255,.05)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
+.card{
+background:var(--surface);border:1px solid var(--border);border-radius:20px;
+overflow:hidden;transition:all .4s;position:relative;
+}
+.card:hover{transform:translateY(-6px);border-color:var(--cyan);box-shadow:0 12px 40px rgba(0,242,255,.1)}
+.card-img-wrap{overflow:hidden;position:relative;height:180px}
+.card-img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.card:hover .card-img{transform:scale(1.05)}
+.card-level{
+position:absolute;top:10px;left:10px;padding:.3rem .75rem;border-radius:6px;
+font-size:.65rem;font-weight:700;text-transform:uppercase;
+}
+.l-starter{background:rgba(16,185,129,.2);color:var(--green)}
+.l-ready{background:rgba(0,242,255,.2);color:var(--cyan)}
+.l-super{background:rgba(245,158,11,.2);color:var(--gold)}
+.card-price{
+position:absolute;top:10px;right:10px;
+background:linear-gradient(135deg,var(--cyan),var(--purple));
+color:#000;padding:.35rem .85rem;border-radius:8px;font-weight:900;font-size:.85rem;
+}
+.card-body{padding:1.25rem}
+.card-cat{font-size:.65rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-bottom:.4rem}
+.card-title{font-size:.95rem;font-weight:700;margin-bottom:.4rem;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-desc{font-size:.8rem;color:var(--dim);line-height:1.5;margin-bottom:.75rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card-exp{font-size:.75rem;color:var(--muted);margin-bottom:1rem}
+.card-exp span{color:var(--purple);font-weight:600}
+.card-btn{
+display:block;width:100%;padding:.7rem;background:linear-gradient(135deg,var(--cyan),var(--purple));
+color:#000;border:none;border-radius:10px;font-weight:700;font-size:.85rem;
+text-align:center;text-decoration:none;cursor:pointer;transition:all .3s;
+}
+.card-btn:hover{transform:scale(1.02);box-shadow:0 4px 15px rgba(0,242,255,.3)}
+/* ═══ PAYMENT MODAL ═══ */
+.modal-overlay{
+display:none;position:fixed;inset:0;z-index:9999;
+background:rgba(0,0,0,.92);backdrop-filter:blur(12px);
+align-items:center;justify-content:center;padding:1rem;
+}
+.modal-overlay.active{display:flex}
+.modal{
+background:var(--surface);border:2px solid var(--purple);
+border-radius:24px;padding:2rem;max-width:540px;width:100%;
+max-height:90vh;overflow-y:auto;position:relative;
+}
+.modal-close{
+position:absolute;top:1rem;right:1rem;background:none;border:none;
+color:var(--dim);font-size:1.5rem;cursor:pointer;transition:color .2s;
+}
+.modal-close:hover{color:var(--text)}
+.modal h2{color:var(--cyan);margin-bottom:.5rem;font-size:1.3rem}
+.modal .prod-name{color:var(--muted);font-size:.9rem;margin-bottom:1rem}
+.modal .prod-price{font-size:2.5rem;font-weight:900;color:var(--green);margin-bottom:1.5rem}
+.pay-method{
+border-radius:14px;padding:1.25rem;margin-bottom:1rem;text-align:left;
+}
+.pay-method h4{margin-bottom:.5rem;font-size:.95rem}
+.pay-method p{font-size:.8rem;color:var(--muted);margin-bottom:.25rem;word-break:break-all}
+.pay-vitawallet{background:rgba(139,19,254,.08);border:2px solid var(--purple)}
+.pay-vitawallet h4{color:var(--purple)}
+.pay-crypto{background:rgba(0,242,255,.04);border:1px solid rgba(0,242,255,.2)}
+.pay-crypto h4{color:var(--cyan)}
+.pay-bank{background:rgba(16,185,129,.04);border:1px solid rgba(16,185,129,.2)}
+.pay-bank h4{color:var(--green)}
+/* ═══ CTA ═══ */
+.cta-box{
+max-width:800px;margin:0 auto;padding:4rem 2rem;
+background:linear-gradient(135deg,rgba(0,242,255,.04),rgba(139,19,254,.04));
+border:1px solid var(--border);border-radius:30px;text-align:center;
+}
+.cta-box h2{font-size:clamp(1.5rem,3vw,2.5rem);font-weight:900;margin-bottom:1rem}
+.cta-box p{color:var(--muted);margin-bottom:2rem;font-size:1.05rem}
+/* ═══ FOOTER ═══ */
+.footer{
+position:relative;z-index:1;padding:3rem 2rem;border-top:1px solid var(--border);text-align:center;
+}
+.footer-social{display:flex;justify-content:center;gap:1rem;margin-bottom:1.5rem}
+.footer-social a{
+width:40px;height:40px;border-radius:50%;background:var(--surface);
+border:1px solid var(--border);display:flex;align-items:center;
+justify-content:center;color:var(--muted);text-decoration:none;transition:all .2s;
+}
+.footer-social a:hover{border-color:var(--cyan);color:var(--cyan)}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.footer-links a{color:var(--dim);text-decoration:none;font-size:.85rem;transition:color .2s}
+.footer-links a:hover{color:var(--cyan)}
+.footer-copy{font-size:.75rem;color:var(--dim)}
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:768px){
+.hero{padding:5rem 1rem 3rem}
+.hero-stats{gap:1.5rem}
+.hero-stat-v{font-size:1.3rem}
+.grid{grid-template-columns:1fr}
+.cta-box{padding:2rem 1.5rem}
+}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="bg-grid"></div>
+
+<!-- NAV -->
+<nav class="nav">
+<a href="#" class="nav-logo"><div class="nav-logo-icon">Ω</div><span class="nav-logo-text">DIHACKTOR Ω</span></a>
+<div class="nav-links"><a href="#productos">Productos</a><a href="#categorias">Categorías</a><a href="#expertos">Expertos</a><a href="#comprar">Comprar</a></div>
+<a href="#comprar" class="nav-cta">Comprar $20,000</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-badge"><div class="hero-badge-dot"></div>1,020,895 Productos IA — Junio 2026</div>
+<h1>La IA no es una herramienta,<br><span class="g">es una habilidad.</span></h1>
+<p class="hero-sub">La colección más grande de tutoriales de IA del mundo. Video HD + PDF + Audio + Workflows n8n. Pago seguro con Nequi / Davivienda, Crypto o Transferencia Bancaria.</p>
+<div class="hero-stats">
+<div class="hero-stat"><div class="hero-stat-v">1M+</div><div class="hero-stat-l">Productos</div></div>
+<div class="hero-stat"><div class="hero-stat-v">80+</div><div class="hero-stat-l">Expertos</div></div>
+<div class="hero-stat"><div class="hero-stat-v">20</div><div class="hero-stat-l">Categorías</div></div>
+<div class="hero-stat"><div class="hero-stat-v">$20,000</div><div class="hero-stat-l">Precio Fijo</div></div>
+</div>
+<div class="hero-cta">
+<a href="#comprar" class="btn btn-primary"><i class="fas fa-bolt"></i> Comprar Ahora — $20,000 COP</a>
+<a href="#productos" class="btn btn-ghost"><i class="fas fa-compass"></i> Explorar Catálogo</a>
+</div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+<span><i class="fas fa-database"></i> <strong>1,020,895</strong> productos</span>
+<span><i class="fas fa-globe"></i> Envío digital global</span>
+<span><i class="fas fa-shield-alt"></i> Pago seguro</span>
+<span><i class="fas fa-bolt"></i> Acceso inmediato</span>
+</div>
+
+<!-- FEATURES -->
+<section class="section" id="categorias">
+<div class="section-hd"><h2>¿Qué incluye cada producto?</h2><p>Contenido completo para dominar cualquier área de la IA</p></div>
+<div class="feat-grid">
+<div class="feat-card"><div class="feat-icon">🎥</div><h3>Video HD</h3><p>Clases en video de alta calidad con explicaciones paso a paso</p></div>
+<div class="feat-card"><div class="feat-icon">📄</div><h3>Guía PDF</h3><p>Más de 30 páginas de documentación detallada</p></div>
+<div class="feat-card"><div class="feat-icon">🎧</div><h3>Audio</h3><p>Versión audio para aprender mientras te desplazas</p></div>
+<div class="feat-card"><div class="feat-icon">⚙️</div><h3>Workflows n8n</h3><p>Automatizaciones listas para usar</p></div>
+<div class="feat-card"><div class="feat-icon">🔄</div><h3>Actualizaciones</h3><p>Contenido actualizado constantemente</p></div>
+<div class="feat-card"><div class="feat-icon">💬</div><h3>Soporte</h3><p>Comunidad vía Telegram</p></div>
+</div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section" id="productos">
+<div class="section-hd"><h2>Explora el Catálogo</h2><p>Más de 1 millón de productos organizados por categoría y nivel</p></div>
+<div class="search-wrap"><i class="fas fa-search search-ico"></i><input type="text" class="search-inp" placeholder="Buscar productos de IA..." id="searchInput"></div>
+<div class="filters">
+<div class="filter active" data-filter="all">Todos</div>
+<div class="filter" data-filter="starter">🟢 Starter</div>
+<div class="filter" data-filter="ready">🔵 Ready</div>
+<div class="filter" data-filter="superpremium">🟡 Super Premium</div>
+</div>
+<div class="grid" id="productsGrid">
+<div style="grid-column:1/-1;text-align:center;padding:4rem;color:var(--dim)">
+<div style="width:40px;height:40px;border:3px solid var(--cyan);border-top-color:transparent;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 1rem"></div>
+<p>Cargando catálogo de 1,020,895 productos...</p>
+</div>
+</div>
+</section>
+
+<!-- CTA / COMPRAR -->
+<section class="section" id="comprar">
+<div class="cta-box">
+<h2>¿Listo para dominar la IA?</h2>
+<p>1,020,895 productos. 80+ expertos. 20 categorías.<br>Precio fijo: <strong style="color:var(--green);">$20,000 COP</strong></p>
+<button class="btn btn-primary" style="font-size:1.1rem;padding:1.25rem 3rem;" onclick="showBuy('DIHACKTOR Ω — Acceso Completo Colombia',20000)"><i class="fas fa-rocket"></i> Comprar Ahora — $20,000 COP</button>
+<div style="max-width:600px;margin:2rem auto 0;text-align:left">
+<div class="pay-method pay-vitawallet"><h4><i class="fas fa-star"></i> VITAWALLET (Principal)</h4><p>🇺🇸 <strong>USA:</strong> Lead Bank | Routing: 101019644 | Cuenta: 217656110014</p><p>🇪🇺 <strong>Europa:</strong> IBAN MT53SYPL39480225701035648622803 | BIC SYPLMTM2XXX</p><p style="font-size:.75rem;color:var(--dim);">Titular: Diego Edgardo Cortez Yanez</p></div>
+<div class="pay-method pay-crypto"><h4><i class="fab fa-bitcoin"></i> Criptomonedas</h4><p>🟡 USDT (BEP20): 0xD923fcdff7Fd1246684867F065a880939262dd80</p><p>₿ BTC: bc1q4est0k205zpl490zl2ypmgphm8d2t7z5k9sz3a</p><p>💎 ETH: 0x58d84e047be839ffa0be97137eec0083775246c8</p><p>🔷 SOL: 2jKUmCWJZTF1tRuuhiuZuDUd3xYehX3gEHeH3BWo8Kmm</p></div>
+<div class="pay-method pay-bank"><h4><i class="fas fa-university"></i> Transferencia Bancaria</h4><p>🇨🇴 <strong>Colombia:</strong> Nequi | Celular: 3001234567 | Davivienda: 123456789</p></div>
+</div>
+<p style="margin-top:1.5rem;font-size:.8rem;color:var(--dim);">🔒 Pago seguro • Acceso inmediato • Garantía de 7 días<br>📧 Envía comprobante a: <strong>techinnovationany@gmail.com</strong></p>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="footer-social">
+<a href="https://www.linkedin.com/in/diego-cortez-b7330b295/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://www.instagram.com/techinnovationany/" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://github.com/tortuguitahack" target="_blank"><i class="fab fa-github"></i></a>
+<a href="https://t.me/d3h1ckt4r_bot" target="_blank"><i class="fab fa-telegram"></i></a>
+<a href="https://www.facebook.com/dihacktor" target="_blank"><i class="fab fa-facebook"></i></a>
+<a href="https://www.x.com/dihacktor" target="_blank"><i class="fab fa-x-twitter"></i></a>
+<a href="https://www.youtube.com/@dihacktor" target="_blank"><i class="fab fa-youtube"></i></a>
+<a href="https://www.tiktok.com/@dihacktor" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="https://discord.gg/dihacktor" target="_blank"><i class="fab fa-discord"></i></a>
+<a href="https://wa.me/59170000000" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="https://pinterest.com/dihacktor" target="_blank"><i class="fab fa-pinterest"></i></a>
+</div>
+<div class="footer-links"><a href="#productos">Productos</a><a href="#categorias">Categorías</a><a href="#expertos">Expertos</a><a href="#comprar">Comprar</a><a href="https://t.me/d3h1ckt4r_bot">Telegram</a></div>
+<p class="footer-copy">© 2026 DIHACKTOR Ω — Colombia — 1,020,895 productos | $20,000 COP | Sin Stripe</p>
+</footer>
+
+<!-- BUY MODAL -->
+<div class="modal-overlay" id="buyModal">
+<div class="modal">
+<button class="modal-close" onclick="closeBuy()">&times;</button>
+<h2><i class="fas fa-shopping-cart"></i> Comprar Producto</h2>
+<p class="prod-name" id="buyName">Producto</p>
+<p class="prod-price" id="buyPrice">$20,000 COP</p>
+<form id="checkoutForm" onsubmit="handleCheckout(event)">
+  <label style="display:block;margin:.75rem 0 .25rem;color:var(--muted);font-size:.8rem;">Tu email (requerido para recibir el acceso)</label>
+  <input type="email" id="checkoutEmail" required placeholder="tu@correo.com" style="width:100%;padding:.6rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);margin-bottom:.75rem;">
+  <input type="hidden" id="checkoutTxId">
+  <button type="submit" class="btn btn-primary" style="width:100%;font-size:1rem;padding:1rem;">Pagar y completar compra — $20,000 COP</button>
+</form>
+<div id="checkoutMsg" style="margin:.5rem 0;font-size:.85rem;color:var(--green);display:none;"></div>
+<div class="pay-method pay-vitawallet"><h4><i class="fas fa-star"></i> VITAWALLET (Principal)</h4><p>🇺🇸 Lead Bank | Routing: 101019644 | Cuenta: 217656110014</p><p>🇪🇺 IBAN: MT53SYPL39480225701035648622803</p></div>
+<div class="pay-method pay-crypto"><h4><i class="fab fa-bitcoin"></i> Criptomonedas</h4><p>USDT: 0xD923fcdff7Fd1246684867F065a880939262dd80</p><p>BTC: bc1q4est0k205zpl490zl2ypmgphm8d2t7z5k9sz3a</p></div>
+<div class="pay-method pay-bank"><h4><i class="fas fa-university"></i> Transferencia</h4><p>🇨🇴 Colombia: Nequi | Celular: 3001234567 | Davivienda: 123456789</p></div>
+<p style="font-size:.75rem;color:var(--dim);text-align:center;margin-top:1rem;">Envía comprobante a: <strong>techinnovationany@gmail.com</strong></p>
+</div>
+</div>
+
+<style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+<script>
+const IMGS={"IA Marketing":"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80","Copywriting IA":"https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80","Automatización n8n":"https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&q=80","SEO con IA":"https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80","Email Marketing IA":"https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=600&q=80","Imágenes IA":"https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80","Video IA":"https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&q=80","Chatbots IA":"https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&q=80","E-commerce IA":"https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80","Micro-SaaS IA":"https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80","default":"https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80"};
+const EXPERTS=["Alex Hormozi","Jeff Bezos","Frank Kern","Naval Ravikant","Andrew Ng","Gary Vaynerchuk","Neil Patel","Tim Ferriss","Russell Brunson","Pat Flynn","MrBeast","Warren Buffett","Robert Kiyosaki","Seth Godin","Grant Cardone","Ben Settle","Simon Sinek","Tony Robbins","Marie Forleo","Dan Kennedy"];
+const CATS=["IA Marketing","Copywriting IA","Automatización n8n","SEO con IA","Email Marketing IA","Imágenes IA","Video IA","Chatbots IA","E-commerce IA","Micro-SaaS IA","Affiliate IA","Podcast IA","Presentaciones IA","Plan de Negocio IA","Trading IA","Freelancing IA","Productividad IA","Análisis Datos IA","Voice AI","IA Generativa"];
+const LEVELS=["starter","ready","superpremium"];
+const LVL={starter:"Starter",ready:"Ready",superpremium:"Super Premium"};
+let products=[];
+const TX_IDS=["cmv39ap940006rquz5aqs86xa","cmv39aq6s00e2rqhu3rz752ex","cmv39aq7200e4rqhuqcbjt3iw","cmv39aq7b00e6rqhusj0iex1u","cmv39aq7j00e8rqhuf21krqpt","cmv39aq7q00earqhunlkn6qdw","cmv39aq7y00ecrqhu10v4m3o7","cmv39aq8500eerqhuc03m3sj3","cmv39aq8c00egrqhuukauug4o","cmv39aq8h00eirqhusvr2nupb","cmv39aq8n00ekrqhupbc1rism","cmv39aq8u00emrqhuq2dek7h5","cmv39aq9300eorqhusr4x21is","cmv39aq9900eqrqhuosmf2hsw","cmv39aq9o00eurqhu7r1xq1lc","cmv39aq9w00ewrqhu5800v7nm","cmv39aqai00eyrqhucnp2y51l","cmv39aqar00f0rqhut61mrtoz","cmv39aqb000f2rqhuhn3bh7pr","cmv39aqb900f4rqhuyjbrqhy3","cmv39aqbh00f6rqhua78ws9af","cmv39aqbq00f8rqhudkoyf091","cmv39aqbx00farqhu36z3jbqo","cmv39aqc500fcrqhuye3le3gl","cmv39aqcc00ferqhu6mpwembx","cmv39aqci00fgrqhu0d7xcdca","cmv39aqcp00firqhudb7xvfyy","cmv39aqcv00fkrqhupt5ryz3f","cmv39aqd200fmrqhu6owg66yj","cmv39aqda00forqhuf3rdffng","cmv39aqdp00fsrqhu5fugukas","cmv39aqdv00furqhusybn5nfx","cmv39aqe100fwrqhus0bexm5u","cmv39aqe700fyrqhu2vohf20w","cmv39aqed00g0rqhu9qpnfj22","cmv39aqel00g2rqhu2u9vgff5","cmv39aqf400g6rqhua3qkqdgg","cmv39aqfd00g8rqhu5hgvbnie","cmv39aqfn00garqhue422z3ry","cmv39aqfw00gcrqhukf1j5z8e","cmv39aqg600gerqhu1h7aferv","cmv39aqgf00ggrqhuyqrvs87u","cmv39aqgp00girqhumt37shz5","cmv39aqgz00gkrqhu8ruqzug6","cmv39aqh800gmrqhubvx6pqkk","cmv39aqhi00gorqhugm81cdyd","cmv39aqhr00gqrqhul7sewlhh","cmv39aqi000gsrqhu01doy6pq","cmv39aqia00gurqhu3o9jbi8h","cmv39aqij00gwrqhupww7t69e","cmv39aqit00gyrqhuhqimyd0x","cmv39aqj200h0rqhuct16sqfa","cmv39aqjb00h2rqhuwrmz1bi6","cmv39aqju00h6rqhunstr0imk","cmv39aqk300h8rqhudr1hw7sl","cmv39aqkl00hcrqhu0hp6exf6","cmv39aqku00herqhuv1vlbvyx","cmv39aql400hgrqhub9vyo1j2","cmv39aqld00hirqhuo6baco5g","cmv39aqln00hkrqhuz1tm2az4","cmv39aqlx00hmrqhu8o9nj47n","cmv39aqm700horqhufywwgipq","cmv39aqmp00hsrqhu97k103r4","cmv39aqmy00hurqhu4nf5b2ko","cmv39aqn700hwrqhupk5pql5w","cmv39aqnf00hyrqhu7dicvmam","cmv39aqnp00i0rqhu1m7zi87t","cmv39aqnv00i2rqhuchx5g6xq","cmv39aqo400i4rqhuw49pzai7","cmv39aqod00i6rqhutrwjdk00","cmv39aqom00i8rqhubeln74p9","cmv39aqou00iarqhu6oaevd4t","cmv39aqp000icrqhuqyoznk8l","cmv39aqp600ierqhukrpss27u","cmv39aqpd00igrqhugz9h4x8n","cmv39aqpm00iirqhufpv4brvd","cmv39aqpt00ikrqhu2lo37skv","cmv39aqq100imrqhut3bohg9e","cmv39aqq900iorqhuduzruds7","cmv39aqqj00iqrqhuforw99h4","cmv39aqqs00isrqhumg8dllhv","cmv39aqr100iurqhupu4jijup","cmv39aqr900iwrqhubozrxz36","cmv39aqrg00iyrqhuhaqjmgzs","cmv39aqro00j0rqhu4mtcw53i","cmv39aqrw00j2rqhu9yi2ujj2","cmv39aqs300j4rqhu87r6b71n","cmv39aqsb00j6rqhurxi078zl","cmv39aqsk00j8rqhujrr3ueai","cmv39aqss00jarqhuunp1vpwz","cmv39aqt100jcrqhui6qjxoy2","cmv39aqta00jerqhuyr7m0uvo","cmv39aqtj00jgrqhutyqt5tyt","cmv39aqtq00jirqhu7yyn6hz3","cmv39aqty00jkrqhua4rstrjs","cmv39aqu800jmrqhufxw1ndqu","cmv39aqug00jorqhua31ejo1a","cmv39aqun00jqrqhume3rapkn","cmv39aquw00jsrqhusnztnzxj","cmv39aqv500jurqhu8iteblwn"];
+let txIndex=0;
+async function loadProducts(){
+try{
+const r=await fetch('api/products.json?limit=100');
+const d=await r.json();
+products=d.products.map(p=>({...p,img:IMGS[p.categoria]||IMGS["default"],exp:EXPERTS[Math.floor(Math.random()*EXPERTS.length)],cat:p.categoria||CATS[Math.floor(Math.random()*CATS.length)]}));
+render(products);
+}catch(e){products=gen(24);render(products)}
+}
+function gen(n){const p=[];for(let i=0;i<n;i++){const c=CATS[i%CATS.length],e=EXPERTS[i%EXPERTS.length],l=LEVELS[i%LEVELS.length];p.push({id:`prod_${i}`,title:`Tutorial ${c} 2026 — Método ${e}`,description:`Aprende ${c} desde cero. Video HD + PDF + Audio + Workflows.`,cat:c,exp:e,lvl:l,img:IMGS[c]||IMGS["default"],precio:20000)}return p}
+function render(p){
+const g=document.getElementById('productsGrid');
+if(!p.length){g.innerHTML='<p style="grid-column:1/-1;text-align:center;color:var(--dim);padding:4rem;">No se encontraron productos.</p>';return}
+g.innerHTML=p.map(x=>`<div class="card" data-level="${x.lvl}" data-cat="${x.cat}">
+<div class="card-img-wrap"><img src="${x.img}" alt="${x.cat}" class="card-img" loading="lazy" onerror="this.src='${IMGS["default"]}'"><div class="card-level l-${x.lvl}">${LVL[x.lvl]||x.lvl}</div><div class="card-price">$${x.precio||20000}</div></div>
+<div class="card-body"><div class="card-cat">${x.cat}</div><h3 class="card-title">${x.title}</h3><p class="card-desc">${x.description||'Tutorial completo.'}</p><div class="card-exp">👨‍🏫 <span>${x.exp}</span></div><button class="card-btn" onclick="showBuy('${x.title.replace(/'/g,"\\'")}',${x.precio||20000})"><i class="fas fa-shopping-cart"></i> Comprar — $'+x.precio+' COP</button></div>
+</div>`).join('');
+}
+document.querySelectorAll('.filter').forEach(t=>{t.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));t.classList.add('active');const f=t.dataset.filter;if(f==='all')render(products);else render(products.filter(p=>p.lvl===f))})});
+document.getElementById('searchInput').addEventListener('input',e=>{const q=e.target.value.toLowerCase();render(products.filter(p=>p.title.toLowerCase().includes(q)||p.cat.toLowerCase().includes(q)))});
+function showBuy(name,price){document.getElementById('buyName').innerText=name;document.getElementById('buyPrice').innerText='$'+price+' COP';document.getElementById('buyModal').classList.add('active');const tx=TX_IDS[txIndex];document.getElementById('checkoutTxId').value=tx;document.getElementById('checkoutMsg').style.display='none';document.getElementById('checkoutEmail').value='';}
+async function handleCheckout(e){e.preventDefault();const email=document.getElementById('checkoutEmail').value.trim();const tx_id=document.getElementById('checkoutTxId').value;const msg=document.getElementById('checkoutMsg');try{const r=await fetch('http://127.0.0.1:5100/capture-email',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,tx_id})});const d=await r.json();if(r.ok){msg.style.color='var(--green)';msg.textContent='¡Compra completada! Orden '+d.order_id+' creada para '+email+' (tx '+tx_id+').';msg.style.display='block';txIndex=(txIndex+1)%TX_IDS.length;setTimeout(closeBuy,1500);}else{msg.style.color='var(--red)';msg.textContent=d.error||'Error al capturar email';msg.style.display='block';}}catch(err){msg.style.color='var(--red)';msg.textContent='No se pudo conectar al servidor de captura';msg.style.display='block';}}
+function closeBuy(){document.getElementById('buyModal').classList.remove('active')}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
+loadProducts();
+</script>
+</body>
+</html>

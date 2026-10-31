@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIHACKTOR Ω | Yinitech — Productos IA — $6.99 USD</title>
+<meta name="description" content="Colección de tutoriales de IA. Productos digitales desde $6.99 USD. Compra única, sin compartir, sin copiar, durabilidad 1 mes. Pago seguro con pasarelas verificadas.">
+<meta property="og:title" content="DIHACKTOR Ω | Yinitech — Productos IA — $6.99 USD">
+<meta property="og:description" content="Compra única. No compartir. No copiar. Durabilidad 1 mes. Pago seguro.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{
+--bg:#020617;--surface:#0f172a;--border:rgba(255,255,255,0.08);
+--cyan:#00f2ff;--purple:#bc13fe;--pink:#ff00bd;
+--green:#10b981;--gold:#f59e0b;--red:#ef4444;
+--text:#f1f5f9;--muted:#94a3b8;--dim:#64748b;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;}
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(139,19,254,0.15),transparent),radial-gradient(ellipse 60% 40% at 80% 50%,rgba(0,242,255,0.08),transparent),radial-gradient(ellipse 60% 40% at 20% 80%,rgba(255,0,189,0.05),transparent);}
+.bg-grid{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:80px 80px;}
+.nav{position:sticky;top:0;z-index:100;background:rgba(2,6,23,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+.nav-logo-icon{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--cyan),var(--purple));display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:900;color:#000;}
+.nav-logo-text{font-size:1.3rem;font-weight:800;background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:600;transition:color .2s}
+.nav-links a:hover{color:var(--cyan)}
+.nav-cta{padding:.6rem 1.5rem;border-radius:10px;font-weight:700;font-size:.85rem;text-decoration:none;transition:all .2s;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,242,255,.3)}
+.country-pill{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .8rem;background:rgba(0,242,255,.08);border:1px solid rgba(0,242,255,.15);border-radius:100px;font-size:.7rem;font-weight:700;color:var(--cyan);margin-left:1rem;}
+.hero{position:relative;z-index:1;padding:6rem 2rem 4rem;text-align:center;max-width:1000px;margin:0 auto;}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.25rem;border-radius:100px;background:rgba(0,242,255,.08);border:1px solid rgba(0,242,255,.15);font-size:.75rem;font-weight:700;color:var(--cyan);margin-bottom:2rem;text-transform:uppercase;letter-spacing:.1em;}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1.1;margin-bottom:1.5rem;font-family:'Space Grotesk',sans-serif;}
+.hero h1 .g{background:linear-gradient(135deg,var(--cyan),var(--purple),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-sub{font-size:clamp(1rem,2vw,1.2rem);color:var(--muted);max-width:600px;margin:0 auto 2.5rem;line-height:1.7;}
+.hero-stats{display:flex;justify-content:center;gap:3rem;margin:3rem 0;flex-wrap:wrap;}
+.hero-stat{text-align:center;}
+.hero-stat-v{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-stat-l{font-size:.7rem;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-top:.25rem;}
+.hero-cta{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:1rem 2rem;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .3s;border:none;cursor:pointer;}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,242,255,.35)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
+.btn-ghost:hover{border-color:var(--cyan);background:rgba(0,242,255,.05)}
+.btn-sm{padding:.6rem 1.25rem;font-size:.8rem;border-radius:8px}
+.section{position:relative;z-index:1;padding:4rem 2rem;max-width:1400px;margin:0 auto;}
+.section-hd{text-align:center;margin-bottom:3rem;}
+.section-hd h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-bottom:.5rem;}
+.section-hd p{color:var(--muted);max-width:600px;margin:0 auto;}
+.search-wrap{max-width:600px;margin:0 auto 1.5rem;position:relative;}
+.search-inp{width:100%;padding:1rem 1.5rem 1rem 3.25rem;background:var(--surface);border:1px solid var(--border);border-radius:14px;color:var(--text);font-size:1rem;outline:none;transition:border-color .2s;}
+.search-inp:focus{border-color:var(--cyan)}
+.search-ico{position:absolute;left:1.25rem;top:50%;transform:translateY(-50%);color:var(--dim)}
+.filters{display:flex;justify-content:center;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap;}
+.filter{padding:.5rem 1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;color:var(--muted);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .2s;}
+.filter:hover,.filter.active{border-color:var(--cyan);color:var(--cyan);background:rgba(0,242,255,.05);}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all .4s;position:relative;}
+.card:hover{transform:translateY(-6px);border-color:var(--cyan);box-shadow:0 12px 40px rgba(0,242,255,.1);}
+.card-img-wrap{overflow:hidden;position:relative;height:180px;}
+.card-img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.card:hover .card-img{transform:scale(1.05);}
+.card-level{position:absolute;top:10px;left:10px;padding:.3rem .75rem;border-radius:6px;font-size:.65rem;font-weight:700;text-transform:uppercase;}
+.l-starter{background:rgba(16,185,129,.2);color:var(--green)}
+.l-ready{background:rgba(0,242,255,.2);color:var(--cyan)}
+.l-super{background:rgba(245,158,11,.2);color:var(--gold)}
+.card-price{position:absolute;top:10px;right:10px;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;padding:.35rem .85rem;border-radius:8px;font-weight:900;font-size:.85rem;}
+.card-body{padding:1.25rem;}
+.card-cat{font-size:.65rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-bottom:.4rem;}
+.card-title{font-size:.95rem;font-weight:700;margin-bottom:.4rem;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.card-desc{font-size:.8rem;color:var(--dim);line-height:1.5;margin-bottom:.75rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.card-exp{font-size:.75rem;color:var(--muted);margin-bottom:1rem;}
+.card-exp span{color:var(--purple);font-weight:600;}
+.card-btn{display:block;width:100%;padding:.7rem;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;border:none;border-radius:10px;font-weight:700;font-size:.85rem;text-align:center;text-decoration:none;cursor:pointer;transition:all .3s;}
+.card-btn:hover{transform:scale(1.02);box-shadow:0 4px 15px rgba(0,242,255,.3);}
+.modal-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.95);backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:1rem;}
+.modal-overlay.active{display:flex;}
+.modal{background:var(--surface);border:2px solid var(--purple);border-radius:24px;padding:2rem;max-width:540px;width:100%;max-height:90vh;overflow-y:auto;position:relative;}
+.modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--dim);font-size:1.5rem;cursor:pointer;transition:color .2s;}
+.modal-close:hover{color:var(--text)}
+.modal h2{color:var(--cyan);margin-bottom:.5rem;font-size:1.3rem;}
+.modal .prod-name{color:var(--muted);font-size:.9rem;margin-bottom:1rem;}
+.modal .prod-price{font-size:2.5rem;font-weight:900;color:var(--green);margin-bottom:1.5rem;}
+.pay-method{border-radius:14px;padding:1.25rem;margin-bottom:1rem;text-align:left;}
+.pay-method h4{margin-bottom:.5rem;font-size:.95rem;}
+.pay-method p{font-size:.8rem;color:var(--muted);margin-bottom:.25rem;word-break:break-all;}
+.pay-vitawallet{background:rgba(139,19,254,.08);border:2px solid var(--purple);}.pay-vitawallet h4{color:var(--purple)}
+.pay-crypto{background:rgba(0,242,255,.04);border:1px solid rgba(0,242,255,.2);}.pay-crypto h4{color:var(--cyan)}
+.pay-bank{background:rgba(16,185,129,.04);border:1px solid rgba(16,185,129,.2);}.pay-bank h4{color:var(--green)}
+
+.cta-box{max-width:800px;margin:0 auto;padding:4rem 2rem;background:linear-gradient(135deg,rgba(0,242,255,.04),rgba(139,19,254,.04));border:1px solid var(--border);border-radius:30px;text-align:center;}
+.cta-box h2{font-size:clamp(1.5rem,3vw,2.5rem);font-weight:900;margin-bottom:1rem;}
+.cta-box p{color:var(--muted);margin-bottom:2rem;font-size:1.05rem;}
+.footer{position:relative;z-index:1;padding:3rem 2rem;border-top:1px solid var(--border);text-align:center;}
+.footer-social{display:flex;justify-content:center;gap:1rem;margin-bottom:1.5rem;}
+.footer-social a{width:40px;height:40px;border-radius:50%;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;transition:all .2s;}
+.footer-social a:hover{border-color:var(--cyan);color:var(--cyan)}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:1.5rem;flex-wrap:wrap;}
+.footer-links a{color:var(--dim);text-decoration:none;font-size:.85rem;transition:color .2s;}
+.footer-links a:hover{color:var(--cyan)}
+.footer-copy{font-size:.75rem;color:var(--dim)}
+@media(max-width:768px){.hero{padding:5rem 1rem 3rem}.hero-stats{gap:1.5rem}.hero-stat-v{font-size:1.3rem}.grid{grid-template-columns:1fr}.cta-box{padding:2rem 1.5rem}.nav-links{display:none}.nav{padding:1rem}}
+.rate-badge{display:inline-flex;align-items:center;gap:.3rem;padding:.2rem .6rem;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);border-radius:6px;font-size:.65rem;color:var(--green);font-weight:700;margin-top:.5rem;}
+.security-badge{display:inline-flex;align-items:center;gap:.3rem;padding:.2rem .6rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:6px;font-size:.65rem;color:var(--cyan);font-weight:700;margin-top:.5rem;}
+.restrictions-box{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-top:1rem;text-align:left;}
+.restrictions-box h4{color:var(--cyan);margin-bottom:.75rem;}
+.restrictions-box ul{color:var(--muted);font-size:.85rem;line-height:1.6;}
+.restrictions-box ul li{margin-bottom:.4rem;}
+.restrictions-box ul li::before{content:"🔒";color:var(--green);margin-right:.5rem;}
+.gateways-box{background:rgba(0,242,255,.03);border:1px solid rgba(0,242,255,.2);border-radius:12px;padding:1.5rem;margin-top:1rem;text-align:left;}
+.gateways-box h4{color:var(--cyan);margin-bottom:.75rem;}
+.gateways-box ul{color:var(--muted);font-size:.85rem;line-height:1.6;}
+.gateways-box ul li{margin-bottom:.4rem;}
+.gateways-box ul li::before{content:"✅";color:var(--green);margin-right:.5rem;}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="bg-grid"></div>
+
+<nav class="nav">
+<a href="#" class="nav-logo"><div class="nav-logo-icon">Ω</div><span class="nav-logo-text">DIHACKTOR Ω</span></a>
+<div class="nav-links"><a href="#productos">Productos</a><a href="#categorias">Categorías</a><a href="#pagos">Pagos</a><a href="#comprar">Comprar</a></div>
+<div class="country-pill" id="countryPill">Detectando país…</div>
+<a href="#comprar" class="nav-cta">Comprar Ahora</a>
+</nav>
+
+<section class="hero">
+<div class="hero-badge"><div id="langBadge">Yinitech Products</div> — Precio Fijo <span id="priceMain">$6.99 USD</span></div>
+<h1>Productos IA de Yinitech<br><span class="g">Compra Única — Sin Compartir — Sin Copiar</span></h1>
+<p class="hero-sub" id="heroSub">Compra una vez. Acceso por 1 mes. No compartir. No copiar. No divulgar. Pago seguro con pasarelas verificadas.</p>
+<div class="hero-stats">
+<div class="hero-stat"><div class="hero-stat-v" id="statProducts">1M+</div><div class="hero-stat-l">Productos</div></div>
+<div class="hero-stat"><div class="hero-stat-v">80+</div><div class="hero-stat-l">Expertos</div></div>
+<div class="hero-stat"><div class="hero-stat-v">20</div><div class="hero-stat-l">Categorías</div></div>
+<div class="hero-stat"><div class="hero-stat-v" id="statPrice">$6.99</div><div class="hero-stat-l" id="statPriceLabel">Precio Fijo</div></div>
+</div>
+<div class="hero-cta">
+<a href="#comprar" class="btn btn-primary" id="ctaBuy">Comprar Ahora — <span id="ctaPrice">$6.99 USD</span></a>
+<a href="#productos" class="btn btn-ghost"><i class="fas fa-compass"></i> Explorar Catálogo</a>
+</div>
+</section>
+
+<div class="stats">
+<span><i class="fas fa-database"></i> <strong id="statsCount">1,020,895</strong> productos</span>
+<span><i class="fas fa-shield-alt"></i> 7 Capas de Seguridad</span>
+<span><i class="fas fa-clock"></i> Durabilidad 1 Mes</span>
+<span><i class="fas fa-bolt"></i> Acceso Inmediato</span>
+</div>
+
+<section class="section" id="categorias">
+<div class="section-hd"><h2 id="featTitle">¿Qué incluye cada producto?</h2><p id="featDesc">Contenido completo para dominar cualquier área de la IA</p></div>
+<div class="feat-grid">
+<div class="feat-card"><div class="feat-icon">🎥</div><h3 id="f1">Video HD</h3><p id="f1d">Clases en video de alta calidad con explicaciones paso a paso</p></div>
+<div class="feat-card"><div class="feat-icon">📄</div><h3 id="f2">Guía PDF</h3><p id="f2d">Más de 30 páginas de documentación detallada</p></div>
+<div class="feat-card"><div class="feat-icon">🎧</div><h3 id="f3">Audio</h3><p id="f3d">Versión audio para aprender mientras te desplazas</p></div>
+<div class="feat-card"><div class="feat-icon">⚙️</div><h3 id="f4">Workflows n8n</h3><p id="f4d">Automatizaciones listas para usar</p></div>
+<div class="feat-card"><div class="feat-icon">🔄</div><h3 id="f5">Actualizaciones</h3><p id="f5d">Contenido actualizado durante 1 mes</p></div>
+<div class="feat-card"><div class="feat-icon">💬</div><h3 id="f6">Soporte</h3><p id="f6d">Comunidad vía Telegram</p></div>
+</div>
+</section>
+
+<section class="section" id="productos">
+<div class="section-hd"><h2 id="catTitle">Explora el Catálogo</h2><p id="catDesc">Más de 1 millón de productos organizados por categoría y nivel</p></div>
+<div class="search-wrap"><i class="fas fa-search search-ico"></i><input type="text" class="search-inp" placeholder="Buscar productos de IA…" id="searchInput"></div>
+<div class="filters"><div class="filter active" data-filter="all" id="fltAll">Todos</div><div class="filter" data-filter="starter" id="fltStarter">Starter</div><div class="filter" data-filter="ready" id="fltReady">Ready</div><div class="filter" data-filter="superpremium" id="fltSuper">Super Premium</div></div>
+<div class="grid" id="productsGrid"><div style="grid-column:1/-1;text-align:center;padding:4rem;color:var(--dim)"><div style="width:40px;height:40px;border:3px solid var(--cyan);border-top-color:transparent;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 1rem"></div><p id="loadMsg">Cargando catálogo de productos…</p></div></div>
+</section>
+
+<section class="section" id="comprar">
+<div class="cta-box">
+<h2 id="buyTitle">¿Listo para dominar la IA?</h2>
+<p id="buySub">Compra única. Acceso por 1 mes. No compartir. No copiar. No divulgar.<br>Precio fijo: <strong id="buyPrice" style="color:var(--green)">$6.99 USD</strong></p>
+<button class="btn btn-primary" style="font-size:1.1rem;padding:1.25rem 3rem;" onclick="showBuy('Acceso Completo Yinitech',6.99)" id="buyBtn">Comprar Ahora — <span id="buyBtnPrice">$6.99 USD</span></button>
+</div>
+<div class="restrictions-box">
+<h4>📋 Términos de Compra</h4>
+<ul>
+<li><strong>Compra única:</strong> Un pago, acceso por 1 mes.</li>
+<li><strong>No compartir:</strong> El acceso es personal e intransferible.</li>
+<li><strong>No copiar:</strong> Prohibida la reproducción total o parcial del contenido.</li>
+<li><strong>No divulgar:</strong> Prohibido compartir claves de acceso o credenciales.</li>
+<li><strong>Comprar otros productos:</strong> Puedes adquirir productos adicionales uno por uno o en cantidad mayor realizando el pago correspondiente.</li>
+<li><strong>Solo pasarelas comprobadas:</strong> Pago seguro con binance, lead_bank, openpayd, banco_mercantil, wallbit, safepal, whop.</li>
+</ul>
+</div>
+</section>
+
+<section class="section" id="pagos">
+<div class="cta-box" style="text-align:left">
+<h2 id="payTitle">Pasarelas de Pago Comprobadas</h2>
+<p id="payDesc">Elige el método que mejor se adapte a tu país. Todos los precios equivalen a $6.99 USD.</p>
+<div class="gateways-box">
+<h4>✅ Pasarelas Verificadas (Transferencia / Cripto)</h4>
+<ul id="gatewaysList">
+<li>🟡 Binance — USDT/USDC/BTC/BNB</li>
+<li>🏦 Lead Bank — USD (Cuenta 219449048779, Ruta 101019644)</li>
+<li>🇪🇺 OpenPayd — EUR (IBAN MT12CFTE28004000000000005456093)</li>
+<li>🇧🇴 Banco Mercantil Santa Cruz — BOB (Cuenta 4069474188, CI 5808841TJ)</li>
+<li>🏦 Wallbit — USD (Entorno production)</li>
+<li>🛡️ SafePal — BTC/ETH/BNB/USDC/USDT/ARBITRUM</li>
+</ul>
+</div>
+</section>
+
+<section class="section" id="tarjeta">
+<div class="cta-box" style="text-align:left">
+<h2 id="cardTitle">Pagar con Tarjeta de Crédito</h2>
+<p id="cardSub">Selecciona tu divisa y serás redirigido a la pasarela de pago correspondiente.</p>
+<div id="cardGatewayBox" style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-top:1rem;text-align:left;">
+<h4 id="cardGatewayTitle">Detectando divisa…</h4>
+<p id="cardGatewayDesc" style="color:var(--muted);font-size:.85rem;line-height:1.6;"></p>
+<div style="margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap;">
+<button class="btn btn-primary" id="cardPayBtn" style="width:auto;padding:1rem 1.75rem;font-size:1rem;" onclick="redirectCardPayment()">Pagar con Tarjeta</button>
+<a href="#comprar" class="btn btn-ghost" style="width:auto;padding:1rem 1.75rem;font-size:1rem;">Otras pasarelas</a>
+</div>
+</div>
+<p style="margin-top:1.5rem;font-size:.8rem;color:var(--dim);">🔒 Pago seguro • Acceso inmediato • Garantía de 7 días<br>📧 Envía comprobante a: <strong>techinnovationany@gmail.com</strong></p>
+</div>
+</section>
+
+<footer class="footer">
+<div class="footer-social">
+<a href="https://www.linkedin.com/in/diego-cortez-b7330b295/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://www.instagram.com/techinnovationany/" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://github.com/tortuguitahack" target="_blank"><i class="fab fa-github"></i></a>
+<a href="https://t.me/d3h1ckt4r_bot" target="_blank"><i class="fab fa-telegram"></i></a>
+<a href="https://www.facebook.com/dihacktor" target="_blank"><i class="fab fa-facebook"></i></a>
+<a href="https://www.x.com/dihacktor" target="_blank"><i class="fab fa-x-twitter"></i></a>
+<a href="https://www.youtube.com/@dihacktor" target="_blank"><i class="fab fa-youtube"></i></a>
+<a href="https://www.tiktok.com/@dihacktor" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="https://discord.gg/dihacktor" target="_blank"><i class="fab fa-discord"></i></a>
+<a href="https://wa.me/59170000000" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</div>
+<div class="footer-links"><a href="#productos">Productos</a><a href="#categorias">Categorías</a><a href="#pagos">Pagos</a><a href="#comprar">Comprar</a><a href="https://t.me/d3h1ckt4r_bot">Telegram</a></div>
+<p class="footer-copy" id="footerCopy">© 2026 DIHACKTOR Ω — Yinitech — 1,020,895 productos | $6.99 USD | Sin Stripe | Compra Única — 1 Mes</p>
+</footer>
+
+<div class="modal-overlay" id="buyModal">
+<div class="modal">
+<button class="modal-close" onclick="closeBuy()">&times;</button>
+<h2 id="modalTitle">Comprar Producto</h2>
+<p class="prod-name" id="modalName">Producto</p>
+<p class="prod-price" id="modalPrice">$6.99 USD</p>
+<form id="checkoutForm" onsubmit="handleCheckout(event)">
+<label style="display:block;margin:.75rem 0 .25rem;color:var(--muted);font-size:.8rem;" id="lblEmail">Tu email (requerido para recibir el acceso)</label>
+<input type="email" id="checkoutEmail" required placeholder="tu@correo.com" style="width:100%;padding:.6rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);margin-bottom:.75rem;">
+<input type="hidden" id="checkoutTxId">
+<button type="submit" class="btn btn-primary" style="width:100%;font-size:1rem;padding:1rem;" id="checkoutBtn">Pagar y completar compra</button>
+</form>
+<div id="checkoutMsg" style="margin:.5rem 0;font-size:.85rem;color:var(--green);display:none;"></div>
+<div class="pay-method pay-vitawallet"><h4><i class="fas fa-star"></i> Pago Directo</h4><p id="modalBank">Envía comprobante a techinnovationany@gmail.com</p></div>
+<p style="font-size:.75rem;color:var(--dim);text-align:center;margin-top:1rem;">📧 techinnovationany@gmail.com</p>
+<p style="font-size:.7rem;color:var(--dim);text-align:center;margin-top:.5rem;">Compra única • Acceso 1 mes • No compartir • No copiar • No divulgar</p>
+</div>
+</div>
+
+<style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+<script>
+// ================= CONFIG =================
+const BASE_PRICE_USD = 6.99;
+const COUNTRIES = {
+  BO:{name:'Bolivia',code:'BOB',symbol:'Bs.',lang:'es',bank:'Banco Mercantil Santa Cruz',acc:'4069474188',ci:'5808841TJ',flag:'🇧🇴'},
+  AR:{name:'Argentina',code:'ARS',symbol:'$',lang:'es',bank:'Banco Nación',acc:'CBU 12345678',ci:'Alias: DIHACKTOR.AR',flag:'🇦🇷'},
+  BR:{name:'Brasil',code:'BRL',symbol:'R$',lang:'pt',bank:'Pix / Itaú',acc:'dihacktor@brasil.com',ci:'',flag:'🇧🇷'},
+  CL:{name:'Chile',code:'CLP',symbol:'$',lang:'es',bank:'Webpay / Banco de Chile',acc:'Cuenta 987654321',ci:'',flag:'🇨🇱'},
+  CO:{name:'Colombia',code:'COP',symbol:'$',lang:'es',bank:'Nequi / Davivienda',acc:'Celular 3001234567',ci:'',flag:'🇨🇴'},
+  PE:{name:'Perú',code:'PEN',symbol:'S/',lang:'es',bank:'Yape / Plin',acc:'Celular 999888777',ci:'',flag:'🇵🇪'},
+  EC:{name:'Ecuador',code:'USD',symbol:'$',lang:'es',bank:'Banco Pichincha',acc:'Cuenta 456789123',ci:'CI 1234567890',flag:'🇪🇨'},
+  UY:{name:'Uruguay',code:'UYU',symbol:'$',lang:'es',bank:'RedPagos',acc:'Código DIHACKTORUY',ci:'',flag:'🇺🇾'},
+  VE:{name:'Venezuela',code:'VES',symbol:'Bs.',lang:'es',bank:'Pago Móvil / Bicentenario',acc:'Celular 0412-3456789',ci:'',flag:'🇻🇪'},
+  MX:{name:'México',code:'MXN',symbol:'$',lang:'es',bank:'Oxxo / SPEI',acc:'Referencia DIHACKTOR',ci:'',flag:'🇲🇽'},
+  US:{name:'Estados Unidos',code:'USD',symbol:'$',lang:'en',bank:'Lead Bank',acc:'Cuenta 219449048779 | Ruta 101019644',ci:'',flag:'🇺🇸'},
+  GT:{name:'Guatemala',code:'GTQ',symbol:'Q',lang:'es',bank:'Transferencia',acc:'Cuenta local',ci:'',flag:'🇬🇹'},
+  CR:{name:'Costa Rica',code:'CRC',symbol:'₡',lang:'es',bank:'Transferencia',acc:'Cuenta local',ci:'',flag:'🇨🇷'},
+  PA:{name:'Panamá',code:'USD',symbol:'$',lang:'es',bank:'Transferencia',acc:'Cuenta local',ci:'',flag:'🇵🇦'},
+  DO:{name:'Rep. Dominicana',code:'DOP',symbol:'RD$',lang:'es',bank:'Transferencia',acc:'Cuenta local',ci:'',flag:'🇩🇴'},
+  CU:{name:'Cuba',code:'CUP',symbol:'$',lang:'es',bank:'Transferencia',acc:'Cuenta local',ci:'',flag:'🇨🇺'},
+  HN:{name:'Honduras',code:'HNL',symbol:'L',lang:'es',bank:'Transferencia',acc:'Cuenta local',ci:'',flag:'🇭🇳'},
+  SV:{name:'El Salvador',code:'USD',symbol:'$',lang:'es',bank:'Transferencia',acc:'Cuenta local',ci:'',flag:'🇸🇻'},
+  NI:{name:'Nicaragua',code:'NIO',symbol:'C$',lang:'es',bank:'Transferencia',acc:'Cuenta local',ci:'',flag:'🇳🇮'},
+  PY:{name:'Paraguay',code:'PYG',symbol:'₲',lang:'es',bank:'Transferencia',acc:'Cuenta local',ci:'',flag:'🇵🇾'}
+};
+const LANG={
+  es:{products:'Productos',categories:'Categorías',experts:'Expertos',buy:'Comprar',featTitle:'¿Qué incluye cada producto?',featDesc:'Contenido completo para dominar cualquier área de la IA',catTitle:'Explora el Catálogo',catDesc:'Más de 1 millón de productos organizados por categoría y nivel',buyTitle:'¿Listo para dominar la IA?',buySub:'Compra única. Acceso por 1 mes. No compartir. No copiar. No divulgar.<br>Precio fijo:',payTitle:'Pasarelas de Pago Comprobadas',payDesc:'Elige el método que mejor se adapte a tu país. Todos los precios equivalen a $6.99 USD.',footerCopy:'© 2026 DIHACKTOR Ω — Yinitech — 1,020,895 productos | $6.99 USD | Sin Stripe | Compra Única — 1 Mes',email:'Tu email (requerido para recibir el acceso)',btnPay:'Pagar y completar compra',msgOk:'¡Compra completada! Orden creada.',msgErr:'No se pudo conectar al servidor de captura.',detecting:'Detectando país…',priceFixed:'Precio Fijo'},
+  en:{products:'Products',categories:'Categories',experts:'Experts',buy:'Buy',featTitle:'What each product includes',featDesc:'Complete content to master any AI area',catTitle:'Explore the Catalog',catDesc:'More than 1 million products organized by category and level',buyTitle:'Ready to master AI?',buySub:'One-time purchase. 1 month access. No sharing. No copying. No disclosure.<br>Fixed price:',payTitle:'Verified Payment Gateways',payDesc:'Choose the method that best suits your country. All prices equal $6.99 USD.',footerCopy:'© 2026 DIHACKTOR Ω — Yinitech — 1,020,895 products | $6.99 USD | No Stripe | One-time purchase — 1 Month',email:'Your email (required to receive access)',btnPay:'Pay and complete purchase',msgOk:'Purchase completed! Order created.',msgErr:'Could not connect to capture server.',detecting:'Detecting country…',priceFixed:'Fixed Price'},
+  pt:{products:'Produtos',categories:'Categorias',experts:'Especialistas',buy:'Comprar',featTitle:'O que cada produto inclui',featDesc:'Conteúdo completo para dominar qualquer área de IA',catTitle:'Explore o Catálogo',catDesc:'Mais de 1 milhão de produtos organizados por categoría e nível',buyTitle:'Pronto para dominar a IA?',buySub:'Compra única. Acesso por 1 mês. Não compartilhar. Não copiar. Não divulgar.<br>Preço fixo:',payTitle:'Gateways de Pagamento Comprovados',payDesc:'Escolha o método que melhor se adapte ao seu país. Todos os preços equivalem a $6.99 USD.',footerCopy:'© 2026 DIHACKTOR Ω — Yinitech — 1,020,895 productos | $6.99 USD | Sem Stripe | Compra Única — 1 Mês',email:'Seu email (obrigatório para receber acesso)',btnPay:'Pagar e concluir compra',msgOk:'Compra concluída! Pedido criado.',msgErr:'Não foi possível conectar ao servidor de captura.',detecting:'Detectando país…',priceFixed:'Preço Fixo'}
+};
+let state={country:'US',lang:'en',rate:1,rates:{},products:[]};
+
+function fmt(n,c=2){return n.toLocaleString(undefined,{minimumFractionDigits:c,maximumFractionDigits:c});}
+function money(n){return fmt(n,2);}
+
+async function detectCountry(){
+  const pill=document.getElementById('countryPill');
+  try{
+    const r=await fetch('https://ipapi.co/json/',{timeout:6000});
+    const d=await r.json();
+    if(d.country_code && COUNTRIES[d.country_code]){
+      state.country=d.country_code; state.lang=COUNTRIES[d.country_code].lang;
+      pill.innerHTML=COUNTRIES[d.country_code].flag+' '+d.country_code;
+      pill.title=d.country_name+' ('+d.country_code+')';
+    }else{state.country='US';state.lang='en';pill.innerHTML='🌐 Internacional';}
+  }catch(e){state.country='US';state.lang='en';pill.innerHTML='🌐 Internacional';console.warn('IP detect falló',e);}
+  await loadRates();
+  applyLocalization();
+}
+async function loadRates(){
+  const today=new Date().toDateString();
+  const saved=localStorage.getItem('dihacktor_rates_date');
+  const savedRates=localStorage.getItem('dihacktor_rates');
+  if(saved===today && savedRates){try{state.rates=JSON.parse(savedRates);}catch(e){state.rates={}}}
+  else{
+    state.rates={};
+    try{const r=await fetch('https://open.er-api.com/v6/latest/USD',{timeout:6000});const d=await r.json();if(d.rates)state.rates=d.rates;}catch(e){console.warn('Rate fetch falló',e);}
+    localStorage.setItem('dihacktor_rates_date',today);
+    localStorage.setItem('dihacktor_rates',JSON.stringify(state.rates));
+  }
+  const c=COUNTRIES[state.country];
+  state.rate=(c.code==='USD')?1:(state.rates[c.code]||1);
+  localStorage.setItem('dihacktor_country',state.country);
+  localStorage.setItem('dihacktor_lang',state.lang);
+}
+function priceLocal(){return BASE_PRICE_USD*state.rate;}
+function fmtLocal(){const c=COUNTRIES[state.country];return c.symbol+money(priceLocal());}
+function applyLocalization(){
+  const c=COUNTRIES[state.country];const l=LANG[state.lang]||LANG.es;
+  document.getElementById('langBadge').textContent=c.name;
+  document.getElementById('priceMain').textContent=fmtLocal()+' '+c.code;
+  document.getElementById('statPrice').textContent=c.symbol+fmt(priceLocal(),0);
+  document.getElementById('statPriceLabel').textContent=c.code;
+  document.getElementById('ctaPrice').textContent=fmtLocal()+' '+c.code;
+  document.getElementById('buyPrice').textContent=fmtLocal()+' '+c.code;
+  document.getElementById('buyBtnPrice').textContent=fmtLocal()+' '+c.code;
+  document.getElementById('modalPrice').textContent=fmtLocal()+' '+c.code;
+  document.getElementById('heroSub').innerHTML=l.buySub.split('<br>')[0]+' '+fmtLocal()+' '+c.code;
+  document.getElementById('featTitle').textContent=l.featTitle;document.getElementById('featDesc').textContent=l.featDesc;
+  document.getElementById('catTitle').textContent=l.catTitle;document.getElementById('catDesc').textContent=l.catDesc;
+  document.getElementById('buyTitle').textContent=l.buyTitle;
+  document.getElementById('payTitle').textContent=l.payTitle;document.getElementById('payDesc').textContent=l.payDesc;
+  document.getElementById('footerCopy').textContent=l.footerCopy;
+  document.getElementById('lblEmail').textContent=l.email;document.getElementById('checkoutBtn').textContent=l.btnPay;
+  document.getElementById('countryPill').title=c.name+' ('+c.code+')';
+  document.getElementById('fltAll').textContent=l.products;
+  renderBankInfo();renderProducts();
+}
+function renderBankInfo(){
+  const c=COUNTRIES[state.country];
+  document.getElementById('bankInfo').innerHTML=c.flag+' '+c.name+': '+c.bank+' — Cuenta: '+c.acc+(c.ci?' | '+c.ci:'')+'<br>Lead Bank (USA) — Cuenta: 219449048779 | Ruta: 101019644<br>OpenPayd (Europa) — IBAN: MT12CFTE28004000000000005456093';
+  document.getElementById('modalBank').innerHTML='<strong>'+c.bank+'</strong>: '+c.acc+(c.ci?' | '+c.ci:'');
+  renderCardGateway(c);
+}
+
+// ================= TARJETA — REDIRECCIÓN POR DIVISA =================
+const CARD_GATEWAYS = {
+  USD:{name:'Whop — Tarjeta de Crédito',url:'https://iaexperts.whop.site/checkout?amount=6.99&currency=usd',desc:'Pago con tarjeta Visa/Mastercard en dólares USD. Webhook verificado HMAC.'},
+  EUR:{name:'OpenPayd — Tarjeta de Crédito',url:'https://easybuy-official-secure.surge.sh/pay?currency=eur',desc:'Pago con tarjeta en euros EUR. IBAN MT12CFTE28004000000000005456093.'},
+  BOB:{name:'Banco Mercantil — Tarjeta de Débito/Crédito',url:'https://tortuguitahack.github.io/Tecnolog-a-Yiniayang/pagar.html?currency=bob',desc:'Pago con tarjeta bolivianos BOB. Cuenta 4069474188, CI 5808841TJ.'},
+  ARS:{name:'Banco Nación — Tarjeta de Débito/Crédito',url:'https://tortuguitahack.github.io/Tecnolog-a-Yiniayang/pagar.html?currency=ars',desc:'Pago con tarjeta pesos argentinos ARS. CBU 12345678.'},
+  BRL:{name:'Pix / Itaú — Tarjeta de Crédito',url:'https://tortuguitahack.github.io/Tecnolog-a-Yiniayang/pagar.html?currency=brl',desc:'Pago con tarjeta reales brasileños BRL. Pix dihacktor@brasil.com.'},
+  CLP:{name:'Webpay / Banco de Chile — Tarjeta de Crédito',url:'https://tortuguitahack.github.io/Tecnolog-a-Yiniayang/pagar.html?currency=clp',desc:'Pago con tarjeta pesos chilenos CLP. Cuenta 987654321.'},
+  COP:{name:'Nequi / Davivienda — Tarjeta de Crédito',url:'https://tortuguitahack.github.io/Tecnolog-a-Yiniayang/pagar.html?currency=cop',desc:'Pago con tarjeta pesos colombianos COP. Celular 3001234567.'},
+  PEN:{name:'Yape / Plin — Tarjeta de Débito/Crédito',url:'https://tortuguitahack.github.io/Tecnolog-a-Yiniayang/pagar.html?currency=pen',desc:'Pago con tarjeta soles peruanos PEN. Celular 999888777.'},
+  MXN:{name:'Oxxo / SPEI — Tarjeta de Débito/Crédito',url:'https://tortuguitahack.github.io/Tecnolog-a-Yiniayang/pagar.html?currency=mxn',desc:'Pago con tarjeta pesos mexicanos MXN. Referencia DIHACKTOR.'},
+  UYU:{name:'RedPagos — Tarjeta de Débito/Crédito',url:'https://tortuguitahack.github.io/Tecnolog-a-Yiniayang/pagar.html?currency=uyu',desc:'Pago con tarjeta pesos uruguayos UYU. Código DIHACKTORUY.'},
+  VES:{name:'Pago Móvil / Bicentenario — Tarjeta de Débito',url:'https://tortuguitahack.github.io/Tecnolog-a-Yiniayang/pagar.html?currency=ves',desc:'Pago con tarjeta bolívares VES. Celular 0412-3456789.'},
+  DEFAULT:{name:'Whop — Tarjeta de Crédito (USD)',url:'https://iaexperts.whop.site/checkout?amount=6.99&currency=usd',desc:'Pago con tarjeta Visa/Mastercard en dólares USD. Webhook verificado HMAC.'}
+};
+function renderCardGateway(c){
+  const gw=CARD_GATEWAYS[c.code]||CARD_GATEWAYS.DEFAULT;
+  document.getElementById('cardGatewayTitle').innerHTML='<strong>'+gw.name+'</strong>';
+  document.getElementById('cardGatewayDesc').textContent=gw.desc;
+  document.getElementById('cardPayBtn').onclick=()=>redirectCardPayment(gw.url);
+}
+function redirectCardPayment(url){
+  const gw=CARD_GATEWAYS[COUNTRIES[state.country].code]||CARD_GATEWAYS.DEFAULT;
+  window.open(url,'_blank','noopener,noreferrer');
+}
+// ================= PRODUCTOS (100 diarios) =================
+const CATS=['IA Marketing','Copywriting IA','Automatización n8n','SEO con IA','Email Marketing IA','Imágenes IA','Video IA','Chatbots IA','E-commerce IA','Micro-SaaS IA'];
+const EXPERTS=['Alex Hormozi','Jeff Bezos','Frank Kern','Naval Ravikant','Andrew Ng','Gary Vaynerchuk','Neil Patel','Tim Ferriss','Russell Brunson','Pat Flynn'];
+const LEVELS=['starter','ready','superpremium'];
+const LVL={starter:'Starter',ready:'Ready',superpremium:'Super Premium'};
+function genProducts(n=100){
+  const p=[];const today=new Date().toDateString();
+  for(let i=0;i<n;i++){
+    const c=CATS[i%CATS.length],e=EXPERTS[i%EXPERTS.length],lv=LEVELS[i%LEVELS.length];
+    p.push({id:'prod_daily_'+today+'_'+i,title:'Tutorial '+c+' 2026 — Método '+e,description:'Aprende '+c+' desde cero. Video HD + PDF + Audio + Workflows. Actualizado '+today+'.',cat:c,exp:e,lvl:lv,img:'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80',precio:BASE_PRICE_USD,updated:today});
+  }
+  return p;
+}
+function renderProducts(filter='all'){
+  const g=document.getElementById('productsGrid');
+  if(!state.products.length)state.products=genProducts(100);
+  let ps=state.products;if(filter!=='all')ps=ps.filter(x=>x.lvl===filter);
+  const c=COUNTRIES[state.country];
+  g.innerHTML=ps.map(x=>`<div class="card" data-level="${x.lvl}" data-cat="${x.cat}">
+  <div class="card-img-wrap"><img src="${x.img}" alt="${x.cat}" class="card-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80'"><div class="card-level l-${x.lvl}">${LVL[x.lvl]}</div><div class="card-price">${c.symbol}${fmt(priceLocal(),0)}</div></div>
+  <div class="card-body"><div class="card-cat">${x.cat}</div><h3 class="card-title">${x.title}</h3><p class="card-desc">${x.description}</p><div class="card-exp">👨‍🏫 <span>${x.exp}</span></div><button class="card-btn" onclick="showBuy('${x.title.replace(/'/g,"\\\\'")}',${BASE_PRICE_USD})"><i class="fas fa-shopping-cart"></i> Comprar — ${c.symbol}${fmt(priceLocal(),0)} ${c.code}</button></div>
+  </div>`).join('');
+}
+// ================= CHECKOUT =================
+function showBuy(name,price){
+  document.getElementById('modalName').textContent=name;
+  document.getElementById('modalPrice').textContent=fmtLocal()+' '+COUNTRIES[state.country].code;
+  document.getElementById('buyModal').classList.add('active');
+  document.getElementById('checkoutTxId').value='TX_'+Date.now()+Math.random().toString(36).slice(2,8);
+  document.getElementById('checkoutMsg').style.display='none';document.getElementById('checkoutEmail').value='';
+}
+async function handleCheckout(e){
+  e.preventDefault();
+  const email=document.getElementById('checkoutEmail').value.trim();const tx_id=document.getElementById('checkoutTxId').value;
+  const msg=document.getElementById('checkoutMsg');const btn=document.getElementById('checkoutBtn');const l=LANG[state.lang]||LANG.es;
+  try{btn.disabled=true;btn.textContent='Procesando…';
+    const r=await fetch('http://127.0.0.1:5100/capture-email',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,tx_id})});
+    const d=await r.json();if(r.ok){msg.style.color='var(--green)';msg.textContent=l.msgOk;msg.style.display='block';setTimeout(closeBuy,1500);}
+    else{msg.style.color='var(--red)';msg.textContent=d.error||l.msgErr;msg.style.display='block';}
+  }catch(err){msg.style.color='var(--red)';msg.textContent=l.msgErr;msg.style.display='block';}
+  btn.disabled=false;btn.textContent=l.btnPay;
+}
+function closeBuy(){document.getElementById('buyModal').classList.remove('active');}
+// ================= EVENTS =================
+document.querySelectorAll('.filter').forEach(t=>{t.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));t.classList.add('active');renderProducts(t.dataset.filter)})});
+document.getElementById('searchInput').addEventListener('input',e=>{const q=e.target.value.toLowerCase();renderProducts('all');const g=document.getElementById('productsGrid');g.innerHTML=g.innerHTML;});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
+// ================= INIT =================
+detectCountry();setInterval(detectCountry,300000);
+</script>
+</body>
+</html>

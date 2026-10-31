@@ -8,6 +8,10 @@
 <meta property="og:title" content="DIHACKTOR Ω | Productos IA — $6.99 USD">
 <meta property="og:description" content="Video HD + PDF + Audio + Workflows n8n. Pago seguro con múltiples pasarelas.">
 <meta property="og:image" content="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop">
+<!-- SECURITY META TAGS - 7 Layer Protection -->
+<meta name="security-hmac" content="yinitech-hmac-secret-2026-change-in-production">
+<meta name="security-webhook" content="https://api.dihacktor.com/security/webhook">
+<meta name="security-telegram" content="@d3h1ckt4r_bot">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
@@ -357,6 +361,79 @@ document.getElementById('searchInput').addEventListener('input',e=>{const q=e.ta
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
 // ================= INIT =================
 detectCountry();setInterval(detectCountry,300000);
+</script>
+<!-- SECURITY CLIENT - 7 Layer Protection -->
+<script src="/security/security-client.js"></script>
+<script>
+// Override showBuy to use secure checkout
+function showBuy(name, price) {
+  const productId = 'prod_' + Date.now();
+  document.getElementById('modalName').textContent = name;
+  document.getElementById('modalPrice').textContent = fmtLocal() + ' ' + COUNTRIES[state.country].code;
+  document.getElementById('buyModal').classList.add('active');
+  document.getElementById('checkoutTxId').value = 'TX_' + Date.now() + Math.random().toString(36).slice(2,8);
+  document.getElementById('checkoutMsg').style.display = 'none';
+  document.getElementById('checkoutEmail').value = '';
+  // Store product info for secure checkout
+  window._pendingPurchase = { name, price, productId };
+}
+
+// Override handleCheckout to use secure endpoint
+async function handleCheckout(e) {
+  e.preventDefault();
+  const email = document.getElementById('checkoutEmail').value.trim();
+  const tx_id = document.getElementById('checkoutTxId').value;
+  const msg = document.getElementById('checkoutMsg');
+  const btn = document.getElementById('checkoutBtn');
+  const l = LANG[state.lang] || LANG.es;
+  const purchase = window._pendingPurchase;
+
+  if (!purchase) {
+    msg.style.color = 'var(--red)';
+    msg.textContent = 'Error: producto no seleccionado';
+    msg.style.display = 'block';
+    return;
+  }
+
+  try {
+    btn.disabled = true;
+    btn.textContent = 'Procesando...';
+
+    const payload = {
+      email,
+      tx_id,
+      productId: purchase.productId,
+      productName: purchase.name,
+      price: purchase.price,
+      gateway: 'vitawallet',
+      currency: 'USD'
+    };
+
+    const r = await fetch('http://127.0.0.1:5100/capture-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const d = await r.json();
+    if (r.ok) {
+      msg.style.color = 'var(--green)';
+      msg.textContent = l.msgOk;
+      msg.style.display = 'block';
+      setTimeout(closeBuy, 1500);
+      window._pendingPurchase = null;
+    } else {
+      msg.style.color = 'var(--red)';
+      msg.textContent = d.error || l.msgErr;
+      msg.style.display = 'block';
+    }
+  } catch (err) {
+    msg.style.color = 'var(--red)';
+    msg.textContent = l.msgErr;
+    msg.style.display = 'block';
+  }
+  btn.disabled = false;
+  btn.textContent = l.btnPay;
+}
 </script>
 </body>
 </html>

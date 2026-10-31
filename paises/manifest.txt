@@ -1,0 +1,11 @@
+bolivia|Bolivia|Bs.50|BOB|Banco Mercantil Santa Cruz|/home/dihacktor/Tecnolog-a-Yiniayang/paises/bolivia/index.html
+argentina|Argentina|$5,000|ARS|Banco Nación / Mercado Pago|/home/dihacktor/Tecnolog-a-Yiniayang/paises/argentina/index.html
+brasil|Brasil|R$25|BRL|Pix / Boleto|/home/dihacktor/Tecnolog-a-Yiniayang/paises/brasil/index.html
+chile|Chile|$4,500|CLP|Webpay / Transferencia|/home/dihacktor/Tecnolog-a-Yiniayang/paises/chile/index.html
+colombia|Colombia|$20,000|COP|Nequi / Davivienda|/home/dihacktor/Tecnolog-a-Yiniayang/paises/colombia/index.html
+peru|Perú|S/19|PEN|Yape / Plin|/home/dihacktor/Tecnolog-a-Yiniayang/paises/peru/index.html
+ecuador|Ecuador|$5|USD|Transferencia Bancaria|/home/dihacktor/Tecnolog-a-Yiniayang/paises/ecuador/index.html
+uruguay|Uruguay|$200|UYU|RedPagos / Transferencia|/home/dihacktor/Tecnolog-a-Yiniayang/paises/uruguay/index.html
+venezuela|Venezuela|Bs.200|VES|Pago Móvil / Binance|/home/dihacktor/Tecnolog-a-Yiniayang/paises/venezuela/index.html
+mexico|México|$100|MXN|Oxxo / SPEI|/home/dihacktor/Tecnolog-a-Yiniayang/paises/mexico/index.html
+usa|Estados Unidos|$5|USD|Lead Bank / Stripe|/home/dihacktor/Tecnolog-a-Yiniayang/paises/usa/index.html
