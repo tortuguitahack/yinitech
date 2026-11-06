@@ -1,28 +1,31 @@
 # Yinitech checkout backend scaffold
 
-This backend is a starting point for the selected flow: Stripe Checkout + manual transfer/Altoke/crypto orders, with Whop webhook receipt. It is not deployed or connected to live credentials by this commit.
+Selected design: Stripe card checkout, Whop webhook intake for configured events, bank transfer/Altoke pending orders, and crypto as a planned method that remains disabled until on-chain verification is implemented.
 
-## Safety and current limitations
+This code is a scaffold, not a deployed or production-ready payment service. No live credentials are included.
 
-- Configure Stripe and Supabase secrets only on the backend host. Never commit a populated `.env` or expose the Supabase service-role key.
-- Stripe checkout sessions use a server-owned product allowlist and fixed USD amounts. Orders remain pending until Stripe's signed webhook validates payment status, session, amount, and currency.
-- Manual bank transfer, QR/Altoke, and crypto orders are created as `pending`. This scaffold does not verify bank settlement or blockchain transfers and does not grant product access.
-- Whop webhook signature verification is implemented over the raw body with replay-age checking and duplicate event IDs. The handler intentionally records verified Whop events but does not mark orders paid: confirm Whop's actual event schema and order metadata mapping with a test delivery before enabling fulfillment.
-- The supplied LocalTunnel URL is `https://whop-webhook-dihacktor.loca.lt/webhooks/whop`. A LocalTunnel URL is only reachable while its tunnel process and backend are running, may change, and is not a recommended permanent production endpoint. Do not expose Proxmox management port 8006.
-- This scaffold does not include authenticated customer order-status or digital-delivery endpoints.
+## Payment truth and current limits
+
+- Stripe order amounts and product names come from a server-side allowlist. An order is marked paid only by a Stripe webhook with a valid signature and matching order/session, paid status, amount, and currency.
+- Bank transfer and Altoke orders remain pending. A customer-provided receipt or reference is not proof of settlement.
+- Crypto is intentionally not enabled in the checkout API/UI yet. Do not send funds or display wallet instructions until you choose the exact chain/asset and deploy a verifier that checks recipient, token, amount, transaction success, confirmations, and replay/duplicate transaction hash. MetaMask/SafePal connection itself is not payment verification.
+- Whop webhook requests are signature checked and event IDs are deduplicated. Events are logged only; they do not prove a Stripe, bank, Altoke, or crypto payment and do not mark Yinitech orders paid. Map Whop's real test event to an order only after confirming its schema and business purpose.
+- The current `backend/server.js` persists to hosted Supabase when configured. If your Supabase runs locally, set `SUPABASE_URL` to the URL reachable from the backend process/container (not browser localhost or Proxmox `:8006`), provide the server-side service-role key privately, and test connectivity. Never expose the database port publicly.
+- The LocalTunnel URL is temporary and not appropriate as a stable production webhook URL. Use a domain you control with HTTPS, routing only to the backend. Do not expose the Proxmox management panel on port 8006.
+- This scaffold does not include customer order-status authentication, product delivery, refunds, or an admin reconciliation interface.
 
 ## Setup
 
-1. Use a supported Node.js version (20+).
-2. Install dependencies with `npm install`.
-3. Copy `.env.example` to `.env` on the backend machine; set `SUPABASE_SERVICE_ROLE_KEY`, Stripe secrets, and Whop signing secret there.
-4. Review and run `backend/schema.sql` in the canonical Supabase project.
-5. Set the Whop webhook destination to `https://whop-webhook-dihacktor.loca.lt/webhooks/whop` only after the backend is listening and the tunnel forwards to it. Configure relevant payment events in Whop's dashboard; consult its current docs for the exact event names and payload.
-6. Configure Stripe's webhook endpoint as `https://YOUR-API-DOMAIN/api/webhooks/stripe`, subscribe to `checkout.session.completed`, `checkout.session.async_payment_succeeded`, `checkout.session.async_payment_failed`, and `checkout.session.expired`.
-7. Run `npm start`; check `GET /health`.
+1. Use Node.js 20+ and run `npm install`.
+2. Copy `.env.example` to `.env` on the backend host. Set secrets in the host's secret manager/environment, not in GitHub or the frontend.
+3. Set `SUPABASE_URL` to the backend-reachable local Supabase API endpoint if using local Supabase; configure `SUPABASE_SERVICE_ROLE_KEY` privately.
+4. Review/run `backend/schema.sql` against the actual database you intend to use.
+5. Set the Whop webhook endpoint to `https://YOUR-DOMAIN/webhooks/whop` only after stable HTTPS is running. Keep `WHOP_WEBHOOK_SECRET` private.
+6. Configure Stripe's webhook endpoint as `https://YOUR-DOMAIN/api/webhooks/stripe` and subscribe to the checkout session events described in Stripe's current docs.
+7. Run `npm start`; check `GET /health`. Start with provider test/sandbox modes and test failed, duplicate, delayed, and successful webhook deliveries.
 
-## Frontend integration contract
+## Frontend API contract
 
-The frontend may call `POST https://YOUR-API-DOMAIN/api/checkout/sessions` with `{ "productId": "copywriting-ia-2026", "email": "buyer@example.com", "paymentMethod": "stripe" }` or use `bank_transfer`, `altoke`, or `crypto`. It must not send a trusted price. For Stripe, redirect to the returned `checkoutUrl`; for other methods the API returns `202` with pending status.
+The frontend calls `POST https://YOUR-DOMAIN/api/checkout/sessions` with `{ "productId": "copywriting-ia-2026", "email": "buyer@example.com", "paymentMethod": "stripe" }`; do not send a trusted amount. Stripe returns a hosted `checkoutUrl`. `bank_transfer` and `altoke` return an order ID in `pending` state. Crypto requests currently must be blocked by the frontend and are rejected/not implemented until a genuine verifier and network configuration are reviewed and tested.
 
-Do not treat the browser return URL, uploaded receipt, typed transaction ID, or Whop webhook receipt alone as proof that a manual payment settled.
+Never trust a browser success page, typed transaction hash, uploaded receipt, or Whop webhook receipt alone as payment proof.
