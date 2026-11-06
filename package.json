@@ -1,0 +1,19 @@
+{
+  "name": "yinitech-checkout-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend scaffold for Yinitech Stripe and manual payment checkout",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node --watch backend/server.js"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "stripe": "^17.5.0"
+  }
+}
