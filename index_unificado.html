@@ -6,14 +6,14 @@
   <meta name="description" content="Catálogo Yinitech de cursos y recursos digitales de IA.">
   <title>Yinitech | Recursos digitales de IA</title>
   <style>
-    :root{color-scheme:dark;--bg:#07111e;--panel:#101d2c;--line:#26394d;--text:#edf5ff;--muted:#9db0c5;--mint:#72e4d1;--violet:#9d91ff;--shadow:0 20px 55px #0005}
+    :root{color-scheme:dark;--bg:#07111e;--line:#26394d;--text:#edf5ff;--muted:#9db0c5;--mint:#72e4d1;--violet:#9d91ff;--shadow:0 20px 55px #0005}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 18% 0%,#28304e 0,transparent 34%),linear-gradient(180deg,#07111e,#081523 75%,#060e18);color:var(--text);font:16px/1.55 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
     button,input{font:inherit}button{cursor:pointer}.shell{max-width:1160px;margin:auto;padding:20px}
     header{height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff15}.brand{font-weight:900;letter-spacing:.18em;color:var(--mint)}header a{color:var(--muted);text-decoration:none}
     .hero{padding:76px 0 42px;text-align:center}.eyebrow{display:inline-block;color:var(--mint);font-size:.75rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.hero h1{max-width:800px;margin:14px auto;font-size:clamp(2.4rem,7vw,5rem);line-height:1.02;letter-spacing:-.055em}.hero p{max-width:620px;margin:0 auto;color:var(--muted);font-size:1.08rem}
     .catalog-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:38px 0 18px}.catalog-head h2{margin:0;font-size:clamp(1.7rem,4vw,2.4rem);letter-spacing:-.04em}.catalog-head p{margin:0;color:var(--muted)}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}.card{overflow:hidden;border:1px solid var(--line);border-radius:20px;background:linear-gradient(160deg,#142438,#0e1927);box-shadow:var(--shadow);transition:transform .18s,border-color .18s}.card:hover{transform:translateY(-3px);border-color:#72e4d177}.art{height:178px;display:grid;place-items:center;font-size:3.3rem;background:radial-gradient(circle at 30% 20%,#72e4d144,transparent 38%),linear-gradient(135deg,#17263b,#1d1d39);border-bottom:1px solid var(--line)}.card-body{padding:20px}.tag{color:var(--mint);font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.card h3{margin:8px 0;font-size:1.18rem;line-height:1.2}.card p{min-height:48px;color:var(--muted);margin:0 0 18px;font-size:.94rem}.card-foot{display:flex;align-items:center;justify-content:space-between;gap:12px}.price{font-weight:900;font-size:1.18rem}.btn{border:0;border-radius:12px;padding:12px 18px;background:linear-gradient(110deg,var(--mint),#a1a1ff);color:#07111e;font-weight:850}.btn:hover{filter:brightness(1.08)}.btn:disabled{opacity:.6;cursor:wait}
-    .overlay{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:18px;background:#020710d9;z-index:10}.overlay.open{display:flex}.modal{width:min(100%,560px);max-height:92vh;overflow:auto;padding:24px;border:1px solid #ffffff24;border-radius:22px;background:linear-gradient(160deg,#142235,#0b1420);box-shadow:var(--shadow)}.modal-top{display:flex;align-items:center;justify-content:space-between;gap:14px}.modal h2{margin:0;font-size:1.5rem}.close{border:0;background:transparent;color:var(--muted);font-size:1.8rem}.selected{margin:10px 0 2px;color:var(--muted)}.total{margin:0 0 18px;color:var(--mint);font-size:2rem;font-weight:900}.field-label{display:block;margin:14px 0 6px;color:var(--muted);font-size:.9rem}.email{width:100%;padding:13px;border:1px solid var(--line);border-radius:11px;background:#08121e;color:var(--text)}.email:focus{outline:2px solid #72e4d166}.methods{display:grid;gap:9px;margin:12px 0 16px}.method{display:flex;gap:12px;align-items:center;padding:13px;border:1px solid var(--line);border-radius:12px;background:#0a1724}.method:has(input:checked){border-color:var(--mint)}.method input{accent-color:var(--mint)}.method strong{display:block}.method small{display:block;color:var(--muted);margin-top:2px}.notice{padding:12px;border:1px solid #9d91ff35;border-radius:11px;background:#9d91ff0d;color:#dfe3ff;font-size:.9rem}.status{display:none;margin-top:12px;padding:12px;border-radius:11px;background:#142236;color:var(--text);white-space:pre-wrap;overflow-wrap:anywhere}.status.show{display:block}.status.error{border:1px solid #f26b6b55;color:#ffd9d9}.submit{width:100%;margin-top:16px}.fineprint{margin-top:12px;color:var(--muted);font-size:.8rem}footer{margin-top:56px;padding:20px 0;border-top:1px solid #ffffff15;color:var(--muted);font-size:.88rem}
+    .overlay{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:18px;background:#020710d9;z-index:10}.overlay.open{display:flex}.modal{width:min(100%,560px);max-height:92vh;overflow:auto;padding:24px;border:1px solid #ffffff24;border-radius:22px;background:linear-gradient(160deg,#142235,#0b1420);box-shadow:var(--shadow)}.modal-top{display:flex;align-items:center;justify-content:space-between;gap:14px}.modal h2{margin:0;font-size:1.5rem}.close{border:0;background:transparent;color:var(--muted);font-size:1.8rem}.selected{margin:10px 0 2px;color:var(--muted)}.total{margin:0 0 18px;color:var(--mint);font-size:2rem;font-weight:900}.field-label{display:block;margin:14px 0 6px;color:var(--muted);font-size:.9rem}.email{width:100%;padding:13px;border:1px solid var(--line);border-radius:11px;background:#08121e;color:var(--text)}.email:focus{outline:2px solid #72e4d166}.methods{display:grid;gap:9px;margin:12px 0 16px}.method{display:flex;gap:12px;align-items:center;padding:13px;border:1px solid var(--line);border-radius:12px;background:#0a1724}.method:has(input:checked){border-color:var(--mint)}.method input{accent-color:var(--mint)}.method strong{display:block}.method small{display:block;color:var(--muted);margin-top:2px}.notice{padding:12px;border:1px solid #9d91ff35;border-radius:11px;background:#9d91ff0d;color:#dfe3ff;font-size:.9rem}.status{display:none;margin-top:12px;padding:12px;border-radius:11px;background:#142236;color:var(--text);white-space:pre-wrap;overflow-wrap:anywhere}.status.show{display:block}.status.error{border:1px solid #f26b6b55;color:#ffd9d9}.fineprint{margin-top:12px;color:var(--muted);font-size:.8rem}footer{margin-top:56px;padding:20px 0;border-top:1px solid #ffffff15;color:var(--muted);font-size:.88rem}
     @media(max-width:650px){.shell{padding:14px}.hero{padding:58px 0 28px}.catalog-head{display:block}.catalog-head p{margin-top:8px}.card p{min-height:0}}
   </style>
 </head>
@@ -23,11 +23,11 @@
     <main>
       <section class="hero"><span class="eyebrow">Aprendizaje práctico con IA</span><h1>Recursos para convertir ideas en resultados.</h1><p>Cursos, guías y automatizaciones digitales. Elige un producto y continúa con el método de pago que prefieras.</p></section>
       <section id="catalogo" aria-labelledby="catalogTitle">
-        <div class="catalog-head"><h2 id="catalogTitle">Catálogo</h2><p>Precio mostrado en USD; el backend valida el importe final.</p></div>
+        <div class="catalog-head"><h2 id="catalogTitle">Catálogo</h2><p>El importe final se valida en el servidor.</p></div>
         <div class="grid" id="productGrid" aria-live="polite"></div>
       </section>
     </main>
-    <footer>© 2026 Yinitech · El acceso se entrega solo tras la confirmación del pago.</footer>
+    <footer>© 2026 Yinitech · El acceso se entrega solo tras la confirmación verificable del pago.</footer>
   </div>
 
   <div class="overlay" id="checkoutOverlay" aria-hidden="true">
@@ -39,35 +39,34 @@
         <input class="email" id="customerEmail" type="email" autocomplete="email" placeholder="tu@correo.com" required maxlength="254">
         <span class="field-label">Método de pago</span>
         <div class="methods">
-          <label class="method"><input type="radio" name="paymentMethod" value="stripe" checked><span><strong>Tarjeta</strong><small>Checkout seguro de Stripe</small></span></label>
+          <label class="method"><input type="radio" name="paymentMethod" value="stripe" checked><span><strong>Tarjeta</strong><small>Checkout alojado y seguro de Stripe</small></span></label>
           <label class="method"><input type="radio" name="paymentMethod" value="bank_transfer"><span><strong>Transferencia bancaria</strong><small>La orden queda pendiente de conciliación</small></span></label>
           <label class="method"><input type="radio" name="paymentMethod" value="altoke"><span><strong>Altoke / QR bancario</strong><small>La orden queda pendiente hasta validar el abono</small></span></label>
+          <label class="method"><input type="radio" name="paymentMethod" value="crypto"><span><strong>Criptomonedas</strong><small>Disponible solo cuando se configure verificación on-chain real</small></span></label>
         </div>
         <div class="notice" id="paymentNotice" role="note"></div>
         <button class="btn submit" id="continueButton" type="submit">Continuar</button>
       </form>
       <div class="status" id="checkoutStatus" role="status" aria-live="polite"></div>
-      <p class="fineprint">Whop se configura como receptor de webhooks/automatización en el backend; no se presenta como pasarela de pago en este formulario. No envíes datos de tarjeta aquí.</p>
+      <p class="fineprint">Whop recibe webhooks para automatización cuando esté configurado; no es una pasarela de pago en esta pantalla. No introduzcas datos de tarjeta ni claves de wallet aquí.</p>
     </section>
   </div>
 
   <script>
-    // These IDs and fixed prices are presentation only. The backend owns the authoritative catalog/prices.
     const products = [
       { id: 'copywriting-ia-2026', name: 'Tutorial Copywriting IA 2026', price: 6.99, icon: '✍️', description: 'Guías y frameworks prácticos para crear mejores textos con IA.' },
       { id: 'agentes-n8n', name: 'Masterclass de Agentes de IA con n8n', price: 6.99, icon: '⚙️', description: 'Aprende a diseñar automatizaciones y flujos de trabajo con IA.' },
       { id: 'prompts-rag', name: 'Pack de Prompts RAG', price: 6.99, icon: '✧', description: 'Prompts y recursos para estructurar contexto y búsqueda aumentada.' }
     ];
 
-    // Set this to the deployed HTTPS API origin when available; never point it at Proxmox :8006.
+    // Replace only after deploying the API on a public HTTPS origin.
     const API_BASE_URL = 'https://YOUR-API-DOMAIN';
     let selectedProduct = null;
     const overlay = document.getElementById('checkoutOverlay');
     const form = document.getElementById('checkoutForm');
     const statusBox = document.getElementById('checkoutStatus');
     const continueButton = document.getElementById('continueButton');
-
-    function money(amount) { return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(amount); }
+    const money = (amount) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(amount);
 
     function renderProducts() {
       const grid = document.getElementById('productGrid');
@@ -79,10 +78,10 @@
         const tag = document.createElement('div'); tag.className = 'tag'; tag.textContent = 'Producto digital';
         const title = document.createElement('h3'); title.textContent = product.name;
         const description = document.createElement('p'); description.textContent = product.description;
-        const foot = document.createElement('div'); foot.className = 'card-foot';
+        const footer = document.createElement('div'); footer.className = 'card-foot';
         const price = document.createElement('span'); price.className = 'price'; price.textContent = money(product.price);
         const buy = document.createElement('button'); buy.className = 'btn'; buy.type = 'button'; buy.textContent = 'Comprar'; buy.addEventListener('click', () => openCheckout(product));
-        foot.append(price, buy); body.append(tag, title, description, foot); card.append(art, body); grid.append(card);
+        footer.append(price, buy); body.append(tag, title, description, footer); card.append(art, body); grid.append(card);
       }
     }
 
@@ -90,9 +89,7 @@
       selectedProduct = product;
       document.getElementById('selectedProduct').textContent = product.name;
       document.getElementById('selectedPrice').textContent = money(product.price);
-      form.reset();
-      clearStatus();
-      updatePaymentNotice();
+      form.reset(); clearStatus(); updatePaymentNotice();
       overlay.classList.add('open'); overlay.setAttribute('aria-hidden', 'false');
       document.getElementById('customerEmail').focus();
     }
@@ -105,15 +102,17 @@
     function updatePaymentNotice() {
       const method = form.querySelector('input[name="paymentMethod"]:checked')?.value;
       const notes = {
-        stripe: 'Se creará una sesión alojada por Stripe. La compra se confirma únicamente cuando el backend recibe y valida el webhook de Stripe.',
-        bank_transfer: 'Se creará una orden pendiente. No se entrega acceso por enviar un comprobante; se espera la conciliación del abono.',
-        altoke: 'Se creará una orden pendiente. El QR/instrucciones y la confirmación deben venir del servicio bancario/proveedor real.'
+        stripe: 'Se creará una sesión alojada por Stripe. La compra se confirma únicamente cuando el backend valida el webhook firmado de Stripe.',
+        bank_transfer: 'Se registra una orden pendiente. No se entrega acceso por enviar un comprobante; se espera confirmación real del abono.',
+        altoke: 'La orden queda pendiente hasta que el servicio bancario/proveedor confirme el pago de forma verificable.',
+        crypto: 'La verificación on-chain todavía no está habilitada. No envíes criptomonedas ni compartas tu frase semilla o clave privada.'
       };
       document.getElementById('paymentNotice').textContent = notes[method] || '';
     }
 
-    function showStatus(text, type = '') {
-      statusBox.textContent = text; statusBox.className = `status show ${type}`;
+    function showStatus(text, error = false) {
+      statusBox.textContent = text;
+      statusBox.className = `status show${error ? ' error' : ''}`;
     }
     function clearStatus() { statusBox.textContent = ''; statusBox.className = 'status'; }
 
@@ -127,31 +126,34 @@
       if (!selectedProduct) return;
       const email = document.getElementById('customerEmail').value.trim();
       const paymentMethod = form.querySelector('input[name="paymentMethod"]:checked')?.value;
-      if (!email || !paymentMethod) return showStatus('Completa tu email y selecciona un método de pago.', 'error');
+      if (!email || !paymentMethod) return showStatus('Completa tu email y selecciona un método de pago.', true);
+      if (paymentMethod === 'crypto') {
+        return showStatus('Cripto todavía no está habilitado: no se creó una orden ni se debe enviar dinero.', true);
+      }
       if (!/^https:\/\//.test(API_BASE_URL) || API_BASE_URL.includes('YOUR-API-DOMAIN')) {
-        return showStatus('El backend HTTPS aún no está configurado. No se inició ningún cobro.', 'error');
+        return showStatus('El backend HTTPS aún no está configurado. No se inició ningún cobro.', true);
       }
 
       continueButton.disabled = true; continueButton.textContent = 'Preparando…';
-      showStatus('Creando la orden en el servidor…');
+      showStatus('Creando orden en el servidor…');
       try {
         const response = await fetch(`${API_BASE_URL}/api/checkout/sessions`, {
           method: 'POST', headers: { 'Content-Type': 'application/json' },
-          // Server chooses amount and product name from its own allowlist.
           body: JSON.stringify({ productId: selectedProduct.id, email, paymentMethod })
         });
         const data = await response.json().catch(() => ({}));
         if (!response.ok) throw new Error(data.error || 'No se pudo crear la orden.');
         if (paymentMethod === 'stripe') {
-          if (!data.checkoutUrl || new URL(data.checkoutUrl).hostname !== 'checkout.stripe.com') {
-            throw new Error('El servidor no devolvió una URL de Checkout válida de Stripe.');
+          const checkoutUrl = new URL(data.checkoutUrl);
+          if (checkoutUrl.protocol !== 'https:' || checkoutUrl.hostname !== 'checkout.stripe.com') {
+            throw new Error('El servidor no devolvió una URL HTTPS válida de Stripe Checkout.');
           }
-          window.location.assign(data.checkoutUrl);
+          window.location.assign(checkoutUrl.href);
           return;
         }
-        showStatus(`Orden creada: ${data.orderId || 'pendiente'}\nEstado: PENDIENTE\n${data.message || 'Se confirmará después de verificar el abono.'}\nNo se ha confirmado el pago todavía.`);
+        showStatus(`Orden ${data.orderId || 'pendiente'}\nEstado: PENDIENTE\n${data.message || 'El pago se confirmará tras verificar el abono.'}\nNo se ha confirmado el pago todavía.`);
       } catch (error) {
-        showStatus(error.message || 'No se pudo conectar al servidor de pagos.', 'error');
+        showStatus(error.message || 'No se pudo conectar al servidor de pagos.', true);
       } finally {
         continueButton.disabled = false; continueButton.textContent = 'Continuar';
       }
