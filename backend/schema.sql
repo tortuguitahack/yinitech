@@ -1,5 +1,5 @@
--- Run in the canonical Supabase project, after reviewing the schema.
--- No payment method can set paid status from browser input.
+-- Run in the selected database after review.
+-- Public clients must not write paid status. Backend service role only.
 
 create table if not exists public.yinitech_orders (
   id uuid primary key default gen_random_uuid(),
@@ -12,6 +12,10 @@ create table if not exists public.yinitech_orders (
   status text not null default 'pending' check (status in ('pending', 'paid', 'cancelled', 'failed', 'review')),
   stripe_session_id text unique,
   provider_payment_id text unique,
+  crypto_network text,
+  crypto_asset text,
+  crypto_recipient text,
+  crypto_tx_hash text unique,
   created_at timestamptz not null default now(),
   paid_at timestamptz
 );
@@ -28,6 +32,4 @@ create table if not exists public.yinitech_webhook_events (
 
 alter table public.yinitech_orders enable row level security;
 alter table public.yinitech_webhook_events enable row level security;
-
--- Do not create public policies for these tables. Backend service role only.
--- Protect service-role key and database access using Supabase project settings.
+-- Do not create public write policies. Backend service role only.
