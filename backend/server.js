@@ -35,7 +35,12 @@ app.use(cors({
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type']
 }));
-app.use(express.json({ limit: '32kb' }));
+// Preserve exact raw payload bytes for signed provider webhooks. JSON parsing is
+// deliberately skipped for these routes and applied only to normal API requests.
+app.use((req, res, next) => {
+  if (req.path === '/api/webhooks/stripe' || req.path === '/webhooks/whop') return next();
+  return express.json({ limit: '32kb' })(req, res, next);
+});
 
 function requireStorage(res) {
   if (!supabase) {
@@ -53,7 +58,7 @@ app.get('/health', (_req, res) => {
   res.json({ status: 'ok', stripeConfigured: Boolean(stripe), storageConfigured: Boolean(supabase) });
 });
 
-// Create pending manual orders or a Stripe Checkout Session.
+// Create pending manual/crypto orders or a Stripe Checkout Session.
 app.post('/api/checkout/sessions', async (req, res) => {
   if (!requireStorage(res)) return;
   const { productId, email, paymentMethod } = req.body || {};
@@ -82,11 +87,14 @@ app.post('/api/checkout/sessions', async (req, res) => {
   }
 
   if (paymentMethod !== 'stripe') {
-    // Transfer/Altoke/crypto stay pending until provider settlement is actually verified.
+    // Transfer/Altoke/crypto stay pending until a trusted provider settlement
+    // integration is implemented and verifies amount, asset, network and recipient.
     return res.status(202).json({
       orderId: order.id,
       status: 'pending',
-      message: 'Orden creada. El pago se confirmará después de verificar la liquidación.'
+      message: paymentMethod === 'crypto'
+        ? 'Orden creada como pendiente. La verificación on-chain aún no está conectada; no envíes fondos hasta recibir instrucciones verificadas.'
+        : 'Orden creada. El pago se confirmará después de verificar la liquidación.'
     });
   }
 
@@ -163,7 +171,7 @@ app.post('/api/webhooks/stripe', express.raw({ type: 'application/json', limit: 
     return res.json({ received: true });
   } catch (error) {
     console.error('Stripe event processing failed:', error.message);
-    return res.sendStatus(500); // Ask provider to retry; idempotency is recorded.
+    return res.sendStatus(500);
   }
 });
 
@@ -174,29 +182,22 @@ function verifyWhopSignature(rawBody, headers, secret) {
   if (!webhookId || !timestamp || !signatureHeader || !secret) return false;
   const timestampSeconds = Number(timestamp);
   if (!Number.isFinite(timestampSeconds) || Math.abs(Date.now() / 1000 - timestampSeconds) > MAX_WEBHOOK_AGE) return false;
-
-  // Whop's signed payload includes id, timestamp, and exact raw body bytes.
-  const signedContent = Buffer.concat([
-    Buffer.from(`${webhookId}.${timestamp}.`, 'utf8'), rawBody
-  ]);
+  const signedContent = Buffer.concat([Buffer.from(`${webhookId}.${timestamp}.`, 'utf8'), rawBody]);
   const expected = crypto.createHmac('sha256', secret).update(signedContent).digest();
   return signatureHeader.split(/\s+/).some((versioned) => {
     const match = /^v1,([A-Za-z0-9+/=]+)$/.exec(versioned);
     if (!match) return false;
-    let received;
-    try { received = Buffer.from(match[1], 'base64'); } catch (_error) { return false; }
+    const received = Buffer.from(match[1], 'base64');
     return received.length === expected.length && crypto.timingSafeEqual(received, expected);
   });
 }
 
-// Whop sends webhook POSTs to the supplied tunnel URL. Use raw body and verify signature.
 app.post('/webhooks/whop', express.raw({ type: 'application/json', limit: '1mb' }), async (req, res) => {
   if (!requireStorage(res)) return;
   if (!process.env.WHOP_WEBHOOK_SECRET) return res.sendStatus(503);
   if (!Buffer.isBuffer(req.body) || !verifyWhopSignature(req.body, req.headers, process.env.WHOP_WEBHOOK_SECRET)) {
     return res.status(400).send('Invalid Whop webhook signature');
   }
-
   let event;
   try { event = JSON.parse(req.body.toString('utf8')); }
   catch (_error) { return res.status(400).send('Invalid JSON'); }
@@ -208,11 +209,10 @@ app.post('/webhooks/whop', express.raw({ type: 'application/json', limit: '1mb' 
   if (eventError && eventError.code === '23505') return res.json({ received: true, duplicate: true });
   if (eventError) return res.sendStatus(500);
 
-  // Deliberately do not mark Yinitech orders paid based on an un-mapped event payload.
-  // Whop event-to-order mapping must be confirmed against a real test event first.
+  // Whop events are logged for automation. No Yinitech order is marked paid by
+  // an event until its real payload is mapped to a Yinitech order and verified.
   await supabase.from('yinitech_webhook_events').update({
-    processed_at: new Date().toISOString(),
-    processing_result: 'signature_validated_mapping_pending'
+    processed_at: new Date().toISOString(), processing_result: 'signature_validated_mapping_pending'
   }).eq('provider', 'whop').eq('event_id', event.id);
   return res.status(202).json({ received: true, status: 'verified_event_mapping_pending' });
 });
