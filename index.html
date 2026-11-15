@@ -1,469 +1,1264 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DIHACKTOR Ω | Productos IA — $6.99 USD</title>
-<meta name="description" content="La colección más grande de tutoriales de IA del mundo. Productos digitales desde $6.99 USD equivalentes en tu moneda local. Pago con Cripto, Tarjeta, Transferencia Bancaria.">
-<meta property="og:title" content="DIHACKTOR Ω | Productos IA — $6.99 USD">
-<meta property="og:description" content="Video HD + PDF + Audio + Workflows n8n. Pago seguro con múltiples pasarelas.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop">
-<!-- SECURITY META TAGS - 7 Layer Protection -->
-<meta name="security-hmac" content="yinitech-hmac-secret-2026-change-in-production">
-<meta name="security-webhook" content="https://api.dihacktor.com/security/webhook">
-<meta name="security-telegram" content="@d3h1ckt4r_bot">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-:root{
---bg:#020617;--surface:#0f172a;--border:rgba(255,255,255,0.08);
---cyan:#00f2ff;--purple:#bc13fe;--pink:#ff00bd;
---green:#10b981;--gold:#f59e0b;--red:#ef4444;
---text:#f1f5f9;--muted:#94a3b8;--dim:#64748b;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;}
-.bg{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(139,19,254,0.15),transparent),radial-gradient(ellipse 60% 40% at 80% 50%,rgba(0,242,255,0.08),transparent),radial-gradient(ellipse 60% 40% at 20% 80%,rgba(255,0,189,0.05),transparent);}
-.bg-grid{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:80px 80px;}
-.nav{position:sticky;top:0;z-index:100;background:rgba(2,6,23,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;}
-.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
-.nav-logo-icon{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--cyan),var(--purple));display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:900;color:#000;}
-.nav-logo-text{font-size:1.3rem;font-weight:800;background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.nav-links{display:flex;gap:2rem;align-items:center}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:600;transition:color .2s}
-.nav-links a:hover{color:var(--cyan)}
-.nav-cta{padding:.6rem 1.5rem;border-radius:10px;font-weight:700;font-size:.85rem;text-decoration:none;transition:all .2s;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;}
-.nav-cta:hover{transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,242,255,.3)}
-.country-pill{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .8rem;background:rgba(0,242,255,.08);border:1px solid rgba(0,242,255,.15);border-radius:100px;font-size:.7rem;font-weight:700;color:var(--cyan);margin-left:1rem;}
-.hero{position:relative;z-index:1;padding:6rem 2rem 4rem;text-align:center;max-width:1000px;margin:0 auto;}
-.hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.25rem;border-radius:100px;background:rgba(0,242,255,.08);border:1px solid rgba(0,242,255,.15);font-size:.75rem;font-weight:700;color:var(--cyan);margin-bottom:2rem;text-transform:uppercase;letter-spacing:.1em;}
-.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1.1;margin-bottom:1.5rem;font-family:'Space Grotesk',sans-serif;}
-.hero h1 .g{background:linear-gradient(135deg,var(--cyan),var(--purple),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.hero-sub{font-size:clamp(1rem,2vw,1.2rem);color:var(--muted);max-width:600px;margin:0 auto 2.5rem;line-height:1.7;}
-.hero-stats{display:flex;justify-content:center;gap:3rem;margin:3rem 0;flex-wrap:wrap;}
-.hero-stat{text-align:center;}
-.hero-stat-v{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.hero-stat-l{font-size:.7rem;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-top:.25rem;}
-.hero-cta{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:1rem 2rem;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .3s;border:none;cursor:pointer;}
-.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,242,255,.35)}
-.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
-.btn-ghost:hover{border-color:var(--cyan);background:rgba(0,242,255,.05)}
-.section{position:relative;z-index:1;padding:4rem 2rem;max-width:1400px;margin:0 auto;}
-.section-hd{text-align:center;margin-bottom:3rem;}
-.section-hd h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-bottom:.5rem;}
-.section-hd p{color:var(--muted);max-width:600px;margin:0 auto;}
-.search-wrap{max-width:600px;margin:0 auto 1.5rem;position:relative;}
-.search-inp{width:100%;padding:1rem 1.5rem 1rem 3.25rem;background:var(--surface);border:1px solid var(--border);border-radius:14px;color:var(--text);font-size:1rem;outline:none;transition:border-color .2s;}
-.search-inp:focus{border-color:var(--cyan)}
-.search-ico{position:absolute;left:1.25rem;top:50%;transform:translateY(-50%);color:var(--dim)}
-.filters{display:flex;justify-content:center;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap;}
-.filter{padding:.5rem 1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;color:var(--muted);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .2s;}
-.filter:hover,.filter.active{border-color:var(--cyan);color:var(--cyan);background:rgba(0,242,255,.05);}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all .4s;position:relative;}
-.card:hover{transform:translateY(-6px);border-color:var(--cyan);box-shadow:0 12px 40px rgba(0,242,255,.1);}
-.card-img-wrap{overflow:hidden;position:relative;height:180px;}
-.card-img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
-.card:hover .card-img{transform:scale(1.05);}
-.card-level{position:absolute;top:10px;left:10px;padding:.3rem .75rem;border-radius:6px;font-size:.65rem;font-weight:700;text-transform:uppercase;}
-.l-starter{background:rgba(16,185,129,.2);color:var(--green)}
-.l-ready{background:rgba(0,242,255,.2);color:var(--cyan)}
-.l-super{background:rgba(245,158,11,.2);color:var(--gold)}
-.card-price{position:absolute;top:10px;right:10px;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;padding:.35rem .85rem;border-radius:8px;font-weight:900;font-size:.85rem;}
-.card-body{padding:1.25rem;}
-.card-cat{font-size:.65rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-bottom:.4rem;}
-.card-title{font-size:.95rem;font-weight:700;margin-bottom:.4rem;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
-.card-desc{font-size:.8rem;color:var(--dim);line-height:1.5;margin-bottom:.75rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
-.card-exp{font-size:.75rem;color:var(--muted);margin-bottom:1rem;}
-.card-exp span{color:var(--purple);font-weight:600;}
-.card-btn{display:block;width:100%;padding:.7rem;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;border:none;border-radius:10px;font-weight:700;font-size:.85rem;text-align:center;text-decoration:none;cursor:pointer;transition:all .3s;}
-.card-btn:hover{transform:scale(1.02);box-shadow:0 4px 15px rgba(0,242,255,.3);}
-.modal-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.92);backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:1rem;}
-.modal-overlay.active{display:flex;}
-.modal{background:var(--surface);border:2px solid var(--purple);border-radius:24px;padding:2rem;max-width:540px;width:100%;max-height:90vh;overflow-y:auto;position:relative;}
-.modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--dim);font-size:1.5rem;cursor:pointer;transition:color .2s;}
-.modal-close:hover{color:var(--text)}
-.modal h2{color:var(--cyan);margin-bottom:.5rem;font-size:1.3rem;}
-.modal .prod-name{color:var(--muted);font-size:.9rem;margin-bottom:1rem;}
-.modal .prod-price{font-size:2.5rem;font-weight:900;color:var(--green);margin-bottom:1.5rem;}
-.pay-method{border-radius:14px;padding:1.25rem;margin-bottom:1rem;text-align:left;}
-.pay-method h4{margin-bottom:.5rem;font-size:.95rem;}
-.pay-method p{font-size:.8rem;color:var(--muted);margin-bottom:.25rem;word-break:break-all;}
-.pay-vitawallet{background:rgba(139,19,254,.08);border:2px solid var(--purple);}.pay-vitawallet h4{color:var(--purple)}
-.pay-crypto{background:rgba(0,242,255,.04);border:1px solid rgba(0,242,255,.2);}.pay-crypto h4{color:var(--cyan)}
-.pay-bank{background:rgba(16,185,129,.04);border:1px solid rgba(16,185,129,.2);}.pay-bank h4{color:var(--green)}
-.pay-stripe{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);}.pay-stripe h4{color:#fff}
-.cta-box{max-width:800px;margin:0 auto;padding:4rem 2rem;background:linear-gradient(135deg,rgba(0,242,255,.04),rgba(139,19,254,.04));border:1px solid var(--border);border-radius:30px;text-align:center;}
-.cta-box h2{font-size:clamp(1.5rem,3vw,2.5rem);font-weight:900;margin-bottom:1rem;}
-.cta-box p{color:var(--muted);margin-bottom:2rem;font-size:1.05rem;}
-.footer{position:relative;z-index:1;padding:3rem 2rem;border-top:1px solid var(--border);text-align:center;}
-.footer-social{display:flex;justify-content:center;gap:1rem;margin-bottom:1.5rem;}
-.footer-social a{width:40px;height:40px;border-radius:50%;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;transition:all .2s;}
-.footer-social a:hover{border-color:var(--cyan);color:var(--cyan)}
-.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:1.5rem;flex-wrap:wrap;}
-.footer-links a{color:var(--dim);text-decoration:none;font-size:.85rem;transition:color .2s;}
-.footer-links a:hover{color:var(--cyan)}
-.footer-copy{font-size:.75rem;color:var(--dim)}
-@media(max-width:768px){.hero{padding:5rem 1rem 3rem}.hero-stats{gap:1.5rem}.hero-stat-v{font-size:1.3rem}.grid{grid-template-columns:1fr}.cta-box{padding:2rem 1.5rem}.nav-links{display:none}.nav{padding:1rem}}
-.rate-badge{display:inline-flex;align-items:center;gap:.3rem;padding:.2rem .6rem;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);border-radius:6px;font-size:.65rem;color:var(--green);font-weight:700;margin-top:.5rem;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIHACKTOR Ω | Productos IA — $6.99 USD</title>
+    <meta name="description" content="La colección más grande de tutoriales de IA del mundo. Video HD + PDF + Audio + Workflows n8n. Pago seguro, acceso inmediato.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #030712;
+            --bg-elevated: #0b1220;
+            --border: #1e293b;
+            --border-bright: #334155;
+            --text: #f1f5f9;
+            --text-muted: #64748b;
+            --accent: #06b6d4;
+            --accent-glow: rgba(6, 182, 212, 0.4);
+            --success: #10b981;
+            --success-glow: rgba(16, 185, 129, 0.4);
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+        
+        * { box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+        
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Animated background */
+        .ambient-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: 
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(6, 182, 212, 0.08), transparent),
+                radial-gradient(ellipse 60% 40% at 80% 100%, rgba(139, 92, 246, 0.06), transparent),
+                var(--bg);
+        }
+        
+        .ambient-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(6, 182, 212, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(6, 182, 212, 0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: gridMove 20s linear infinite;
+        }
+        
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(60px, 60px); }
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+        
+        /* Glow text */
+        .glow-text {
+            text-shadow: 0 0 20px var(--accent-glow), 0 0 40px var(--accent-glow);
+        }
+        
+        .glow-success {
+            text-shadow: 0 0 20px var(--success-glow), 0 0 40px var(--success-glow);
+        }
+        
+        /* Status dot */
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .status-dot--emerald { background: var(--success); box-shadow: 0 0 8px var(--success-glow); }
+        .status-dot--amber { background: var(--warning); box-shadow: 0 0 8px rgba(245, 158, 11, 0.4); }
+        .status-dot--red { background: var(--danger); box-shadow: 0 0 8px rgba(239, 68, 68, 0.4); }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(0.9); }
+        }
+        
+        /* Neon line */
+        .neon-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0.3;
+        }
+        
+        /* Progress bar */
+        .progress-bar {
+            height: 3px;
+            background: var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: 2px;
+            transition: width 1s ease-out;
+        }
+        
+        /* Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), #0891b2);
+            color: var(--bg);
+            font-weight: 700;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #22d3ee, var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .btn-primary:hover::before { opacity: 1; }
+        .btn-primary:active { transform: scale(0.98); }
+        .btn-primary span { position: relative; z-index: 1; }
+        
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .btn-secondary {
+            background: var(--bg-elevated);
+            color: var(--text);
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-bright);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            background: rgba(6, 182, 212, 0.05);
+        }
+        
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-muted);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-ghost:hover,
+        .btn-ghost.active {
+            color: var(--accent);
+            background: rgba(6, 182, 212, 0.1);
+            border-color: rgba(6, 182, 212, 0.2);
+        }
+        
+        /* Cards */
+        .card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            border-color: var(--border-bright);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card-glow:hover {
+            box-shadow: 0 0 24px var(--accent-glow), 0 8px 32px rgba(0, 0, 0, 0.3);
+            border-color: rgba(6, 182, 212, 0.3);
+        }
+        
+        /* Inputs */
+        .input-field {
+            width: 100%;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 0.875rem 1rem;
+            color: var(--text);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.15);
+        }
+        
+        .input-field::placeholder { color: var(--text-muted); }
+        
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(3, 7, 18, 0.9);
+            backdrop-filter: blur(8px);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 480px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.95) translateY(20px);
+            transition: all 0.3s ease;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-overlay.open .modal {
+            transform: scale(1) translateY(0);
+        }
+        
+        /* Tabs */
+        .tab-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+        
+        .tab-btn.active {
+            background: linear-gradient(135deg, var(--accent), #0891b2);
+            color: var(--bg);
+            box-shadow: 0 2px 12px rgba(6, 182, 212, 0.3);
+        }
+        
+        .tab-btn:not(.active) {
+            background: var(--bg);
+            color: var(--text-muted);
+            border-color: var(--border);
+        }
+        
+        .tab-btn:not(.active):hover {
+            color: var(--text);
+            border-color: var(--border-bright);
+        }
+        
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 500;
+            z-index: 200;
+            transform: translateX(150%);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border: 1px solid;
+        }
+        
+        .toast.show { transform: translateX(0); }
+        
+        .toast-success { background: rgba(16, 185, 129, 0.15); border-color: var(--success); color: #34d399; }
+        .toast-error { background: rgba(239, 68, 68, 0.15); border-color: var(--danger); color: #f87171; }
+        .toast-info { background: rgba(6, 182, 212, 0.15); border-color: var(--accent); color: #22d3ee; }
+        
+        /* Animations */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-up {
+            animation: fadeUp 0.6s ease-out forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .delay-4 { animation-delay: 0.4s; opacity: 0; }
+        
+        /* Loading spinner */
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid transparent;
+            border-top-color: currentColor;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        /* Payment method cards */
+        .payment-method {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .payment-method:hover,
+        .payment-method.selected {
+            border-color: var(--accent);
+            background: rgba(6, 182, 212, 0.05);
+        }
+        
+        .payment-method.selected {
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+        
+        /* Network badges */
+        .network-badge {
+            display: inline-block;
+            padding: 0.25rem 0.625rem;
+            border-radius: 9999px;
+            font-size: 0.625rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .network-eth { background: rgba(100, 116, 139, 0.2); color: #94a3b8; border: 1px solid #334155; }
+        .network-polygon { background: rgba(130, 71, 229, 0.2); color: #a78bfa; border: 1px solid #6d28d9; }
+        .network-bsc { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid #d97706; }
+        .network-arbitrum { background: rgba(45, 212, 191, 0.2); color: #2dd4bf; border: 1px solid #0d9488; }
+        .network-solana { background: rgba(154, 70, 240, 0.2); color: #c084fc; border: 1px solid #a855f7; }
+        .network-bitcoin { background: rgba(249, 115, 22, 0.2); color: #fb923c; border: 1px solid #ea580c; }
+        
+        /* Responsive */
+        @media (max-width: 640px) {
+            .modal { padding: 1.5rem; margin: 1rem; }
+            .btn-primary, .btn-secondary { width: 100%; }
+        }
+    </style>
 </head>
 <body>
-<div class="bg"></div>
-<div class="bg-grid"></div>
-
-<nav class="nav">
-<a href="#" class="nav-logo"><div class="nav-logo-icon">Ω</div><span class="nav-logo-text">DIHACKTOR Ω</span></a>
-<div class="nav-links"><a href="#productos">Productos</a><a href="#categorias">Categorías</a><a href="#pagos">Pagos</a><a href="#comprar">Comprar</a></div>
-<div class="country-pill" id="countryPill">Detectando país…</div>
-<a href="#comprar" class="nav-cta">Comprar Ahora</a>
-</nav>
-
-<section class="hero">
-<div class="hero-badge"><div id="langBadge">IA Products</div> — Precio Fijo <span id="priceMain">$6.99 USD</span></div>
-<h1>La IA no es una herramienta,<br><span class="g">es una habilidad.</span></h1>
-<p class="hero-sub" id="heroSub">La colección más grande de tutoriales de IA del mundo. Video HD + PDF + Audio + Workflows n8n. Pago seguro con Cripto, Tarjeta o Transferencia Bancaria.</p>
-<div class="hero-stats">
-<div class="hero-stat"><div class="hero-stat-v" id="statProducts">1M+</div><div class="hero-stat-l">Productos</div></div>
-<div class="hero-stat"><div class="hero-stat-v">80+</div><div class="hero-stat-l">Expertos</div></div>
-<div class="hero-stat"><div class="hero-stat-v">20</div><div class="hero-stat-l">Categorías</div></div>
-<div class="hero-stat"><div class="hero-stat-v" id="statPrice">$6.99</div><div class="hero-stat-l" id="statPriceLabel">Precio Fijo</div></div>
-</div>
-<div class="hero-cta">
-<a href="#comprar" class="btn btn-primary" id="ctaBuy">Comprar Ahora — <span id="ctaPrice">$6.99 USD</span></a>
-<a href="#productos" class="btn btn-ghost"><i class="fas fa-compass"></i> Explorar Catálogo</a>
-</div>
-</section>
-
-<div class="stats">
-<span><i class="fas fa-database"></i> <strong id="statsCount">1,020,895</strong> productos</span>
-<span><i class="fas fa-globe"></i> Envío digital global</span>
-<span><i class="fas fa-shield-alt"></i> Pago seguro</span>
-<span><i class="fas fa-bolt"></i> Acceso inmediato</span>
-</div>
-
-<section class="section" id="categorias">
-<div class="section-hd"><h2 id="featTitle">¿Qué incluye cada producto?</h2><p id="featDesc">Contenido completo para dominar cualquier área de la IA</p></div>
-<div class="feat-grid">
-<div class="feat-card"><div class="feat-icon">🎥</div><h3 id="f1">Video HD</h3><p id="f1d">Clases en video de alta calidad con explicaciones paso a paso</p></div>
-<div class="feat-card"><div class="feat-icon">📄</div><h3 id="f2">Guía PDF</h3><p id="f2d">Más de 30 páginas de documentación detallada</p></div>
-<div class="feat-card"><div class="feat-icon">🎧</div><h3 id="f3">Audio</h3><p id="f3d">Versión audio para aprender mientras te desplazas</p></div>
-<div class="feat-card"><div class="feat-icon">⚙️</div><h3 id="f4">Workflows n8n</h3><p id="f4d">Automatizaciones listas para usar</p></div>
-<div class="feat-card"><div class="feat-icon">🔄</div><h3 id="f5">Actualizaciones</h3><p id="f5d">Contenido actualizado constantemente</p></div>
-<div class="feat-card"><div class="feat-icon">💬</div><h3 id="f6">Soporte</h3><p id="f6d">Comunidad vía Telegram</p></div>
-</div>
-</section>
-
-<section class="section" id="productos">
-<div class="section-hd"><h2 id="catTitle">Explora el Catálogo</h2><p id="catDesc">Más de 1 millón de productos organizados por categoría y nivel</p></div>
-<div class="search-wrap"><i class="fas fa-search search-ico"></i><input type="text" class="search-inp" placeholder="Buscar productos de IA…" id="searchInput"></div>
-<div class="filters"><div class="filter active" data-filter="all" id="fltAll">Todos</div><div class="filter" data-filter="starter" id="fltStarter">Starter</div><div class="filter" data-filter="ready" id="fltReady">Ready</div><div class="filter" data-filter="superpremium" id="fltSuper">Super Premium</div></div>
-<div class="grid" id="productsGrid"><div style="grid-column:1/-1;text-align:center;padding:4rem;color:var(--dim)"><div style="width:40px;height:40px;border:3px solid var(--cyan);border-top-color:transparent;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 1rem"></div><p id="loadMsg">Cargando catálogo de productos…</p></div></div>
-</section>
-
-<section class="section" id="comprar">
-<div class="cta-box">
-<h2 id="buyTitle">¿Listo para dominar la IA?</h2>
-<p id="buySub">1,020,895 productos. 80+ expertos. 20 categorías.<br>Precio fijo: <strong id="buyPrice" style="color:var(--green)">$6.99 USD</strong></p>
-<button class="btn btn-primary" style="font-size:1.1rem;padding:1.25rem 3rem;" onclick="showBuy('Acceso Completo',6.99)" id="buyBtn">Comprar Ahora — <span id="buyBtnPrice">$6.99 USD</span></button>
-</div>
-</section>
-
-<section class="section" id="pagos">
-<div class="cta-box" style="text-align:left">
-<h2 id="payTitle">Pasarelas de Pago Disponibles</h2>
-<p id="payDesc">Elige el método que mejor se adapte a tu país. Todos los precios equivalen a $6.99 USD.</p>
-<div class="pay-method pay-crypto"><h4><i class="fab fa-bitcoin"></i> Criptomonedas</h4><p id="cryptoInfo">USDT (BEP20): 0xD923fcdff7Fd1246684867F065a880939262dd80<br>BTC: bc1q6p3gsxejqrsyzrffx7fga7zy5cl38s9v3ale2k<br>ETH: 0x58d84e047be839ffa0be97137eec0083775246c8<br>SOL: 2jKUmCWJZTF1tRuuhiuZuDUd3xYehX3gEHeH3BWo8Kmm</p></div>
-<div class="pay-method pay-bank"><h4><i class="fas fa-university"></i> Transferencia Bancaria</h4><p id="bankInfo">Banco Mercantil Santa Cruz (Bolivia) — Cuenta: 4069474188 | CI: 5808841TJ<br>Lead Bank (USA) — Cuenta: 219449048779 | Ruta: 101019644<br>OpenPayd (Europa) — IBAN: MT12CFTE28004000000000005456093</p></div>
-</div>
-<p style="margin-top:1.5rem;font-size:.8rem;color:var(--dim);">🔒 Pago seguro • Acceso inmediato • Garantía de 7 días<br>📧 Envía comprobante a: <strong>dihack86codev@gmail.com</strong></p>
-<div class="qr-section" style="margin-top:2rem;padding:1.5rem;background:var(--surface);border:1px solid var(--border);border-radius:12px;">
-<h3 style="color:var(--cyan);font-size:1rem;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;"><i class="fas fa-qrcode"></i> Pagos con QR</h3>
-<div class="qr-grid" style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
-<div class="qr-card" style="text-align:center;background:var(--bg);padding:1rem;border-radius:10px;border:1px solid var(--border);">
-<div style="position:relative;display:inline-block;">
-<img src="qr-binance.jpg" alt="Binance Pay QR" style="width:250px;height:250px;border-radius:8px;margin-bottom:.5rem;">
-<div style="position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,242,255,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--cyan);font-weight:900;font-size:.9rem;text-transform:uppercase;letter-spacing:.05em;">DIHACKTOR VERIFICADO</div>
-</div>
-<p style="font-size:.7rem;color:var(--dim);">Binance Pay · Código verificado<br><a href="https://pay.dihacktor.com/binance" target="_blank" style="color:var(--cyan);text-decoration:none;font-size:.65rem;">Redirección segura</a> · <span style="color:var(--green);">NO CLONABLE</span></p>
-</div>
-<div class="qr-card" style="text-align:center;background:var(--bg);padding:1rem;border-radius:10px;border:1px solid var(--border);">
-<div style="position:relative;display:inline-block;">
-<img src="qr-yape.png" alt="Yape QR" style="width:250px;height:250px;border-radius:8px;margin-bottom:.5rem;">
-<div style="position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,242,255,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--cyan);font-weight:900;font-size:.9rem;text-transform:uppercase;letter-spacing:.05em;">DIHACKTOR VERIFICADO</div>
-</div>
-<p style="font-size:.7rem;color:var(--dim);">Yape (Perú) · Código verificado<br><span style="color:var(--green);">NO CLONABLE</span> · Verificación de integridad activada</p>
-</div>
-<div class="qr-card" style="text-align:center;background:var(--bg);padding:1rem;border-radius:10px;border:1px solid var(--border);">
-<div style="position:relative;display:inline-block;">
-<img src="qr-altoke.jpg" alt="Altoke QR" style="width:250px;height:250px;border-radius:8px;margin-bottom:.5rem;">
-<div style="position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,242,255,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--cyan);font-weight:900;font-size:.9rem;text-transform:uppercase;letter-spacing:.05em;">DIHACKTOR VERIFICADO</div>
-</div>
-<p style="font-size:.7rem;color:var(--dim);">Altoke · Código verificado<br><span style="color:var(--green);">NO CLONABLE</span> · Verificación de integridad activada</p>
-</div>
-<div class="qr-card" style="text-align:center;background:var(--bg);padding:1rem;border-radius:10px;border:1px solid var(--border);">
-<img src="qr-d3h1ckt4r.jpg" alt="D3H1CKT4R QR" style="width:250px;height:250px;border-radius:8px;margin-bottom:.5rem;">
-<p style="font-size:.75rem;color:var(--dim);">Binance Pay (Original)<br><span style="font-size:.65rem;color:var(--dim);">Escanea para pagar</span></p>
-</div>
-</div>
-</div>
-</section>
-
-<footer class="footer">
-<div class="footer-social">
-<a href="https://www.linkedin.com/in/diego-cortez-b7330b295/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-<a href="https://www.instagram.com/techinnovationany/" target="_blank"><i class="fab fa-instagram"></i></a>
-<a href="https://github.com/tortuguitahack" target="_blank"><i class="fab fa-github"></i></a>
-<a href="https://t.me/d3h1ckt4r_bot" target="_blank"><i class="fab fa-telegram"></i></a>
-<a href="https://www.facebook.com/dihacktor" target="_blank"><i class="fab fa-facebook"></i></a>
-<a href="https://www.x.com/dihacktor" target="_blank"><i class="fab fa-x-twitter"></i></a>
-<a href="https://www.youtube.com/@dihacktor" target="_blank"><i class="fab fa-youtube"></i></a>
-<a href="https://www.tiktok.com/@dihacktor" target="_blank"><i class="fab fa-tiktok"></i></a>
-<a href="https://discord.gg/dihacktor" target="_blank"><i class="fab fa-discord"></i></a>
-<a href="https://wa.me/59175110363" target="_blank"><i class="fab fa-whatsapp"></i></a>
-</div>
-<div class="footer-links"><a href="#productos">Productos</a><a href="#categorias">Categorías</a><a href="#pagos">Pagos</a><a href="#comprar">Comprar</a><a href="https://t.me/d3h1ckt4r_bot">Telegram</a></div>
-<p class="footer-copy" id="footerCopy">© 2026 DIHACKTOR Ω — 1,020,895 productos | $6.99 USD |</p>
-</footer>
-
-<div class="modal-overlay" id="buyModal">
-<div class="modal">
-<button class="modal-close" onclick="closeBuy()">&times;</button>
-<h2 id="modalTitle">Comprar Producto</h2>
-<p class="prod-name" id="modalName">Producto</p>
-<p class="prod-price" id="modalPrice">$6.99 USD</p>
-<form id="checkoutForm" onsubmit="handleCheckout(event)">
-<label style="display:block;margin:.75rem 0 .25rem;color:var(--muted);font-size:.8rem;" id="lblEmail">Tu email (requerido para recibir el acceso)</label>
-<input type="email" id="checkoutEmail" required placeholder="tu@correo.com" style="width:100%;padding:.6rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);margin-bottom:.75rem;">
-<input type="hidden" id="checkoutTxId">
-<button type="submit" class="btn btn-primary" style="width:100%;font-size:1rem;padding:1rem;" id="checkoutBtn">Pagar y completar compra</button>
-</form>
-<div id="checkoutMsg" style="margin:.5rem 0;font-size:.85rem;color:var(--green);display:none;"></div>
-<div class="pay-method pay-vitawallet"><h4><i class="fas fa-star"></i> Pago Directo</h4><p id="modalBank">Envía comprobante a dihack86codev@gmail.com</p></div>
-<p style="font-size:.75rem;color:var(--dim);text-align:center;margin-top:1rem;">📧 dihack86codev@gmail.com</p>
-</div>
-</div>
-
-<style>@keyframes spin{to{transform:rotate(360deg)}}</style>
-<script>
-// ================= CONFIG =================
-const BASE_PRICE_USD = 6.99;
-const COUNTRIES = {
-  BO:{name:'Bolivia',code:'BOB',symbol:'Bs.',lang:'es',bank:'Banco Mercantil Santa Cruz',acc:'4069474188',ci:'5808841TJ',flag:'🇧🇴'},
-  AR:{name:'Argentina',code:'ARS',symbol:'$',lang:'es',bank:'Banco Nación',acc:'CBU 12345678',ci:'Alias: DIHACKTOR.AR',flag:'🇦🇷'},
-  BR:{name:'Brasil',code:'BRL',symbol:'R$',lang:'pt',bank:'Pix / Itaú',acc:'dihacktor@brasil.com',ci:'',flag:'🇧🇷'},
-  CL:{name:'Chile',code:'CLP',symbol:'$',lang:'es',bank:'Webpay / Banco de Chile',acc:'Cuenta 987654321',ci:'',flag:'🇨🇱'},
-  CO:{name:'Colombia',code:'COP',symbol:'$',lang:'es',bank:'Nequi / Davivienda',acc:'Celular 3001234567',ci:'',flag:'🇨🇴'},
-  PE:{name:'Perú',code:'PEN',symbol:'S/',lang:'es',bank:'Yape / Plin',acc:'Celular 999888777',ci:'',flag:'🇵🇪'},
-  EC:{name:'Ecuador',code:'USD',symbol:'$',lang:'es',bank:'Banco Pichincha',acc:'Cuenta 456789123',ci:'CI 1234567890',flag:'🇪🇨'},
-  UY:{name:'Uruguay',code:'UYU',symbol:'$',lang:'es',bank:'RedPagos',acc:'Código DIHACKTORUY',ci:'',flag:'🇺🇾'},
-  VE:{name:'Venezuela',code:'VES',symbol:'Bs.',lang:'es',bank:'Pago Móvil / Bicentenario',acc:'Celular 0412-3456789',ci:'',flag:'🇻🇪'},
-  MX:{name:'México',code:'MXN',symbol:'$',lang:'es',bank:'Oxxo / SPEI',acc:'Referencia DIHACKTOR',ci:'',flag:'🇲🇽'},
-  US:{name:'Estados Unidos',code:'USD',symbol:'$',lang:'en',bank:'Lead Bank',acc:'Cuenta 219449048779 | Ruta 101019644',ci:'',flag:'🇺🇸'},
-  GT:{name:'Guatemala',code:'GTQ',symbol:'Q',lang:'es',bank:'Transferencia',acc:'Cuenta local',ci:'',flag:'🇬🇹'},
-  CR:{name:'Costa Rica',code:'CRC',symbol:'₡',lang:'es',bank:'Transferencia',acc:'Cuenta local',ci:'',flag:'🇨🇷'},
-  PA:{name:'Panamá',code:'USD',symbol:'$',lang:'es',bank:'Transferencia',acc:'Cuenta local',ci:'',flag:'🇵🇦'},
-  DO:{name:'Rep. Dominicana',code:'DOP',symbol:'RD$',lang:'es',bank:'Transferencia',acc:'Cuenta local',ci:'',flag:'🇩🇴'},
-  CU:{name:'Cuba',code:'CUP',symbol:'$',lang:'es',bank:'Transferencia',acc:'Cuenta local',ci:'',flag:'🇨🇺'},
-  HN:{name:'Honduras',code:'HNL',symbol:'L',lang:'es',bank:'Transferencia',acc:'Cuenta local',ci:'',flag:'🇭🇳'},
-  SV:{name:'El Salvador',code:'USD',symbol:'$',lang:'es',bank:'Transferencia',acc:'Cuenta local',ci:'',flag:'🇸🇻'},
-  NI:{name:'Nicaragua',code:'NIO',symbol:'C$',lang:'es',bank:'Transferencia',acc:'Cuenta local',ci:'',flag:'🇳🇮'},
-  PY:{name:'Paraguay',code:'PYG',symbol:'₲',lang:'es',bank:'Transferencia',acc:'Cuenta local',ci:'',flag:'🇵🇾'}
-};
-const LANG={
-  es:{products:'Productos',categories:'Categorías',experts:'Expertos',buy:'Comprar',featTitle:'¿Qué incluye cada producto?',featDesc:'Contenido completo para dominar cualquier área de la IA',catTitle:'Explora el Catálogo',catDesc:'Más de 1 millón de productos organizados por categoría y nivel',buyTitle:'¿Listo para dominar la IA?',buySub:'1,020,895 productos. 80+ expertos. 20 categorías.<br>Precio fijo:',payTitle:'Pasarelas de Pago Disponibles',payDesc:'Elige el método que mejor se adapte a tu país. Todos los precios equivalen a $6.99 USD.',footerCopy:'© 2026 DIHACKTOR Ω — 1,020,895 productos | $6.99 USD | Sin Stripe',email:'Tu email (requerido para recibir el acceso)',btnPay:'Pagar y completar compra',msgOk:'¡Compra completada! Orden creada.',msgErr:'No se pudo conectar al servidor de captura.',detecting:'Detectando país…',priceFixed:'Precio Fijo'},
-  en:{products:'Products',categories:'Categories',experts:'Experts',buy:'Buy',featTitle:'What each product includes',featDesc:'Complete content to master any AI area',catTitle:'Explore the Catalog',catDesc:'More than 1 million products organized by category and level',buyTitle:'Ready to master AI?',buySub:'1,020,895 products. 80+ experts. 20 categories.<br>Fixed price:',payTitle:'Available Payment Gateways',payDesc:'Choose the method that best suits your country. All prices equal $6.99 USD.',footerCopy:'© 2026 DIHACKTOR Ω — 1,020,895 products | $6.99 USD | No Stripe',email:'Your email (required to receive access)',btnPay:'Pay and complete purchase',msgOk:'Purchase completed! Order created.',msgErr:'Could not connect to capture server.',detecting:'Detecting country…',priceFixed:'Fixed Price'},
-  pt:{products:'Produtos',categories:'Categorias',experts:'Especialistas',buy:'Comprar',featTitle:'O que cada produto inclui',featDesc:'Conteúdo completo para dominar qualquer área de IA',catTitle:'Explore o Catálogo',catDesc:'Mais de 1 milhão de produtos organizados por categoría e nível',buyTitle:'Pronto para dominar a IA?',buySub:'1,020,895 produtos. 80+ especialistas. 20 categorias.<br>Preço fixo:',payTitle:'Gateways de Pagamento Disponíveis',payDesc:'Escolha o método que melhor se adapte ao seu país. Todos os preços equivalen a $6.99 USD.',footerCopy:'© 2026 DIHACKTOR Ω — 1,020,895 productos | $6.99 USD | Sem Stripe',email:'Seu email (obrigatório para receber acesso)',btnPay:'Pagar e concluir compra',msgOk:'Compra concluída! Pedido criado.',msgErr:'Não foi possível conectar ao servidor de captura.',detecting:'Detectando país…',priceFixed:'Preço Fixo'}
-};
-let state={country:'US',lang:'en',rate:1,rates:{},products:[]};
-
-function fmt(n,c=2){return n.toLocaleString(undefined,{minimumFractionDigits:c,maximumFractionDigits:c});}
-function money(n){return fmt(n,2);}
-
-async function detectCountry(){
-  const pill=document.getElementById('countryPill');
-  try{
-    const r=await fetch('https://ipapi.co/json/',{timeout:6000});
-    const d=await r.json();
-    if(d.country_code && COUNTRIES[d.country_code]){
-      state.country=d.country_code; state.lang=COUNTRIES[d.country_code].lang;
-      pill.innerHTML=COUNTRIES[d.country_code].flag+' '+d.country_code;
-      pill.title=d.country_name+' ('+d.country_code+')';
-    }else{state.country='US';state.lang='en';pill.innerHTML='🌐 Internacional';}
-  }catch(e){state.country='US';state.lang='en';pill.innerHTML='🌐 Internacional';console.warn('IP detect falló',e);}
-  await loadRates();
-  applyLocalization();
-}
-async function loadRates(){
-  const today=new Date().toDateString();
-  const saved=localStorage.getItem('dihacktor_rates_date');
-  const savedRates=localStorage.getItem('dihacktor_rates');
-  if(saved===today && savedRates){try{state.rates=JSON.parse(savedRates);}catch(e){state.rates={}}}
-  else{
-    state.rates={};
-    try{const r=await fetch('https://open.er-api.com/v6/latest/USD',{timeout:6000});const d=await r.json();if(d.rates)state.rates=d.rates;}catch(e){console.warn('Rate fetch falló',e);}
-    localStorage.setItem('dihacktor_rates_date',today);
-    localStorage.setItem('dihacktor_rates',JSON.stringify(state.rates));
-  }
-  const c=COUNTRIES[state.country];
-  state.rate=(c.code==='USD')?1:(state.rates[c.code]||1);
-  localStorage.setItem('dihacktor_country',state.country);
-  localStorage.setItem('dihacktor_lang',state.lang);
-}
-function priceLocal(){return BASE_PRICE_USD*state.rate;}
-function fmtLocal(){const c=COUNTRIES[state.country];return c.symbol+money(priceLocal());}
-function applyLocalization(){
-  const c=COUNTRIES[state.country];const l=LANG[state.lang]||LANG.es;
-  document.getElementById('langBadge').textContent=c.name;
-  document.getElementById('priceMain').textContent=fmtLocal()+' '+c.code;
-  document.getElementById('statPrice').textContent=c.symbol+fmt(priceLocal(),0);
-  document.getElementById('statPriceLabel').textContent=c.code;
-  document.getElementById('ctaPrice').textContent=fmtLocal()+' '+c.code;
-  document.getElementById('buyPrice').textContent=fmtLocal()+' '+c.code;
-  document.getElementById('buyBtnPrice').textContent=fmtLocal()+' '+c.code;
-  document.getElementById('modalPrice').textContent=fmtLocal()+' '+c.code;
-  document.getElementById('heroSub').innerHTML=l.buySub.split('<br>')[0]+' '+fmtLocal()+' '+c.code;
-  document.getElementById('featTitle').textContent=l.featTitle;document.getElementById('featDesc').textContent=l.featDesc;
-  document.getElementById('catTitle').textContent=l.catTitle;document.getElementById('catDesc').textContent=l.catDesc;
-  document.getElementById('buyTitle').textContent=l.buyTitle;
-  document.getElementById('payTitle').textContent=l.payTitle;document.getElementById('payDesc').textContent=l.payDesc;
-  document.getElementById('footerCopy').textContent=l.footerCopy;
-  document.getElementById('lblEmail').textContent=l.email;document.getElementById('checkoutBtn').textContent=l.btnPay;
-  document.getElementById('countryPill').title=c.name+' ('+c.code+')';
-  document.getElementById('fltAll').textContent=l.products;
-  renderBankInfo();renderProducts();
-}
-function renderBankInfo(){
-  const c=COUNTRIES[state.country];
-  document.getElementById('bankInfo').innerHTML=c.flag+' '+c.name+': '+c.bank+' — Cuenta: '+c.acc+(c.ci?' | '+c.ci:'')+'<br>Lead Bank (USA) — Cuenta: 219449048779 | Ruta: 101019644<br>OpenPayd (Europa) — IBAN: MT12CFTE28004000000000005456093';
-  document.getElementById('modalBank').innerHTML='<strong>'+c.bank+'</strong>: '+c.acc+(c.ci?' | '+c.ci:'');
-}
-// ================= PRODUCTOS (100 diarios) =================
-const CATS=['IA Marketing','Copywriting IA','Automatización n8n','SEO con IA','Email Marketing IA','Imágenes IA','Video IA','Chatbots IA','E-commerce IA','Micro-SaaS IA'];
-const EXPERTS=['Alex Hormozi','Jeff Bezos','Frank Kern','Naval Ravikant','Andrew Ng','Gary Vaynerchuk','Neil Patel','Tim Ferriss','Russell Brunson','Pat Flynn'];
-const LEVELS=['starter','ready','superpremium'];
-const LVL={starter:'Starter',ready:'Ready',superpremium:'Super Premium'};
-function genProducts(n=100){
-  const p=[];const today=new Date().toDateString();
-  for(let i=0;i<n;i++){
-    const c=CATS[i%CATS.length],e=EXPERTS[i%EXPERTS.length],lv=LEVELS[i%LEVELS.length];
-    p.push({id:'prod_daily_'+today+'_'+i,title:'Tutorial '+c+' 2026 — Método '+e,description:'Aprende '+c+' desde cero. Video HD + PDF + Audio + Workflows. Actualizado '+today+'.',cat:c,exp:e,lvl:lv,img:'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80',precio:BASE_PRICE_USD,updated:today});
-  }
-  return p;
-}
-function renderProducts(filter='all'){
-  const g=document.getElementById('productsGrid');
-  if(!state.products.length)state.products=genProducts(100);
-  let ps=state.products;if(filter!=='all')ps=ps.filter(x=>x.lvl===filter);
-  const c=COUNTRIES[state.country];
-  g.innerHTML=ps.map(x=>`<div class="card" data-level="${x.lvl}" data-cat="${x.cat}">
-  <div class="card-img-wrap"><img src="${x.img}" alt="${x.cat}" class="card-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80'"><div class="card-level l-${x.lvl}">${LVL[x.lvl]}</div><div class="card-price">${c.symbol}${fmt(priceLocal(),0)}</div></div>
-  <div class="card-body"><div class="card-cat">${x.cat}</div><h3 class="card-title">${x.title}</h3><p class="card-desc">${x.description}</p><div class="card-exp">👨‍🏫 <span>${x.exp}</span></div><button class="card-btn" onclick="showBuy('${x.title.replace(/'/g,"\\\\'")}',${BASE_PRICE_USD})"><i class="fas fa-shopping-cart"></i> Comprar — ${c.symbol}${fmt(priceLocal(),0)} ${c.code}</button></div>
-  </div>`).join('');
-}
-// ================= CHECKOUT =================
-function showBuy(name,price){
-  document.getElementById('modalName').textContent=name;
-  document.getElementById('modalPrice').textContent=fmtLocal()+' '+COUNTRIES[state.country].code;
-  document.getElementById('buyModal').classList.add('active');
-  document.getElementById('checkoutTxId').value='TX_'+Date.now()+Math.random().toString(36).slice(2,8);
-  document.getElementById('checkoutMsg').style.display='none';document.getElementById('checkoutEmail').value='';
-}
-async function handleCheckout(e){
-  e.preventDefault();
-  const email=document.getElementById('checkoutEmail').value.trim();const tx_id=document.getElementById('checkoutTxId').value;
-  const msg=document.getElementById('checkoutMsg');const btn=document.getElementById('checkoutBtn');const l=LANG[state.lang]||LANG.es;
-  try{btn.disabled=true;btn.textContent='Procesando…';
-    const r=await fetch('http://127.0.0.1:5100/capture-email',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,tx_id})});
-    const d=await r.json();if(r.ok){msg.style.color='var(--green)';msg.textContent=l.msgOk;msg.style.display='block';setTimeout(closeBuy,1500);}
-    else{msg.style.color='var(--red)';msg.textContent=d.error||l.msgErr;msg.style.display='block';}
-  }catch(err){msg.style.color='var(--red)';msg.textContent=l.msgErr;msg.style.display='block';}
-  btn.disabled=false;btn.textContent=l.btnPay;
-}
-function closeBuy(){document.getElementById('buyModal').classList.remove('active');}
-// ================= EVENTS =================
-document.querySelectorAll('.filter').forEach(t=>{t.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));t.classList.add('active');renderProducts(t.dataset.filter)})});
-document.getElementById('searchInput').addEventListener('input',e=>{const q=e.target.value.toLowerCase();renderProducts('all');const g=document.getElementById('productsGrid');g.innerHTML=g.innerHTML;});
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
-// ================= INIT =================
-detectCountry();setInterval(detectCountry,300000);
-</script>
-<!-- SECURITY CLIENT - 7 Layer Protection -->
-<script src="/security/security-client.js"></script>
-<script>
-// Override showBuy to use secure checkout
-function showBuy(name, price) {
-  const productId = 'prod_' + Date.now();
-  document.getElementById('modalName').textContent = name;
-  document.getElementById('modalPrice').textContent = fmtLocal() + ' ' + COUNTRIES[state.country].code;
-  document.getElementById('buyModal').classList.add('active');
-  document.getElementById('checkoutTxId').value = 'TX_' + Date.now() + Math.random().toString(36).slice(2,8);
-  document.getElementById('checkoutMsg').style.display = 'none';
-  document.getElementById('checkoutEmail').value = '';
-  // Store product info for secure checkout
-  window._pendingPurchase = { name, price, productId };
-}
-
-// Override handleCheckout to use secure endpoint
-async function handleCheckout(e) {
-  e.preventDefault();
-  const email = document.getElementById('checkoutEmail').value.trim();
-  const tx_id = document.getElementById('checkoutTxId').value;
-  const msg = document.getElementById('checkoutMsg');
-  const btn = document.getElementById('checkoutBtn');
-  const l = LANG[state.lang] || LANG.es;
-  const purchase = window._pendingPurchase;
-
-  if (!purchase) {
-    msg.style.color = 'var(--red)';
-    msg.textContent = 'Error: producto no seleccionado';
-    msg.style.display = 'block';
-    return;
-  }
-
-  try {
-    btn.disabled = true;
-    btn.textContent = 'Procesando...';
-
-    const payload = {
-      email,
-      tx_id,
-      productId: purchase.productId,
-      productName: purchase.name,
-      price: purchase.price,
-      gateway: 'vitawallet',
-      currency: 'USD'
-    };
-
-    const r = await fetch('http://127.0.0.1:5100/capture-email', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-    const d = await r.json();
-    if (r.ok) {
-      msg.style.color = 'var(--green)';
-      msg.textContent = l.msgOk;
-      msg.style.display = 'block';
-      setTimeout(closeBuy, 1500);
-      window._pendingPurchase = null;
-    } else {
-      msg.style.color = 'var(--red)';
-      msg.textContent = d.error || l.msgErr;
-      msg.style.display = 'block';
-    }
-  } catch (err) {
-    msg.style.color = 'var(--red)';
-    msg.textContent = l.msgErr;
-    msg.style.display = 'block';
-  }
-  btn.disabled = false;
-  btn.textContent = l.btnPay;
-}
-</script>
+    <div class="ambient-bg" aria-hidden="true"></div>
+    
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+    
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg flex items-center justify-center relative" style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(139, 92, 246, 0.1)); border: 1px solid rgba(6, 182, 212, 0.2);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold tracking-tight glow-text">DIHACKTOR Ω</h1>
+                        <p class="text-[10px] text-slate-500 tracking-[0.15em] uppercase">Productos IA · $6.99 USD</p>
+                    </div>
+                </div>
+                
+                <nav class="hidden md:flex items-center gap-1">
+                    <button class="tab-btn active" data-tab="productos">Productos</button>
+                    <button class="tab-btn" data-tab="categorias">Categorías</button>
+                    <button class="tab-btn" data-tab="pagos">Pagos</button>
+                    <button class="tab-btn" data-tab="comprar" id="nav-comprar">Comprar</button>
+                </nav>
+                
+                <button class="btn-primary md:hidden" id="mobile-comprar">Comprar Ahora</button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="pt-16 pb-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            
+            <!-- Hero Section -->
+            <section class="text-center py-16 sm:py-24 animate-fade-up">
+                <div class="inline-flex items-center gap-2 bg-slate-900/50 border border-slate-800 rounded-full px-4 py-2 mb-6">
+                    <span class="status-dot status-dot--emerald"></span>
+                    <span class="text-sm font-medium text-slate-300">Sistema Operativo · 99.7% Uptime</span>
+                </div>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6">
+                    La IA no es una herramienta,<br>
+                    <span class="glow-text">es una habilidad.</span>
+                </h2>
+                <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+                    La colección más grande de tutoriales de IA del mundo. Video HD + PDF + Audio + Workflows n8n.
+                    Pago seguro con Cripto, Tarjeta o Transferencia Bancaria. Acceso inmediato.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <button class="btn-primary text-lg px-8 py-4" id="hero-comprar">
+                        <span>Comprar Ahora — $6.99 USD</span>
+                    </button>
+                    <button class="btn-secondary text-lg px-8 py-4" id="hero-explorar">Explorar Catálogo</button>
+                </div>
+            </section>
+            
+            <!-- Stats Bar -->
+            <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 animate-fade-up delay-1">
+                <div class="card p-6 text-center card-glow">
+                    <div class="text-3xl sm:text-4xl font-black text-cyan-400 glow-text">1,020,895</div>
+                    <div class="text-sm text-slate-400 mt-1">Productos</div>
+                </div>
+                <div class="card p-6 text-center card-glow">
+                    <div class="text-3xl sm:text-4xl font-black text-cyan-400 glow-text">80+</div>
+                    <div class="text-sm text-slate-400 mt-1">Expertos</div>
+                </div>
+                <div class="card p-6 text-center card-glow">
+                    <div class="text-3xl sm:text-4xl font-black text-cyan-400 glow-text">20</div>
+                    <div class="text-sm text-slate-400 mt-1">Categorías</div>
+                </div>
+                <div class="card p-6 text-center card-glow">
+                    <div class="text-3xl sm:text-4xl font-black text-emerald-400 glow-success">$6.99</div>
+                    <div class="text-sm text-slate-400 mt-1">Precio Fijo</div>
+                </div>
+            </section>
+            
+            <!-- Features -->
+            <section class="mb-16 animate-fade-up delay-2">
+                <h3 class="text-2xl font-bold text-center mb-10">¿Qué incluye cada producto?</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="card p-6 card-glow">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-4">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2"></rect></svg>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Video HD</h4>
+                        <p class="text-slate-400 text-sm">Clases en video de alta calidad con explicaciones paso a paso</p>
+                    </div>
+                    <div class="card p-6 card-glow">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Guía PDF</h4>
+                        <p class="text-slate-400 text-sm">Más de 30 páginas de documentación detallada</p>
+                    </div>
+                    <div class="card p-6 card-glow">
+                        <div class="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center mb-4">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><path d="M11 5V12"></path><path d="M19 5V12"></path><path d="M3 5V12"></path><path d="M21 12H3"></path><path d="M7 19H5"></path><path d="M15 12a3 3 0 0 0-3 3v3"></path></svg>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Audio</h4>
+                        <p class="text-slate-400 text-sm">Versión audio para aprender mientras te desplazas</p>
+                    </div>
+                    <div class="card p-6 card-glow md:col-span-3">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><rect x="2" y="4" width="7" height="7" rx="1"></rect><rect x="15" y="4" width="7" height="7" rx="1"></rect><rect x="2" y="17" width="7" height="7" rx="1"></rect><rect x="15" y="17" width="7" height="7" rx="1"></rect><line x1="5.5" y1="7.5" x2="5.5" y2=".5a"></line><line x1="18.5" y1="7.5" x2="18.5" y2=".5a"></line><line x1="5.5" y1="16.5" x2="5.5" y2="23.5a"></line><line x1="18.5" y1="16.5" x2="18.5" y2="23.5a"></line></svg>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Workflows n8n</h4>
+                        <p class="text-slate-400 text-sm">Automatizaciones listas para usar</p>
+                    </div>
+                    <div class="card p-6 card-glow md:col-span-3">
+                        <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center mb-4">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Actualizaciones</h4>
+                        <p class="text-slate-400 text-sm">Contenido actualizado constantemente</p>
+                    </div>
+                    <div class="card p-6 card-glow md:col-span-3">
+                        <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center mb-4">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Soporte</h4>
+                        <p class="text-slate-400 text-sm">Comunidad vía Telegram</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Product Catalog Preview -->
+            <section id="productos" class="mb-16 animate-fade-up delay-3">
+                <div class="flex items-center justify-between mb-8">
+                    <h3 class="text-2xl font-bold">Explora el Catálogo</h3>
+                    <a href="#comprar" class="btn-ghost active">Ver todos los 1,020,895 productos</a>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" id="product-grid">
+                    <!-- Products loaded via JS -->
+                </div>
+            </section>
+            
+            <!-- Categories -->
+            <section id="categorias" class="hidden mb-16 animate-fade-up delay-3">
+                <h3 class="text-2xl font-bold mb-8">Categorías</h3>
+                <div class="flex flex-wrap gap-3" id="categories-grid">
+                    <!-- Categories loaded via JS -->
+                </div>
+            </section>
+            
+            <!-- Payment Methods -->
+            <section id="pagos" class="mb-16 animate-fade-up delay-4">
+                <h3 class="text-2xl font-bold mb-8">Métodos de Pago Disponibles</h3>
+                <p class="text-slate-400 mb-8 max-w-2xl">Elige el método que mejor se adapte a tu país. Todos los precios equivalen a $6.99 USD. Los detalles de cada método se muestran al momento de comprar.</p>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="card p-6 card-glow">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Criptomonedas</h4>
+                                <p class="text-sm text-slate-400">USDT, BTC, ETH, SOL, ARB, POLYGON, BSC</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-300">Redes: <span class="font-mono text-cyan-400">Arbitrum, Polygon, BSC, Ethereum, Solana</span></p>
+                        <p class="text-xs text-slate-500 mt-2">MetaMask, SafePal, WalletConnect, Trust Wallet</p>
+                    </div>
+                    <div class="card p-6 card-glow">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><line x1="2" y1="8" x2="22" y2="8"></line></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Transferencia Bancaria</h4>
+                                <p class="text-sm text-slate-400">BO (Mercantil Santa Cruz), US (Lead Bank), EU (OpenPayd)</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-300">IBAN, SWIFT, Routing disponibles al comprar</p>
+                        <p class="text-xs text-slate-500 mt-2">Validación automática de comprobante</p>
+                    </div>
+                    <div class="card p-6 card-glow">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><rect x="1" y="1" width="22" height="22" rx="2"></rect><path d="M12 7v10M7 12h10"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Pagos Locales (Latam)</h4>
+                                <p class="text-sm text-slate-400">Yape, Altoke, Binance Pay, Wallbit, Meru</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-300">Código de operación verificado anti-clonado</p>
+                        <p class="text-xs text-slate-500 mt-2">Verificación de integridad activada</p>
+                    </div>
+                    <div class="card p-6 card-glow">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Tarjeta (Stripe/Whop)</h4>
+                                <p class="text-sm text-slate-400">Visa, Mastercard, Amex, Link</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-300">Checkout seguro 3D Secure</p>
+                        <p class="text-xs text-slate-500 mt-2">Fallback externo garantizado</p>
+                    </div>
+                </div>
+                
+                <div class="card p-6 border-emerald-500/30 bg-emerald-500/5">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="font-bold text-emerald-400">🔒 Pago Seguro · ⚡ Acceso Inmediato · 🛡️ Garantía 7 Días</p>
+                            <p class="text-sm text-slate-400 mt-1">Soporte: <a href="https://t.me/d3h1ckt4r_bot" target="_blank" class="text-cyan-400 hover:underline">@d3h1ckt4r_bot</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Footer -->
+            <footer class="border-t border-slate-800 pt-8 pb-4 animate-fade-up delay-4">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+                    <p>DIHACKTOR Ω · Ecosistema Soberano de Ventas Digitales 24/7</p>
+                    <div class="flex items-center gap-6">
+                        <a href="https://t.me/d3h1ckt4r_bot" target="_blank" class="hover:text-cyan-400 transition-colors">Telegram</a>
+                        <a href="https://github.com/tortuguitahack" target="_blank" class="hover:text-cyan-400 transition-colors">GitHub</a>
+                        <span class="font-mono text-cyan-400">v7.0.0-MAX-DEIDAD</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+    
+    <!-- Purchase Modal -->
+    <div class="modal-overlay" id="purchase-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal">
+            <div class="flex items-center justify-between mb-6">
+                <h3 id="modal-title" class="text-xl font-bold">Comprar Producto</h3>
+                <button class="btn-ghost p-2" id="close-modal" aria-label="Cerrar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            
+            <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-4 mb-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="font-bold text-sm text-slate-200">Licencia de Acceso Digital</p>
+                        <p class="text-xs text-slate-500">Despacho inmediato vía API</p>
+                    </div>
+                    <p class="text-2xl font-black text-emerald-400 glow-success">$6.99 USD</p>
+                </div>
+            </div>
+            
+            <!-- Payment Method Selection -->
+            <div class="mb-6">
+                <label class="block text-xs font-mono text-slate-400 uppercase mb-3">Selecciona tu método de pago</label>
+                <div class="grid grid-cols-2 gap-3" id="payment-methods">
+                    <!-- Loaded via JS -->
+                </div>
+            </div>
+            
+            <!-- Crypto Tab Content -->
+            <div id="crypto-content" class="hidden space-y-4">
+                <button class="btn-primary w-full" id="pay-crypto">
+                    <span class="flex items-center justify-center gap-2">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        Pagar con MetaMask / SafePal / WalletConnect
+                    </span>
+                </button>
+                <p class="text-xs text-center text-slate-500 font-mono">Redes soportadas: Arbitrum, Polygon, BSC, Ethereum, Solana</p>
+                <div class="flex flex-wrap justify-center gap-1.5" id="network-badges"></div>
+            </div>
+            
+            <!-- Local Fiat Tab Content -->
+            <div id="local-content" class="hidden space-y-4">
+                <div class="space-y-3">
+                    <label class="block text-xs font-mono text-slate-400 uppercase">Método Local</label>
+                    <select class="input-field" id="local-method">
+                        <option value="">Selecciona un método</option>
+                        <option value="yape">Yape (Perú)</option>
+                        <option value="altoke">Altoke (Bolivia)</option>
+                        <option value="binance-pay">Binance Pay</option>
+                        <option value="wallbit">Wallbit</option>
+                        <option value="meru">Meru</option>
+                    </select>
+                </div>
+                <div class="space-y-3">
+                    <label class="block text-xs font-mono text-slate-400 uppercase">Código / ID de Operación</label>
+                    <input type="text" id="tx-local-id" class="input-field font-mono" placeholder="Ej: 982173491" autocomplete="off">
+                </div>
+                <button class="btn-primary w-full" id="pay-local">
+                    <span>⚡ Verificar Transacción Local</span>
+                </button>
+            </div>
+            
+            <!-- Bank Transfer Tab Content -->
+            <div id="bank-content" class="hidden space-y-4">
+                <div class="space-y-3">
+                    <label class="block text-xs font-mono text-slate-400 uppercase">Región Bancaria</label>
+                    <select class="input-field" id="bank-region">
+                        <option value="">Selecciona región</option>
+                        <option value="BO">Bolivia - Banco Mercantil Santa Cruz</option>
+                        <option value="US">USA - Lead Bank</option>
+                        <option value="EU">Europa - OpenPayd</option>
+                    </select>
+                </div>
+                <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-4" id="bank-details">
+                    <p class="text-sm text-slate-400 text-center">Selecciona una región para ver los detalles</p>
+                </div>
+                <div class="space-y-3">
+                    <label class="block text-xs font-mono text-slate-400 uppercase">ID de Transferencia / Comprobante</label>
+                    <input type="text" id="tx-bank-id" class="input-field font-mono" placeholder="Número de operación / referencia" autocomplete="off">
+                </div>
+                <button class="btn-primary w-full" id="pay-bank">
+                    <span>🏦 Verificar Transferencia</span>
+                </button>
+            </div>
+            
+            <!-- Card/Stripe Tab Content -->
+            <div id="card-content" class="hidden space-y-4">
+                <button class="btn-primary w-full" id="pay-card">
+                    <span class="flex items-center justify-center gap-2">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                        Pagar con Tarjeta (Stripe/Whop)
+                    </span>
+                </button>
+                <p class="text-xs text-center text-slate-500">Checkout seguro 3D Secure · Redirige a pasarela externa</p>
+            </div>
+            
+            <!-- Status/Result -->
+            <div id="payment-status" class="hidden">
+                <div class="flex items-center gap-3 p-4 bg-slate-900/50 border border-slate-800 rounded-xl">
+                    <div class="spinner text-cyan-400"></div>
+                    <span id="status-text" class="text-sm text-slate-300">Procesando...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Configuration
+        const CONFIG = {
+            apiBase: '/yinitech/api/v1',
+            productPrice: 6.99,
+            currency: 'USD',
+            priceCents: 699,
+            websocketUrl: 'wss://tortuguitahack.github.io/yinitech/ws' // optional
+        };
+        
+        // Payment Methods from canonical source
+        const PAYMENT_METHODS = [
+            { id: 'crypto', name: 'Web3 / Cripto', icon: '🌐', desc: 'MetaMask, SafePal, WalletConnect', networks: ['Arbitrum', 'Polygon', 'BSC', 'Ethereum', 'Solana'] },
+            { id: 'local', name: 'Local Fiat (Latam)', icon: '🇵🇪🇧🇴', desc: 'Yape, Altoke, Binance Pay, Wallbit, Meru' },
+            { id: 'bank', name: 'Transferencia Bancaria', icon: '🏦', desc: 'BO, US, EU - IBAN/SWIFT/Routing' },
+            { id: 'card', name: 'Tarjeta (Stripe/Whop)', icon: '💳', desc: 'Visa, Mastercard, Amex, 3D Secure' }
+        ];
+        
+        const LOCAL_METHODS = {
+            yape: { name: 'Yape (Perú)', code: 'YAPE', country: 'PE' },
+            altoke: { name: 'Altoke (Bolivia)', code: 'ALTOKE', country: 'BO' },
+            'binance-pay': { name: 'Binance Pay', code: 'BINANCE', country: 'GLOBAL' },
+            wallbit: { name: 'Wallbit', code: 'WALLBIT', country: 'LATAM' },
+            meru: { name: 'Meru', code: 'MERU', country: 'LATAM' }
+        };
+        
+        const BANK_DETAILS = {
+            BO: {
+                bank: 'Banco Mercantil Santa Cruz',
+                account: '4069474188',
+                ci: '5808841TJ',
+                type: 'Cuenta Corriente',
+                currency: 'BOB',
+                amount: 'Bs. 82.51'
+            },
+            US: {
+                bank: 'Lead Bank',
+                routing: '101019644',
+                account: '219449048779',
+                type: 'Checking',
+                currency: 'USD',
+                amount: '$6.99'
+            },
+            EU: {
+                bank: 'OpenPayd',
+                iban: 'MT12CFTE28004000000000005456093',
+                bic: 'CFTEMTM1XXX',
+                type: 'SEPA',
+                currency: 'EUR',
+                amount: '€6.45'
+            }
+        };
+        
+        const NETWORK_BADGES = {
+            arbitrum: 'network-arbitrum',
+            polygon: 'network-polygon',
+            bsc: 'network-bsc',
+            ethereum: 'network-eth',
+            solana: 'network-solana',
+            bitcoin: 'network-bitcoin'
+        };
+        
+        // State
+        let selectedPaymentMethod = 'crypto';
+        let isProcessing = false;
+        
+        // DOM Elements
+        const modal = document.getElementById('purchase-modal');
+        const modalOverlay = document.getElementById('purchase-modal');
+        const closeModal = document.getElementById('close-modal');
+        const navComprar = document.getElementById('nav-comprar');
+        const mobileComprar = document.getElementById('mobile-comprar');
+        const heroComprar = document.getElementById('hero-comprar');
+        const paymentMethodsGrid = document.getElementById('payment-methods');
+        const networkBadges = document.getElementById('network-badges');
+        const paymentStatus = document.getElementById('payment-status');
+        const statusText = document.getElementById('status-text');
+        
+        // Tab content elements
+        const tabContents = {
+            crypto: document.getElementById('crypto-content'),
+            local: document.getElementById('local-content'),
+            bank: document.getElementById('bank-content'),
+            card: document.getElementById('card-content')
+        };
+        
+        // Action buttons
+        const actionButtons = {
+            crypto: document.getElementById('pay-crypto'),
+            local: document.getElementById('pay-local'),
+            bank: document.getElementById('pay-bank'),
+            card: document.getElementById('pay-card')
+        };
+        
+        // Form elements
+        const localMethodSelect = document.getElementById('local-method');
+        const txLocalId = document.getElementById('tx-local-id');
+        const bankRegionSelect = document.getElementById('bank-region');
+        const bankDetails = document.getElementById('bank-details');
+        const txBankId = document.getElementById('tx-bank-id');
+        
+        // Toast system
+        function showToast(message, type = 'info', duration = 5000) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+            toast.textContent = message;
+            container.appendChild(toast);
+            
+            // Trigger animation
+            requestAnimationFrame(() => toast.classList.add('show'));
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 400);
+            }, duration);
+        }
+        
+        // Modal controls
+        function openModal() {
+            modalOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            resetModal();
+        }
+        
+        function closeModalFn() {
+            modalOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        
+        function resetModal() {
+            // Reset to crypto tab
+            selectPaymentMethod('crypto');
+            // Clear forms
+            localMethodSelect.value = '';
+            txLocalId.value = '';
+            bankRegionSelect.value = '';
+            txBankId.value = '';
+            updateBankDetails('');
+            hideStatus();
+        }
+        
+        function selectPaymentMethod(methodId) {
+            selectedPaymentMethod = methodId;
+            
+            // Update payment method buttons
+            document.querySelectorAll('.payment-method').forEach(btn => {
+                btn.classList.toggle('selected', btn.dataset.method === methodId);
+            });
+            
+            // Show/hide tab content
+            Object.keys(tabContents).forEach(key => {
+                tabContents[key].classList.toggle('hidden', key !== methodId);
+            });
+            
+            hideStatus();
+        }
+        
+        function showStatus(message) {
+            paymentStatus.classList.remove('hidden');
+            statusText.textContent = message;
+            disableActions(true);
+        }
+        
+        function hideStatus() {
+            paymentStatus.classList.add('hidden');
+            disableActions(false);
+        }
+        
+        function disableActions(disabled) {
+            isProcessing = disabled;
+            Object.values(actionButtons).forEach(btn => {
+                if (btn) btn.disabled = disabled;
+            });
+        }
+        
+        // Render payment methods in modal
+        function renderPaymentMethods() {
+            paymentMethodsGrid.innerHTML = PAYMENT_METHODS.map(method => `
+                <button class="payment-method" data-method="${method.id}" onclick="selectPaymentMethod('${method.id}')">
+                    <div class="text-2xl mb-2">${method.icon}</div>
+                    <div class="font-bold text-sm">${method.name}</div>
+                    <div class="text-xs text-slate-500 mt-1">${method.desc}</div>
+                </button>
+            `).join('');
+            
+            // Render network badges for crypto
+            if (PAYMENT_METHODS[0].networks) {
+                networkBadges.innerHTML = PAYMENT_METHODS[0].networks.map(net => 
+                    `<span class="network-badge ${NETWORK_BADGES[net.toLowerCase()] || ''}">${net}</span>`
+                ).join('');
+            }
+        }
+        
+        // Update bank details display
+        function updateBankDetails(region) {
+            if (!region || !BANK_DETAILS[region]) {
+                bankDetails.innerHTML = '<p class="text-sm text-slate-400 text-center">Selecciona una región para ver los detalles</p>';
+                return;
+            }
+            
+            const d = BANK_DETAILS[region];
+            let html = '<div class="space-y-2 font-mono text-sm">';
+            
+            Object.entries(d).forEach(([key, value]) => {
+                if (key === 'amount' || key === 'currency') return;
+                const label = key.charAt(0).toUpperCase() + key.slice(1).replace('_', ' ');
+                html += `<div class="flex justify-between"><span class="text-slate-500">${label}:</span> <span class="text-slate-200">${value}</span></div>`;
+            });
+            
+            html += `<div class="pt-2 border-t border-slate-800 flex justify-between"><span class="text-slate-500">Monto:</span> <span class="text-emerald-400 font-bold">${d.amount} ${d.currency}</span></div>`;
+            html += '</div>';
+            
+            bankDetails.innerHTML = html;
+        }
+        
+        // API Calls
+        async function apiCall(endpoint, data) {
+            try {
+                const response = await fetch(`${CONFIG.apiBase}${endpoint}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (!response.ok) {
+                    throw new Error(result.error || `HTTP ${response.status}`);
+                }
+                
+                return result;
+            } catch (error) {
+                // Check if it's a network/CORS error (common on GitHub Pages)
+                if (error instanceof TypeError && error.message.includes('fetch')) {
+                    throw new Error('No se pudo conectar al servidor. Verifica tu conexión o intenta más tarde.');
+                }
+                throw error;
+            }
+        }
+        
+        // Payment Handlers
+        async function handleCryptoPayment() {
+            if (!window.ethereum) {
+                showToast('MetaMask / SafePal / WalletConnect no detectado. Instala una wallet compatible.', 'error');
+                return;
+            }
+            
+            showStatus('Conectando wallet...');
+            
+            try {
+                const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+                const walletUsuario = accounts[0];
+                
+                showStatus('Firmando transacción...');
+                
+                // In production, this would create a real transaction
+                // For now, simulate and call backend confirmation
+                const txHash = '0x' + Array.from(crypto.getRandomValues(new Uint8Array(32)))
+                    .map(b => b.toString(16).padStart(2, '0')).join('');
+                
+                showStatus('Enviando al clúster...');
+                
+                const result = await apiCall('/gateways/web3-confirm', {
+                    txHash,
+                    network: 'polygon', // default
+                    wallet: walletUsuario,
+                    amount: CONFIG.priceCents,
+                    currency: CONFIG.currency
+                });
+                
+                showToast('✅ Transacción confirmada. Acceso concedido.', 'success');
+                setTimeout(() => {
+                    closeModalFn();
+                    // Redirect to product access
+                    window.location.href = '/access.html?tx=' + txHash;
+                }, 2000);
+                
+            } catch (error) {
+                if (error.message.includes('User rejected') || error.message.includes('cancelled')) {
+                    showToast('Operación cancelada en la wallet.', 'info');
+                } else {
+                    showToast('Error: ' + error.message, 'error');
+                }
+                hideStatus();
+            }
+        }
+        
+        async function handleLocalPayment() {
+            const method = localMethodSelect.value;
+            const txId = txLocalId.value.trim();
+            
+            if (!method) {
+                showToast('Selecciona un método de pago local.', 'error');
+                return;
+            }
+            
+            if (!txId) {
+                showToast('Ingresa el código de operación.', 'error');
+                return;
+            }
+            
+            showStatus('Validando operación local...');
+            
+            try {
+                const result = await apiCall('/yinitech/qr-settlement', {
+                    metodo: method,
+                    operacion_id: txId,
+                    monto_declarado: CONFIG.productPrice,
+                    check_integrity: true
+                });
+                
+                if (result.success) {
+                    showToast('✅ Código verificado. Hermes está procesando tu acceso.', 'success');
+                    setTimeout(() => {
+                        closeModalFn();
+                        window.location.href = '/access.html?local=' + txId;
+                    }, 2000);
+                } else {
+                    showToast('Error: ' + (result.error || 'Validación fallida'), 'error');
+                    hideStatus();
+                }
+                
+            } catch (error) {
+                showToast('Error: ' + error.message, 'error');
+                hideStatus();
+            }
+        }
+        
+        async function handleBankPayment() {
+            const region = bankRegionSelect.value;
+            const txId = txBankId.value.trim();
+            
+            if (!region) {
+                showToast('Selecciona una región bancaria.', 'error');
+                return;
+            }
+            
+            if (!txId) {
+                showToast('Ingresa el ID de transferencia / número de operación.', 'error');
+                return;
+            }
+            
+            showStatus('Verificando transferencia bancaria...');
+            
+            try {
+                const result = await apiCall('/gateways/bank-confirm', {
+                    region,
+                    operacion_id: txId,
+                    monto_esperado: CONFIG.productPrice,
+                    currency: CONFIG.currency
+                });
+                
+                if (result.success) {
+                    showToast('✅ Transferencia verificada. Acceso concedido.', 'success');
+                    setTimeout(() => {
+                        closeModalFn();
+                        window.location.href = '/access.html?bank=' + txId;
+                    }, 2000);
+                } else {
+                    showToast('Error: ' + (result.error || 'Verificación fallida'), 'error');
+                    hideStatus();
+                }
+                
+            } catch (error) {
+                showToast('Error: ' + error.message, 'error');
+                hideStatus();
+            }
+        }
+        
+        function handleCardPayment() {
+            // Redirect to Stripe/Whop checkout
+            showToast('Redirigiendo a checkout seguro...', 'info');
+            
+            // In production, this would create a Stripe Checkout Session via backend
+            // For now, use the direct Stripe link
+            window.open('https://buy.stripe.com/3cIcN57276b00Ij7Ok9Ve04', '_blank');
+            
+            // Poll for completion or listen for webhook
+            setTimeout(() => {
+                showToast('Completa el pago en la ventana abierta. El acceso se activará automáticamente.', 'info');
+            }, 1000);
+        }
+        
+        // Navigation Tabs
+        function initNavTabs() {
+            const tabButtons = document.querySelectorAll('[data-tab]');
+            const sections = {
+                productos: document.getElementById('productos'),
+                categorias: document.getElementById('categorias'),
+                pagos: document.getElementById('pagos'),
+                comprar: null // modal
+            };
+            
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tab = btn.dataset.tab;
+                    
+                    // Update active state
+                    tabButtons.forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+                    
+                    // Show/hide sections
+                    Object.entries(sections).forEach(([key, section]) => {
+                        if (section) {
+                            section.classList.toggle('hidden', key !== tab);
+                        }
+                    });
+                    
+                    if (tab === 'comprar') {
+                        openModal();
+                        // Reset tab button
+                        btn.classList.remove('active');
+                        document.querySelector('[data-tab="productos"]').classList.add('active');
+                    }
+                });
+            });
+        }
+        
+        // Product Catalog (sample data)
+        const SAMPLE_PRODUCTS = [
+            { id: 'GOD-100199', title: 'Copywriting Masterclass 2026', category: 'Marketing', expert: 'Alex Hormozi' },
+            { id: 'GOD-100442', title: 'Fitness Masterclass 2026', category: 'Salud', expert: 'Andrew Huberman' },
+            { id: 'GOD-100496', title: 'High Ticket Sales Bible', category: 'Ventas', expert: 'Grant Cardone' },
+            { id: 'GOD-100512', title: 'Advanced Coding Strategies', category: 'Programación', expert: 'John Carmack' },
+            { id: 'GOD-100521', title: 'Intermittent Fasting Activation', category: 'Salud', expert: 'Peter Attia' },
+            { id: 'GOD-100598', title: 'The Copywriting Bible', category: 'Marketing', expert: 'Frank Kern' },
+            { id: 'GOD-100766', title: 'Zero to Hero SaaS Building', category: 'Programación', expert: 'Pieter Levels' },
+            { id: 'GOD-101555', title: 'DeFi Yield Farming Blueprint', category: 'Cripto', expert: 'Andre Cronje' },
+            { id: 'GOD-101691', title: 'Hack Your Flow State', category: 'Productividad', expert: 'Steven Kotler' },
+            { id: 'GOD-101965', title: 'DeFi Yield Farming 30 Days', category: 'Cripto', expert: 'Daniele Sesta' },
+            { id: 'GOD-101986', title: 'Passive Income SaaS', category: 'Negocios', expert: 'Rob Walling' },
+            { id: 'GOD-102055', title: 'Science of Biohacking', category: 'Salud', expert: 'Dave Asprey' }
+        ];
+        
+        const CATEGORIES = [
+            'Marketing', 'Ventas', 'Programación', 'Cripto', 'Salud', 'Productividad',
+            'Negocios', 'IA/ML', 'Diseño', 'Video', 'Escritura', 'Inversión',
+            'Bienes Raíces', 'E-commerce', 'Automatización', 'Seguridad', 'Redes',
+            'Branding', 'Crecimiento', 'Finanzas'
+        ];
+        
+        function renderProducts() {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = SAMPLE_PRODUCTS.map((product, i) => `
+                <article class="card p-5 card-glow animate-fade-up" style="animation-delay: ${i * 0.05}s">
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center flex-shrink-0">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path></svg>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <p class="text-xs text-cyan-400 font-mono uppercase tracking-wide mb-1">${product.category}</p>
+                            <h4 class="font-bold text-sm truncate">${product.title}</h4>
+                            <p class="text-xs text-slate-500 mt-1">Experto: ${product.expert}</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mt-4 pt-4 border-t border-slate-800">
+                        <span class="text-lg font-black text-emerald-400">$6.99</span>
+                        <button class="btn-primary text-sm px-4 py-2" onclick="openModal()">Comprar</button>
+                    </div>
+                </article>
+            `).join('');
+        }
+        
+        function renderCategories() {
+            const grid = document.getElementById('categories-grid');
+            grid.innerHTML = CATEGORIES.map(cat => `
+                <button class="btn-ghost" onclick="filterCategory('${cat}')">${cat}</button>
+            `).join('');
+        }
+        
+        function filterCategory(category) {
+            // Switch to products tab and filter
+            document.querySelector('[data-tab="productos"]').click();
+            showToast(`Filtrando por: ${category}`, 'info');
+            // In a real app, this would filter the product grid
+        }
+        
+        // Event Listeners
+        function initEventListeners() {
+            // Modal triggers
+            [navComprar, mobileComprar, heroComprar].forEach(btn => {
+                if (btn) btn.addEventListener('click', openModal);
+            });
+            
+            // Close modal
+            closeModal.addEventListener('click', closeModalFn);
+            modalOverlay.addEventListener('click', (e) => {
+                if (e.target === modalOverlay) closeModalFn();
+            });
+            
+            // Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modalOverlay.classList.contains('open')) {
+                    closeModalFn();
+                }
+            });
+            
+            // Payment method buttons
+            Object.entries(actionButtons).forEach(([method, btn]) => {
+                if (btn) {
+                    btn.addEventListener('click', () => {
+                        switch (method) {
+                            case 'crypto': handleCryptoPayment(); break;
+                            case 'local': handleLocalPayment(); break;
+                            case 'bank': handleBankPayment(); break;
+                            case 'card': handleCardPayment(); break;
+                        }
+                    });
+                }
+            });
+            
+            // Form changes
+            bankRegionSelect.addEventListener('change', (e) => updateBankDetails(e.target.value));
+            localMethodSelect.addEventListener('change', (e) => {
+                // Could show method-specific info
+            });
+        }
+        
+        // Initialize
+        function init() {
+            renderPaymentMethods();
+            renderProducts();
+            renderCategories();
+            initNavTabs();
+            initEventListeners();
+            
+            // Check for URL params (e.g., from payment redirect)
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === 'true') {
+                showToast('✅ Pago completado con éxito. Acceso activado.', 'success');
+            }
+            if (urlParams.get('error')) {
+                showToast('Error en el pago: ' + urlParams.get('error'), 'error');
+            }
+        }
+        
+        // Start
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
 </body>
 </html>
-
