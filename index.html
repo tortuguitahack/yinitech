@@ -725,7 +725,7 @@
         // Configuration
         const CONFIG = {
             // Primary API base - localhost.run tunnel (may rotate)
-            apiBase: 'https://434b70df9e693c0b-200-87-154-34.serveousercontent.com/yinitech/api',
+            apiBase: 'https://2a748c03e5601ec8-200-87-154-34.serveousercontent.com/yinitech/api',
             // Fallback: direct IP (only works on local network)
             apiBaseLocal: 'http://192.168.11.151:3000',
             productPrice: 6.99,
@@ -800,6 +800,41 @@
                 // State
         let selectedPaymentMethod = 'crypto';
         let isProcessing = false;
+
+        // Idempotency key management
+        const IDEMPOTENCY_KEY_STORAGE = 'yinitech_idempotency_key';
+        const IDEMPOTENCY_ATTEMPT_STORAGE = 'yinitech_idempotency_attempt';
+
+        function generateIdempotencyKey() {
+            return 'idem_' + crypto.randomUUID().replace(/-/g, '');
+        }
+
+        function getOrCreateIdempotencyKey() {
+            let key = sessionStorage.getItem(IDEMPOTENCY_KEY_STORAGE);
+            let attempt = parseInt(sessionStorage.getItem(IDEMPOTENCY_ATTEMPT_STORAGE) || '0', 10);
+            
+            if (!key) {
+                key = generateIdempotencyKey();
+                sessionStorage.setItem(IDEMPOTENCY_KEY_STORAGE, key);
+                attempt = 1;
+                sessionStorage.setItem(IDEMPOTENCY_ATTEMPT_STORAGE, attempt.toString());
+            } else {
+                // Increment attempt counter for this session
+                attempt += 1;
+                sessionStorage.setItem(IDEMPOTENCY_ATTEMPT_STORAGE, attempt.toString());
+            }
+            
+            return { key, attempt };
+        }
+
+        function clearIdempotencyKey() {
+            sessionStorage.removeItem(IDEMPOTENCY_KEY_STORAGE);
+            sessionStorage.removeItem(IDEMPOTENCY_ATTEMPT_STORAGE);
+        }
+
+        function getCurrentIdempotencyKey() {
+            return sessionStorage.getItem(IDEMPOTENCY_KEY_STORAGE);
+        }
         
         // DOM Elements
         const modal = document.getElementById('purchase-modal');
@@ -858,6 +893,8 @@
             modalOverlay.classList.add('open');
             document.body.style.overflow = 'hidden';
             resetModal();
+            // Generate new idempotency key for this purchase attempt
+            getOrCreateIdempotencyKey();
         }
         
         function closeModalFn() {
@@ -952,89 +989,105 @@
         }
         
         // API Calls
-        async function apiCall(endpoint, data) {
-            // Try primary API base, then fallback to local
-            const bases = [CONFIG.apiBase, CONFIG.apiBaseLocal].filter(Boolean);
-            let lastError;
+                async function apiCall(endpoint, data, options = {}) {
+                    // Try primary API base, then fallback to local
+                    const bases = [CONFIG.apiBase, CONFIG.apiBaseLocal].filter(Boolean);
+                    let lastError;
+
+                    // Get idempotency key if this is a payment endpoint
+                    const paymentEndpoints = ['/gateways/web3-confirm', '/yinitech/qr-settlement', '/gateways/bank-confirm', '/gateways/capture-email'];
+                    const isPaymentEndpoint = paymentEndpoints.some(ep => endpoint.startsWith(ep));
             
-            for (const base of bases) {
-                try {
-                    const response = await fetch(`${base}${endpoint}`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(data)
-                    });
-                    
-                    const result = await response.json();
-                    
-                    if (!response.ok) {
-                        throw new Error(result.error || `HTTP ${response.status}`);
+                    let idempotencyKey = options.idempotencyKey;
+                    if (isPaymentEndpoint && !idempotencyKey) {
+                        const { key } = getOrCreateIdempotencyKey();
+                        idempotencyKey = key;
                     }
-                    
-                    return result;
-                } catch (error) {
-                    lastError = error;
-                    console.warn(`API call failed for ${base}:`, error.message);
-                    continue;
+
+                    for (const base of bases) {
+                        try {
+                            const headers = { 'Content-Type': 'application/json' };
+                            if (idempotencyKey) {
+                                headers['Idempotency-Key'] = idempotencyKey;
+                            }
+
+                            const response = await fetch(`${base}${endpoint}`, {
+                                method: 'POST',
+                                headers,
+                                body: JSON.stringify(data)
+                            });
+
+                            const result = await response.json();
+
+                            if (!response.ok) {
+                                throw new Error(result.error || `HTTP ${response.status}`);
+                            }
+
+                            return result;
+                        } catch (error) {
+                            lastError = error;
+                            console.warn(`API call failed for ${base}:`, error.message);
+                            continue;
+                        }
+                    }
+
+                    // All bases failed
+                    if (lastError instanceof TypeError && lastError.message.includes('fetch')) {
+                        throw new Error('No se pudo conectar al servidor de pagos. Usa pago manual con las direcciones mostradas.');
+                    }
+                    throw lastError;
                 }
-            }
-            
-            // All bases failed
-            if (lastError instanceof TypeError && lastError.message.includes('fetch')) {
-                throw new Error('No se pudo conectar al servidor de pagos. Usa pago manual con las direcciones mostradas.');
-            }
-            throw lastError;
-        }
         
         // Payment Handlers
         async function handleCryptoPayment() {
-            if (!window.ethereum) {
-                // Show wallet addresses for manual payment
-                showManualCryptoPayment();
-                return;
-            }
-            
-            showStatus('Conectando wallet...');
-            
-            try {
-                const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-                const walletUsuario = accounts[0];
-                
-                showStatus('Firmando transacción...');
-                
-                // In production, this would create a real transaction
-                // For now, simulate and call backend confirmation
-                const txHash = '0x' + Array.from(crypto.getRandomValues(new Uint8Array(32)))
-                    .map(b => b.toString(16).padStart(2, '0')).join('');
-                
-                showStatus('Enviando al clúster...');
-                
-                const result = await apiCall('/gateways/web3-confirm', {
-                    txHash,
-                    network: 'polygon', // default
-                    wallet: walletUsuario,
-                    amount: CONFIG.priceCents,
-                    currency: CONFIG.currency
-                });
-                
-                showToast('✅ Transacción confirmada. Acceso concedido.', 'success');
-                setTimeout(() => {
-                    closeModalFn();
-                    // Redirect to product access
-                    window.location.href = '/access.html?tx=' + txHash;
-                }, 2000);
-                
-            } catch (error) {
-                if (error.message.includes('User rejected') || error.message.includes('cancelled')) {
-                    showToast('Operación cancelada en la wallet.', 'info');
-                } else {
-                    showToast('Error: ' + error.message, 'error');
-                    // Fallback to manual payment
-                    showManualCryptoPayment();
+                    if (!window.ethereum) {
+                        // Show wallet addresses for manual payment
+                        showManualCryptoPayment();
+                        return;
+                    }
+
+                    showStatus('Conectando wallet...');
+
+                    try {
+                        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+                        const walletUsuario = accounts[0];
+
+                        showStatus('Firmando transacción...');
+
+                        // In production, this would create a real transaction
+                        // For now, simulate and call backend confirmation
+                        const txHash = '0x' + Array.from(crypto.getRandomValues(new Uint8Array(32)))
+                            .map(b => b.toString(16).padStart(2, '0')).join('');
+
+                        showStatus('Enviando al clúster...');
+
+                        const result = await apiCall('/gateways/web3-confirm', {
+                            txHash,
+                            network: 'polygon', // default
+                            wallet: walletUsuario,
+                            amount: CONFIG.priceCents,
+                            currency: CONFIG.currency
+                        });
+
+                        showToast('✅ Transacción confirmada. Acceso concedido.', 'success');
+                        clearIdempotencyKey(); // Clear on success
+                        setTimeout(() => {
+                            closeModalFn();
+                            // Redirect to product access
+                            window.location.href = '/access.html?tx=' + txHash;
+                        }, 2000);
+
+                    } catch (error) {
+                        if (error.message.includes('User rejected') || error.message.includes('cancelled')) {
+                            showToast('Operación cancelada en la wallet.', 'info');
+                        } else {
+                            showToast('Error: ' + error.message, 'error');
+                            // Fallback to manual payment
+                            showManualCryptoPayment();
+                        }
+                        hideStatus();
+                    }
                 }
-                hideStatus();
-            }
-        }
         
         function showManualCryptoPayment() {
             const wallets = FALLBACK_WALLETS;
@@ -1074,86 +1127,88 @@
         }
         
         async function handleLocalPayment() {
-            const method = localMethodSelect.value;
-            const txId = txLocalId.value.trim();
-            
-            if (!method) {
-                showToast('Selecciona un método de pago local.', 'error');
-                return;
-            }
-            
-            if (!txId) {
-                showToast('Ingresa el código de operación.', 'error');
-                return;
-            }
-            
-            showStatus('Validando operación local...');
-            
-            try {
-                const result = await apiCall('/yinitech/qr-settlement', {
-                    metodo: method,
-                    operacion_id: txId,
-                    monto_declarado: CONFIG.productPrice,
-                    check_integrity: true
-                });
-                
-                if (result.success) {
-                    showToast('✅ Código verificado. Hermes está procesando tu acceso.', 'success');
-                    setTimeout(() => {
-                        closeModalFn();
-                        window.location.href = '/access.html?local=' + txId;
-                    }, 2000);
-                } else {
-                    showToast('Error: ' + (result.error || 'Validación fallida'), 'error');
-                    hideStatus();
+                    const method = localMethodSelect.value;
+                    const txId = txLocalId.value.trim();
+
+                    if (!method) {
+                        showToast('Selecciona un método de pago local.', 'error');
+                        return;
+                    }
+
+                    if (!txId) {
+                        showToast('Ingresa el código de operación.', 'error');
+                        return;
+                    }
+
+                    showStatus('Validando operación local...');
+
+                    try {
+                        const result = await apiCall('/yinitech/qr-settlement', {
+                            metodo: method,
+                            operacion_id: txId,
+                            monto_declarado: CONFIG.productPrice,
+                            check_integrity: true
+                        });
+
+                        if (result.success) {
+                            showToast('✅ Código verificado. Hermes está procesando tu acceso.', 'success');
+                            clearIdempotencyKey(); // Clear on success
+                            setTimeout(() => {
+                                closeModalFn();
+                                window.location.href = '/access.html?local=' + txId;
+                            }, 2000);
+                        } else {
+                            showToast('Error: ' + (result.error || 'Validación fallida'), 'error');
+                            hideStatus();
+                        }
+
+                    } catch (error) {
+                        showToast('Error: ' + error.message, 'error');
+                        hideStatus();
+                    }
                 }
-                
-            } catch (error) {
-                showToast('Error: ' + error.message, 'error');
-                hideStatus();
-            }
-        }
         
         async function handleBankPayment() {
-            const region = bankRegionSelect.value;
-            const txId = txBankId.value.trim();
-            
-            if (!region) {
-                showToast('Selecciona una región bancaria.', 'error');
-                return;
-            }
-            
-            if (!txId) {
-                showToast('Ingresa el ID de transferencia / número de operación.', 'error');
-                return;
-            }
-            
-            showStatus('Verificando transferencia bancaria...');
-            
-            try {
-                const result = await apiCall('/gateways/bank-confirm', {
-                    region,
-                    operacion_id: txId,
-                    monto_esperado: CONFIG.productPrice,
-                    currency: CONFIG.currency
-                });
-                
-                if (result.success) {
-                    showToast('✅ Transferencia verificada. Acceso concedido.', 'success');
-                    setTimeout(() => {
-                        closeModalFn();
-                        window.location.href = '/access.html?bank=' + txId;
-                    }, 2000);
-                } else {
-                    showToast('Error: ' + (result.error || 'Verificación fallida'), 'error');
-                    hideStatus();
+                    const region = bankRegionSelect.value;
+                    const txId = txBankId.value.trim();
+
+                    if (!region) {
+                        showToast('Selecciona una región bancaria.', 'error');
+                        return;
+                    }
+
+                    if (!txId) {
+                        showToast('Ingresa el ID de transferencia / número de operación.', 'error');
+                        return;
+                    }
+
+                    showStatus('Verificando transferencia bancaria...');
+
+                    try {
+                        const result = await apiCall('/gateways/bank-confirm', {
+                            region,
+                            operacion_id: txId,
+                            monto_esperado: CONFIG.productPrice,
+                            currency: CONFIG.currency
+                        });
+
+                        if (result.success) {
+                            showToast('✅ Transferencia verificada. Acceso concedido.', 'success');
+                            clearIdempotencyKey(); // Clear on success
+                            setTimeout(() => {
+                                closeModalFn();
+                                window.location.href = '/access.html?bank=' + txId;
+                            }, 2000);
+                        } else {
+                            showToast('Error: ' + (result.error || 'Verificación fallida'), 'error');
+                            hideStatus();
+                        }
+
+                    } catch (error) {
+                        showToast('Error: ' + error.message, 'error');
+                        hideStatus();
+                    }
                 }
-                
-            } catch (error) {
-                showToast('Error: ' + error.message, 'error');
-                hideStatus();
-            }
-        }
         
         function handleCardPayment() {
             // Sin Stripe: mostrar pago manual con cripto
