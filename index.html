@@ -582,11 +582,11 @@
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                             </div>
                             <div>
-                                <h4 class="font-bold">Tarjeta (Stripe/Whop)</h4>
+                                <h4 class="font-bold">Tarjeta / P2P Directo</h4>
                                 <p class="text-sm text-slate-400">Visa, Mastercard, Amex, Link</p>
                             </div>
                         </div>
-                        <p class="text-sm text-slate-300">Checkout seguro 3D Secure</p>
+                        <p class="text-sm text-slate-300">Procesamiento directo sin intermediarios</p>
                         <p class="text-xs text-slate-500 mt-2">Fallback externo garantizado</p>
                     </div>
                 </div>
@@ -705,10 +705,10 @@
                 <button class="btn-primary w-full" id="pay-card">
                     <span class="flex items-center justify-center gap-2">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
-                        Pagar con Tarjeta (Stripe/Whop)
+                        Pagar con Tarjeta / P2P Directo
                     </span>
                 </button>
-                <p class="text-xs text-center text-slate-500">Checkout seguro 3D Secure · Redirige a pasarela externa</p>
+                <p class="text-xs text-center text-slate-500">Procesamiento directo sin intermediarios · Redirige a pasarela externa</p>
             </div>
             
             <!-- Status/Result -->
@@ -739,7 +739,7 @@
             { id: 'crypto', name: 'Web3 / Cripto', icon: '🌐', desc: 'MetaMask, SafePal, WalletConnect', networks: ['Arbitrum', 'Polygon', 'BSC', 'Ethereum', 'Solana'] },
             { id: 'local', name: 'Local Fiat (Latam)', icon: '🇵🇪🇧🇴', desc: 'Yape, Altoke, Binance Pay, Wallbit, Meru' },
             { id: 'bank', name: 'Transferencia Bancaria', icon: '🏦', desc: 'BO, US, EU - IBAN/SWIFT/Routing' },
-            { id: 'card', name: 'Tarjeta (Stripe/Whop)', icon: '💳', desc: 'Visa, Mastercard, Amex, 3D Secure' }
+            { id: 'card', name: 'Tarjeta / P2P Directo', icon: '💳', desc: 'Visa, Mastercard, Amex, P2P Directo' }
         ];
         
         const LOCAL_METHODS = {
@@ -981,7 +981,7 @@
             
             // All bases failed
             if (lastError instanceof TypeError && lastError.message.includes('fetch')) {
-                throw new Error('No se pudo conectar al servidor de pagos. Usa pago manual con las direcciones mostradas o tarjeta (Stripe).');
+                throw new Error('No se pudo conectar al servidor de pagos. Usa pago manual con las direcciones mostradas.');
             }
             throw lastError;
         }
@@ -1156,17 +1156,8 @@
         }
         
         function handleCardPayment() {
-            // Redirect to Stripe/Whop checkout
-            showToast('Redirigiendo a checkout seguro...', 'info');
-            
-            // In production, this would create a Stripe Checkout Session via backend
-            // For now, use the direct Stripe link
-            window.open('https://buy.stripe.com/3cIcN57276b00Ij7Ok9Ve04', '_blank');
-            
-            // Poll for completion or listen for webhook
-            setTimeout(() => {
-                showToast('Completa el pago en la ventana abierta. El acceso se activará automáticamente.', 'info');
-            }, 1000);
+            // Sin Stripe: mostrar pago manual con cripto
+            showManualCryptoPayment();
         }
         
         // Navigation Tabs
