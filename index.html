@@ -952,33 +952,44 @@
         
         // API Calls
         async function apiCall(endpoint, data) {
-            try {
-                const response = await fetch(`${CONFIG.apiBase}${endpoint}`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
-                });
-                
-                const result = await response.json();
-                
-                if (!response.ok) {
-                    throw new Error(result.error || `HTTP ${response.status}`);
+            // Try primary API base, then fallback to local
+            const bases = [CONFIG.apiBase, CONFIG.apiBaseLocal].filter(Boolean);
+            let lastError;
+            
+            for (const base of bases) {
+                try {
+                    const response = await fetch(`${base}${endpoint}`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data)
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (!response.ok) {
+                        throw new Error(result.error || `HTTP ${response.status}`);
+                    }
+                    
+                    return result;
+                } catch (error) {
+                    lastError = error;
+                    console.warn(`API call failed for ${base}:`, error.message);
+                    continue;
                 }
-                
-                return result;
-            } catch (error) {
-                // Check if it's a network/CORS error (common on GitHub Pages)
-                if (error instanceof TypeError && error.message.includes('fetch')) {
-                    throw new Error('No se pudo conectar al servidor. Verifica tu conexión o intenta más tarde.');
-                }
-                throw error;
             }
+            
+            // All bases failed
+            if (lastError instanceof TypeError && lastError.message.includes('fetch')) {
+                throw new Error('No se pudo conectar al servidor de pagos. Usa pago manual con las direcciones mostradas o tarjeta (Stripe).');
+            }
+            throw lastError;
         }
         
         // Payment Handlers
         async function handleCryptoPayment() {
             if (!window.ethereum) {
-                showToast('MetaMask / SafePal / WalletConnect no detectado. Instala una wallet compatible.', 'error');
+                // Show wallet addresses for manual payment
+                showManualCryptoPayment();
                 return;
             }
             
@@ -1017,9 +1028,48 @@
                     showToast('Operación cancelada en la wallet.', 'info');
                 } else {
                     showToast('Error: ' + error.message, 'error');
+                    // Fallback to manual payment
+                    showManualCryptoPayment();
                 }
                 hideStatus();
             }
+        }
+        
+        function showManualCryptoPayment() {
+            const wallets = FALLBACK_WALLETS;
+            const html = `
+                <div class="space-y-4 p-4 bg-slate-900/50 border border-slate-800 rounded-xl">
+                    <h4 class="font-bold text-cyan-400 mb-3">Pago Manual - Envía $6.99 USD a cualquiera de estas direcciones:</h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between p-2 bg-slate-800/50 rounded">
+                            <span class="text-slate-400">USDT (BEP20/ERC20):</span>
+                            <span class="font-mono text-cyan-400 break-all">${wallets.USDT_BEP20}</span>
+                        </div>
+                        <div class="flex justify-between p-2 bg-slate-800/50 rounded">
+                            <span class="text-slate-400">BTC:</span>
+                            <span class="font-mono text-cyan-400 break-all">${wallets.BTC}</span>
+                        </div>
+                        <div class="flex justify-between p-2 bg-slate-800/50 rounded">
+                            <span class="text-slate-400">ETH:</span>
+                            <span class="font-mono text-cyan-400 break-all">${wallets.ETH}</span>
+                        </div>
+                        <div class="flex justify-between p-2 bg-slate-800/50 rounded">
+                            <span class="text-slate-400">SOL:</span>
+                            <span class="font-mono text-cyan-400 break-all">${wallets.SOL}</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 text-center">
+                        Redes soportadas: Arbitrum, Polygon, BSC, Ethereum, Solana<br>
+                        Tras enviar, usa "Verificar Transacción Local" con el hash de la transacción
+                    </p>
+                    <button class="btn-secondary w-full mt-3" onclick="selectPaymentMethod('local')">
+                        Tengo el hash → Verificar Local
+                    </button>
+                </div>
+            `;
+            
+            const cryptoContent = document.getElementById('crypto-content');
+            cryptoContent.innerHTML = html;
         }
         
         async function handleLocalPayment() {
