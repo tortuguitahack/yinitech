@@ -724,7 +724,10 @@
     <script>
         // Configuration
         const CONFIG = {
-            apiBase: 'https://electronics-event-wages-eric.trycloudflare.com/yinitech/api/v1',
+            // Primary API base - trycloudflare tunnel (may rotate)
+            apiBase: 'https://strength-restrictions-advertisements-discretion.trycloudflare.com/yinitech/api/v1',
+            // Fallback: direct IP (only works on local network)
+            apiBaseLocal: 'http://192.168.11.151:3000/yinitech/api/v1',
             productPrice: 6.99,
             currency: 'USD',
             priceCents: 699,
