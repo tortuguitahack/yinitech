@@ -778,15 +778,25 @@
         };
         
         const NETWORK_BADGES = {
-            arbitrum: 'network-arbitrum',
-            polygon: 'network-polygon',
-            bsc: 'network-bsc',
-            ethereum: 'network-eth',
-            solana: 'network-solana',
-            bitcoin: 'network-bitcoin'
-        };
-        
-        // State
+                    arbitrum: 'network-arbitrum',
+                    polygon: 'network-polygon',
+                    bsc: 'network-bsc',
+                    ethereum: 'network-eth',
+                    solana: 'network-solana',
+                    bitcoin: 'network-bitcoin'
+                };
+
+                // Fallback wallet addresses (canonical from payment-destinations.yaml)
+                // Used immediately on load; replaced by API data when available
+                const FALLBACK_WALLETS = {
+                    USDT_BEP20: '0xeBe965EFe1ab53d2da915134d72e5BdBd5E3C053',
+                    USDT_ERC20: '0xeBe965EFe1ab53d2da915134d72e5BdBd5E3C053',
+                    BTC: 'bc1qjjgsx3lwa0wz59l89htcpr28j5s7dtmv99fmw0',
+                    ETH: '0x2F4bc6f77719AB99BCd6a9b553729bB96C9B8c22',
+                    SOL: '2jKUmCWJZTF1tRuuhiuZuDUd3xYehX3gEHeH3BWo8Kmm'
+                };
+
+                // State
         let selectedPaymentMethod = 'crypto';
         let isProcessing = false;
         
