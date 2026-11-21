@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tortuguitahack.github.io/yinitech/sitemap.xml
