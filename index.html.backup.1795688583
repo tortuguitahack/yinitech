@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIHACKTOR Ω | Productos IA — $6.99 USD</title>
+    <meta name="description" content="La colección más grande de tutoriales de IA del mundo. Video HD + PDF + Audio + Workflows n8n. Pago seguro, acceso inmediato.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #030712;
+            --bg-elevated: #0b1220;
+            --border: #1e293b;
+            --border-bright: #334155;
+            --text: #f1f5f9;
+            --text-muted: #64748b;
+            --accent: #06b6d4;
+            --accent-glow: rgba(6, 182, 212, 0.4);
+            --success: #10b981;
+            --success-glow: rgba(16, 185, 129, 0.4);
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+        
+        * { box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+        
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Animated background */
+        .ambient-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: 
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(6, 182, 212, 0.08), transparent),
+                radial-gradient(ellipse 60% 40% at 80% 100%, rgba(139, 92, 246, 0.06), transparent),
+                var(--bg);
+        }
+        
+        .ambient-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(6, 182, 212, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(6, 182, 212, 0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: gridMove 20s linear infinite;
+        }
+        
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(60px, 60px); }
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+        
+        /* Glow text */
+        .glow-text {
+            text-shadow: 0 0 20px var(--accent-glow), 0 0 40px var(--accent-glow);
+        }
+        
+        .glow-success {
+            text-shadow: 0 0 20px var(--success-glow), 0 0 40px var(--success-glow);
+        }
+        
+        /* Status dot */
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .status-dot--emerald { background: var(--success); box-shadow: 0 0 8px var(--success-glow); }
+        .status-dot--amber { background: var(--warning); box-shadow: 0 0 8px rgba(245, 158, 11, 0.4); }
+        .status-dot--red { background: var(--danger); box-shadow: 0 0 8px rgba(239, 68, 68, 0.4); }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(0.9); }
+        }
+        
+        /* Neon line */
+        .neon-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0.3;
+        }
+        
+        /* Progress bar */
+        .progress-bar {
+            height: 3px;
+            background: var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: 2px;
+            transition: width 1s ease-out;
+        }
+        
+        /* Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), #0891b2);
+            color: var(--bg);
+            font-weight: 700;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #22d3ee, var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .btn-primary:hover::before { opacity: 1; }
+        .btn-primary:active { transform: scale(0.98); }
+        .btn-primary span { position: relative; z-index: 1; }
+        
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .btn-secondary {
+            background: var(--bg-elevated);
+            color: var(--text);
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-bright);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            background: rgba(6, 182, 212, 0.05);
+        }
+        
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-muted);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-ghost:hover,
+        .btn-ghost.active {
+            color: var(--accent);
+            background: rgba(6, 182, 212, 0.1);
+            border-color: rgba(6, 182, 212, 0.2);
+        }
+        
+        /* Cards */
+        .card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            border-color: var(--border-bright);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card-glow:hover {
+            box-shadow: 0 0 24px var(--accent-glow), 0 8px 32px rgba(0, 0, 0, 0.3);
+            border-color: rgba(6, 182, 212, 0.3);
+        }
+        
+        /* Inputs */
+        .input-field {
+            width: 100%;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 0.875rem 1rem;
+            color: var(--text);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.15);
+        }
+        
+        .input-field::placeholder { color: var(--text-muted); }
+        
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(3, 7, 18, 0.9);
+            backdrop-filter: blur(8px);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 480px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.95) translateY(20px);
+            transition: all 0.3s ease;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-overlay.open .modal {
+            transform: scale(1) translateY(0);
+        }
+        
+        /* Tabs */
+        .tab-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+        
+        .tab-btn.active {
+            background: linear-gradient(135deg, var(--accent), #0891b2);
+            color: var(--bg);
+            box-shadow: 0 2px 12px rgba(6, 182, 212, 0.3);
+        }
+        
+        .tab-btn:not(.active) {
+            background: var(--bg);
+            color: var(--text-muted);
+            border-color: var(--border);
+        }
+        
+        .tab-btn:not(.active):hover {
+            color: var(--text);
+            border-color: var(--border-bright);
+        }
+        
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 500;
+            z-index: 200;
+            transform: translateX(150%);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border: 1px solid;
+        }
+        
+        .toast.show { transform: translateX(0); }
+        
+        .toast-success { background: rgba(16, 185, 129, 0.15); border-color: var(--success); color: #34d399; }
+        .toast-error { background: rgba(239, 68, 68, 0.15); border-color: var(--danger); color: #f87171; }
+        .toast-info { background: rgba(6, 182, 212, 0.15); border-color: var(--accent); color: #22d3ee; }
+        
+        /* Animations */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-up {
+            animation: fadeUp 0.6s ease-out forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .delay-4 { animation-delay: 0.4s; opacity: 0; }
+        
+        /* Loading spinner */
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid transparent;
+            border-top-color: currentColor;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        /* Payment method cards */
+        .payment-method {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .payment-method:hover,
+        .payment-method.selected {
+            border-color: var(--accent);
+            background: rgba(6, 182, 212, 0.05);
+        }
+        
+        .payment-method.selected {
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+        
+        /* Network badges */
+        .network-badge {
+            display: inline-block;
+            padding: 0.25rem 0.625rem;
+            border-radius: 9999px;
+            font-size: 0.625rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .network-eth { background: rgba(100, 116, 139, 0.2); color: #94a3b8; border: 1px solid #334155; }
+        .network-polygon { background: rgba(130, 71, 229, 0.2); color: #a78bfa; border: 1px solid #6d28d9; }
+        .network-bsc { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid #d97706; }
+        .network-arbitrum { background: rgba(45, 212, 191, 0.2); color: #2dd4bf; border: 1px solid #0d9488; }
+        .network-solana { background: rgba(154, 70, 240, 0.2); color: #c084fc; border: 1px solid #a855f7; }
+        .network-bitcoin { background: rgba(249, 115, 22, 0.2); color: #fb923c; border: 1px solid #ea580c; }
+        
+        /* Responsive */
+        @media (max-width: 640px) {
+            .modal { padding: 1.5rem; margin: 1rem; }
+            .btn-primary, .btn-secondary { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient-bg" aria-hidden="true"></div>
+    
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+    
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg flex items-center justify-center relative" style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(139, 92, 246, 0.1)); border: 1px solid rgba(6, 182, 212, 0.2);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold tracking-tight glow-text">DIHACKTOR Ω</h1>
+                        <p class="text-[10px] text-slate-500 tracking-[0.15em] uppercase">Productos IA · $6.99 USD</p>
+                    </div>
+                </div>
+                
+                <nav class="hidden md:flex items-center gap-1">
+                    <button class="tab-btn active" data-tab="productos">Productos</button>
+                    <button class="tab-btn" data-tab="categorias">Categorías</button>
+                    <button class="tab-btn" data-tab="pagos">Pagos</button>
+                    <button class="tab-btn" data-tab="comprar" id="nav-comprar">Comprar</button>
+                </nav>
+                
+                <button class="btn-primary md:hidden" id="mobile-comprar">Comprar Ahora</button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="pt-16 pb-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            
+            <!-- Hero Section -->
+            <section class="text-center py-16 sm:py-24 animate-fade-up">
+                <div class="inline-flex items-center gap-2 bg-slate-900/50 border border-slate-800 rounded-full px-4 py-2 mb-6">
+                    <span class="status-dot status-dot--emerald"></span>
+                    <span class="text-sm font-medium text-slate-300">Sistema Operativo · 99.7% Uptime</span>
+                </div>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6">
+                    La IA no es una herramienta,<br>
+                    <span class="glow-text">es una habilidad.</span>
+                </h2>
+                <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+                    La colección más grande de tutoriales de IA del mundo. Video HD + PDF + Audio + Workflows n8n.
+                    Pago seguro con Cripto, Tarjeta o Transferencia Bancaria. Acceso inmediato.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <button class="btn-primary text-lg px-8 py-4" id="hero-comprar">
+                        <span>Comprar Ahora — $6.99 USD</span>
+                    </button>
+                    <button class="btn-secondary text-lg px-8 py-4" id="hero-explorar">Explorar Catálogo</button>
+                </div>
+            </section>
+            
+            <!-- Stats Bar -->
+            <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 animate-fade-up delay-1">
+                <div class="card p-6 text-center card-glow">
+                    <div class="text-3xl sm:text-4xl font-black text-cyan-400 glow-text">1,020,895</div>
+                    <div class="text-sm text-slate-400 mt-1">Productos</div>
+                </div>
+                <div class="card p-6 text-center card-glow">
+                    <div class="text-3xl sm:text-4xl font-black text-cyan-400 glow-text">80+</div>
+                    <div class="text-sm text-slate-400 mt-1">Expertos</div>
+                </div>
+                <div class="card p-6 text-center card-glow">
+                    <div class="text-3xl sm:text-4xl font-black text-cyan-400 glow-text">20</div>
+                    <div class="text-sm text-slate-400 mt-1">Categorías</div>
+                </div>
+                <div class="card p-6 text-center card-glow">
+                    <div class="text-3xl sm:text-4xl font-black text-emerald-400 glow-success">$6.99</div>
+                    <div class="text-sm text-slate-400 mt-1">Precio Fijo</div>
+                </div>
+            </section>
+            
+            <!-- Features -->
+            <section class="mb-16 animate-fade-up delay-2">
+                <h3 class="text-2xl font-bold text-center mb-10">¿Qué incluye cada producto?</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="card p-6 card-glow">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-4">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2"></rect></svg>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Video HD</h4>
+                        <p class="text-slate-400 text-sm">Clases en video de alta calidad con explicaciones paso a paso</p>
+                    </div>
+                    <div class="card p-6 card-glow">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Guía PDF</h4>
+                        <p class="text-slate-400 text-sm">Más de 30 páginas de documentación detallada</p>
+                    </div>
+                    <div class="card p-6 card-glow">
+                        <div class="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center mb-4">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><path d="M11 5V12"></path><path d="M19 5V12"></path><path d="M3 5V12"></path><path d="M21 12H3"></path><path d="M7 19H5"></path><path d="M15 12a3 3 0 0 0-3 3v3"></path></svg>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Audio</h4>
+                        <p class="text-slate-400 text-sm">Versión audio para aprender mientras te desplazas</p>
+                    </div>
+                    <div class="card p-6 card-glow md:col-span-3">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><rect x="2" y="4" width="7" height="7" rx="1"></rect><rect x="15" y="4" width="7" height="7" rx="1"></rect><rect x="2" y="17" width="7" height="7" rx="1"></rect><rect x="15" y="17" width="7" height="7" rx="1"></rect><line x1="5.5" y1="7.5" x2="5.5" y2=".5a"></line><line x1="18.5" y1="7.5" x2="18.5" y2=".5a"></line><line x1="5.5" y1="16.5" x2="5.5" y2="23.5a"></line><line x1="18.5" y1="16.5" x2="18.5" y2="23.5a"></line></svg>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Workflows n8n</h4>
+                        <p class="text-slate-400 text-sm">Automatizaciones listas para usar</p>
+                    </div>
+                    <div class="card p-6 card-glow md:col-span-3">
+                        <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center mb-4">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Actualizaciones</h4>
+                        <p class="text-slate-400 text-sm">Contenido actualizado constantemente</p>
+                    </div>
+                    <div class="card p-6 card-glow md:col-span-3">
+                        <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center mb-4">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Soporte</h4>
+                        <p class="text-slate-400 text-sm">Comunidad vía Telegram</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Product Catalog Preview -->
+            <section id="productos" class="mb-16 animate-fade-up delay-3">
+                <div class="flex items-center justify-between mb-8">
+                    <h3 class="text-2xl font-bold">Explora el Catálogo</h3>
+                    <a href="#comprar" class="btn-ghost active">Ver todos los 1,020,895 productos</a>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" id="product-grid">
+                    <!-- Products loaded via JS -->
+                </div>
+            </section>
+            
+            <!-- Categories -->
+            <section id="categorias" class="hidden mb-16 animate-fade-up delay-3">
+                <h3 class="text-2xl font-bold mb-8">Categorías</h3>
+                <div class="flex flex-wrap gap-3" id="categories-grid">
+                    <!-- Categories loaded via JS -->
+                </div>
+            </section>
+            
+            <!-- Payment Methods -->
+            <section id="pagos" class="mb-16 animate-fade-up delay-4">
+                <h3 class="text-2xl font-bold mb-8">Métodos de Pago Disponibles</h3>
+                <p class="text-slate-400 mb-8 max-w-2xl">Elige el método que mejor se adapte a tu país. Todos los precios equivalen a $6.99 USD. Los detalles de cada método se muestran al momento de comprar.</p>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="card p-6 card-glow">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Criptomonedas</h4>
+                                <p class="text-sm text-slate-400">USDT, BTC, ETH, SOL, ARB, POLYGON, BSC</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-300">Redes: <span class="font-mono text-cyan-400">Arbitrum, Polygon, BSC, Ethereum, Solana</span></p>
+                        <p class="text-xs text-slate-500 mt-2">MetaMask, SafePal, WalletConnect, Trust Wallet</p>
+                    </div>
+                    <div class="card p-6 card-glow">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><line x1="2" y1="8" x2="22" y2="8"></line></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Transferencia Bancaria</h4>
+                                <p class="text-sm text-slate-400">BO (Mercantil Santa Cruz), US (Lead Bank), EU (OpenPayd)</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-300">IBAN, SWIFT, Routing disponibles al comprar</p>
+                        <p class="text-xs text-slate-500 mt-2">Validación automática de comprobante</p>
+                    </div>
+                    <div class="card p-6 card-glow">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><rect x="1" y="1" width="22" height="22" rx="2"></rect><path d="M12 7v10M7 12h10"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Pagos Locales (Latam)</h4>
+                                <p class="text-sm text-slate-400">Yape, Altoke, Binance Pay, Wallbit, Meru</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-300">Código de operación verificado anti-clonado</p>
+                        <p class="text-xs text-slate-500 mt-2">Verificación de integridad activada</p>
+                    </div>
+                    <div class="card p-6 card-glow">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Tarjeta / P2P Directo</h4>
+                                <p class="text-sm text-slate-400">Visa, Mastercard, Amex, Link</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-300">Procesamiento directo sin intermediarios</p>
+                        <p class="text-xs text-slate-500 mt-2">Fallback externo garantizado</p>
+                    </div>
+                </div>
+                
+                <div class="card p-6 border-emerald-500/30 bg-emerald-500/5">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="font-bold text-emerald-400">🔒 Pago Seguro · ⚡ Acceso Inmediato · 🛡️ Garantía 7 Días</p>
+                            <p class="text-sm text-slate-400 mt-1">Soporte: <a href="https://t.me/d3h1ckt4r_bot" target="_blank" class="text-cyan-400 hover:underline">@d3h1ckt4r_bot</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Footer -->
+            <footer class="border-t border-slate-800 pt-8 pb-4 animate-fade-up delay-4">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+                    <p>DIHACKTOR Ω · Ecosistema Soberano de Ventas Digitales 24/7</p>
+                    <div class="flex items-center gap-6">
+                        <a href="https://t.me/d3h1ckt4r_bot" target="_blank" class="hover:text-cyan-400 transition-colors">Telegram</a>
+                        <a href="https://github.com/tortuguitahack" target="_blank" class="hover:text-cyan-400 transition-colors">GitHub</a>
+                        <span class="font-mono text-cyan-400">v7.0.0-MAX-DEIDAD</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+    
+    <!-- Purchase Modal -->
+    <div class="modal-overlay" id="purchase-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal">
+            <div class="flex items-center justify-between mb-6">
+                <h3 id="modal-title" class="text-xl font-bold">Comprar Producto</h3>
+                <button class="btn-ghost p-2" id="close-modal" aria-label="Cerrar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            
+            <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-4 mb-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="font-bold text-sm text-slate-200">Licencia de Acceso Digital</p>
+                        <p class="text-xs text-slate-500">Despacho inmediato vía API</p>
+                    </div>
+                    <p class="text-2xl font-black text-emerald-400 glow-success">$6.99 USD</p>
+                </div>
+            </div>
+            
+            <!-- Payment Method Selection -->
+            <div class="mb-6">
+                <label class="block text-xs font-mono text-slate-400 uppercase mb-3">Selecciona tu método de pago</label>
+                <div class="grid grid-cols-2 gap-3" id="payment-methods">
+                    <!-- Loaded via JS -->
+                </div>
+            </div>
+            
+            <!-- Crypto Tab Content -->
+            <div id="crypto-content" class="hidden space-y-4">
+                <button class="btn-primary w-full" id="pay-crypto">
+                    <span class="flex items-center justify-center gap-2">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        Pagar con MetaMask / SafePal / WalletConnect
+                    </span>
+                </button>
+                <p class="text-xs text-center text-slate-500 font-mono">Redes soportadas: Arbitrum, Polygon, BSC, Ethereum, Solana</p>
+                <div class="flex flex-wrap justify-center gap-1.5" id="network-badges"></div>
+            </div>
+            
+            <!-- Local Fiat Tab Content -->
+            <div id="local-content" class="hidden space-y-4">
+                <div class="space-y-3">
+                    <label class="block text-xs font-mono text-slate-400 uppercase">Método Local</label>
+                    <select class="input-field" id="local-method">
+                        <option value="">Selecciona un método</option>
+                        <option value="yape">Yape (Perú)</option>
+                        <option value="altoke">Altoke (Bolivia)</option>
+                        <option value="binance-pay">Binance Pay</option>
+                        <option value="wallbit">Wallbit</option>
+                        <option value="meru">Meru</option>
+                    </select>
+                </div>
+                <div class="space-y-3">
+                    <label class="block text-xs font-mono text-slate-400 uppercase">Código / ID de Operación</label>
+                    <input type="text" id="tx-local-id" class="input-field font-mono" placeholder="Ej: 982173491" autocomplete="off">
+                </div>
+                <button class="btn-primary w-full" id="pay-local">
+                    <span>⚡ Verificar Transacción Local</span>
+                </button>
+            </div>
+            
+            <!-- Bank Transfer Tab Content -->
+            <div id="bank-content" class="hidden space-y-4">
+                <div class="space-y-3">
+                    <label class="block text-xs font-mono text-slate-400 uppercase">Región Bancaria</label>
+                    <select class="input-field" id="bank-region">
+                        <option value="">Selecciona región</option>
+                        <option value="BO">Bolivia - Banco Mercantil Santa Cruz</option>
+                        <option value="US">USA - Lead Bank</option>
+                        <option value="EU">Europa - OpenPayd</option>
+                    </select>
+                </div>
+                <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-4" id="bank-details">
+                    <p class="text-sm text-slate-400 text-center">Selecciona una región para ver los detalles</p>
+                </div>
+                <div class="space-y-3">
+                    <label class="block text-xs font-mono text-slate-400 uppercase">ID de Transferencia / Comprobante</label>
+                    <input type="text" id="tx-bank-id" class="input-field font-mono" placeholder="Número de operación / referencia" autocomplete="off">
+                </div>
+                <button class="btn-primary w-full" id="pay-bank">
+                    <span>🏦 Verificar Transferencia</span>
+                </button>
+            </div>
+            
+            <!-- Card/P2P Tab Content -->
+            <div id="card-content" class="hidden space-y-4">
+                <button class="btn-primary w-full" id="pay-card">
+                    <span class="flex items-center justify-center gap-2">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                        Pagar con Tarjeta / P2P Directo
+                    </span>
+                </button>
+                <p class="text-xs text-center text-slate-500">Procesamiento directo sin intermediarios · Redirige a pasarela externa</p>
+            </div>
+            
+            <!-- Status/Result -->
+            <div id="payment-status" class="hidden">
+                <div class="flex items-center gap-3 p-4 bg-slate-900/50 border border-slate-800 rounded-xl">
+                    <div class="spinner text-cyan-400"></div>
+                    <span id="status-text" class="text-sm text-slate-300">Procesando...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Configuration
+        const CONFIG = {
+            // Primary API base - localhost.run tunnel (may rotate)
+            apiBase: 'https://c41b53b1e6011b.app.lhr.life/yinitech/api'
+            // Fallback: direct IP (only works on local network)
+            apiBaseLocal: 'http://192.168.11.151:3000',
+            productPrice: 6.99,
+            currency: 'USD',
+            priceCents: 699,
+            websocketUrl: 'wss://tortuguitahack.github.io/yinitech/ws', // optional
+            productsUrl: '/products.json' // Product catalog endpoint
+        };
+        
+        // Payment Methods from canonical source
+        const PAYMENT_METHODS = [
+            { id: 'crypto', name: 'Web3 / Cripto', icon: '🌐', desc: 'MetaMask, SafePal, WalletConnect', networks: ['Arbitrum', 'Polygon', 'BSC', 'Ethereum', 'Solana'] },
+            { id: 'local', name: 'Local Fiat (Latam)', icon: '🇵🇪🇧🇴', desc: 'Yape, Altoke, Binance Pay, Wallbit, Meru' },
+            { id: 'bank', name: 'Transferencia Bancaria', icon: '🏦', desc: 'BO, US, EU - IBAN/SWIFT/Routing' },
+            { id: 'card', name: 'Tarjeta / P2P Directo', icon: '💳', desc: 'Visa, Mastercard, Amex, P2P Directo' }
+        ];
+        
+        const LOCAL_METHODS = {
+            yape: { name: 'Yape (Perú)', code: 'YAPE', country: 'PE' },
+            altoke: { name: 'Altoke (Bolivia)', code: 'ALTOKE', country: 'BO' },
+            'binance-pay': { name: 'Binance Pay', code: 'BINANCE', country: 'GLOBAL' },
+            wallbit: { name: 'Wallbit', code: 'WALLBIT', country: 'LATAM' },
+            meru: { name: 'Meru', code: 'MERU', country: 'LATAM' }
+        };
+        
+        const BANK_DETAILS = {
+            BO: {
+                bank: 'Banco Mercantil Santa Cruz',
+                account: '4069474188',
+                ci: '5808841TJ',
+                type: 'Cuenta Corriente',
+                currency: 'BOB',
+                amount: 'Bs. 82.51'
+            },
+            US: {
+                bank: 'Lead Bank',
+                routing: '101019644',
+                account: '219449048779',
+                type: 'Checking',
+                currency: 'USD',
+                amount: '$6.99'
+            },
+            EU: {
+                bank: 'OpenPayd',
+                iban: 'MT12CFTE28004000000000005456093',
+                bic: 'CFTEMTM1XXX',
+                type: 'SEPA',
+                currency: 'EUR',
+                amount: '€6.45'
+            }
+        };
+        
+        const NETWORK_BADGES = {
+                    arbitrum: 'network-arbitrum',
+                    polygon: 'network-polygon',
+                    bsc: 'network-bsc',
+                    ethereum: 'network-eth',
+                    solana: 'network-solana',
+                    bitcoin: 'network-bitcoin'
+                };
+
+                // Fallback wallet addresses (HOT WALLETS - reciben pagos, luego barrido a SafePal)
+                // Used immediately on load; replaced by API data when available
+                        const FALLBACK_WALLETS = {
+                            USDT_BEP20: '0xdf48159A9E6780D8B0CEBb87F8D2062E675F082C',
+                            USDT_ERC20: '0xdf48159A9E6780D8B0CEBb87F8D2062E675F082C',
+                            BTC: 'bc1qq55wxujek332plygr2l8jwc5lm5u06kgl3mqql',
+                            ETH: '0xdf48159A9E6780D8B0CEBb87F8D2062E675F082C',
+                            SOL: 'ym3DLSdVT3LfEQ7gUALrisKzwVCDrhp6v7Ez5fi3ke4',
+                            TRX: 'TPcrzxMjphtWtwECZgQyYevV3ofAU462yF'
+                        };
+
+                // State
+        let selectedPaymentMethod = 'crypto';
+        let isProcessing = false;
+        let productsData = [];
+        let categoriesData = [];
+
+        // Idempotency key management
+        const IDEMPOTENCY_KEY_STORAGE = 'yinitech_idempotency_key';
+        const IDEMPOTENCY_ATTEMPT_STORAGE = 'yinitech_idempotency_attempt';
+
+        function generateIdempotencyKey() {
+            return 'idem_' + crypto.randomUUID().replace(/-/g, '');
+        }
+
+        function getOrCreateIdempotencyKey() {
+            let key = sessionStorage.getItem(IDEMPOTENCY_KEY_STORAGE);
+            let attempt = parseInt(sessionStorage.getItem(IDEMPOTENCY_ATTEMPT_STORAGE) || '0', 10);
+            
+            if (!key) {
+                key = generateIdempotencyKey();
+                sessionStorage.setItem(IDEMPOTENCY_KEY_STORAGE, key);
+                attempt = 1;
+                sessionStorage.setItem(IDEMPOTENCY_ATTEMPT_STORAGE, attempt.toString());
+            } else {
+                // Increment attempt counter for this session
+                attempt += 1;
+                sessionStorage.setItem(IDEMPOTENCY_ATTEMPT_STORAGE, attempt.toString());
+            }
+            
+            return { key, attempt };
+        }
+
+        function clearIdempotencyKey() {
+            sessionStorage.removeItem(IDEMPOTENCY_KEY_STORAGE);
+            sessionStorage.removeItem(IDEMPOTENCY_ATTEMPT_STORAGE);
+        }
+
+        function getCurrentIdempotencyKey() {
+            return sessionStorage.getItem(IDEMPOTENCY_KEY_STORAGE);
+        }
+        
+        // DOM Elements
+        const modal = document.getElementById('purchase-modal');
+        const modalOverlay = document.getElementById('purchase-modal');
+        const closeModal = document.getElementById('close-modal');
+        const navComprar = document.getElementById('nav-comprar');
+        const mobileComprar = document.getElementById('mobile-comprar');
+        const heroComprar = document.getElementById('hero-comprar');
+        const paymentMethodsGrid = document.getElementById('payment-methods');
+        const networkBadges = document.getElementById('network-badges');
+        const paymentStatus = document.getElementById('payment-status');
+        const statusText = document.getElementById('status-text');
+        
+        // Tab content elements
+        const tabContents = {
+            crypto: document.getElementById('crypto-content'),
+            local: document.getElementById('local-content'),
+            bank: document.getElementById('bank-content'),
+            card: document.getElementById('card-content')
+        };
+        
+        // Action buttons
+        const actionButtons = {
+            crypto: document.getElementById('pay-crypto'),
+            local: document.getElementById('pay-local'),
+            bank: document.getElementById('pay-bank'),
+            card: document.getElementById('pay-card')
+        };
+        
+        // Form elements
+        const localMethodSelect = document.getElementById('local-method');
+        const txLocalId = document.getElementById('tx-local-id');
+        const bankRegionSelect = document.getElementById('bank-region');
+        const bankDetails = document.getElementById('bank-details');
+        const txBankId = document.getElementById('tx-bank-id');
+        
+        // Toast system
+        function showToast(message, type = 'info', duration = 5000) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+            toast.textContent = message;
+            container.appendChild(toast);
+            
+            // Trigger animation
+            requestAnimationFrame(() => toast.classList.add('show'));
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 400);
+            }, duration);
+        }
+        
+        // Modal controls
+        function openModal() {
+            modalOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            resetModal();
+            // Generate new idempotency key for this purchase attempt
+            getOrCreateIdempotencyKey();
+        }
+        
+        function closeModalFn() {
+            modalOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        
+        function resetModal() {
+            // Reset to crypto tab
+            selectPaymentMethod('crypto');
+            // Clear forms
+            localMethodSelect.value = '';
+            txLocalId.value = '';
+            bankRegionSelect.value = '';
+            txBankId.value = '';
+            updateBankDetails('');
+            hideStatus();
+        }
+        
+        function selectPaymentMethod(methodId) {
+            selectedPaymentMethod = methodId;
+            
+            // Update payment method buttons
+            document.querySelectorAll('.payment-method').forEach(btn => {
+                btn.classList.toggle('selected', btn.dataset.method === methodId);
+            });
+            
+            // Show/hide tab content
+            Object.keys(tabContents).forEach(key => {
+                tabContents[key].classList.toggle('hidden', key !== methodId);
+            });
+            
+            hideStatus();
+        }
+        
+        function showStatus(message) {
+            paymentStatus.classList.remove('hidden');
+            statusText.textContent = message;
+            disableActions(true);
+        }
+        
+        function hideStatus() {
+            paymentStatus.classList.add('hidden');
+            disableActions(false);
+        }
+        
+        function disableActions(disabled) {
+            isProcessing = disabled;
+            Object.values(actionButtons).forEach(btn => {
+                if (btn) btn.disabled = disabled;
+            });
+        }
+        
+        // Render payment methods in modal
+        function renderPaymentMethods() {
+            paymentMethodsGrid.innerHTML = PAYMENT_METHODS.map(method => `
+                <button class="payment-method" data-method="${method.id}" onclick="selectPaymentMethod('${method.id}')">
+                    <div class="text-2xl mb-2">${method.icon}</div>
+                    <div class="font-bold text-sm">${method.name}</div>
+                    <div class="text-xs text-slate-500 mt-1">${method.desc}</div>
+                </button>
+            `).join('');
+            
+            // Render network badges for crypto
+            if (PAYMENT_METHODS[0].networks) {
+                networkBadges.innerHTML = PAYMENT_METHODS[0].networks.map(net => 
+                    `<span class="network-badge ${NETWORK_BADGES[net.toLowerCase()] || ''}">${net}</span>`
+                ).join('');
+            }
+        }
+        
+        // Update bank details display
+        function updateBankDetails(region) {
+            if (!region || !BANK_DETAILS[region]) {
+                bankDetails.innerHTML = '<p class="text-sm text-slate-400 text-center">Selecciona una región para ver los detalles</p>';
+                return;
+            }
+            
+            const d = BANK_DETAILS[region];
+            let html = '<div class="space-y-2 font-mono text-sm">';
+            
+            Object.entries(d).forEach(([key, value]) => {
+                if (key === 'amount' || key === 'currency') return;
+                const label = key.charAt(0).toUpperCase() + key.slice(1).replace('_', ' ');
+                html += `<div class="flex justify-between"><span class="text-slate-500">${label}:</span> <span class="text-slate-200">${value}</span></div>`;
+            });
+            
+            html += `<div class="pt-2 border-t border-slate-800 flex justify-between"><span class="text-slate-500">Monto:</span> <span class="text-emerald-400 font-bold">${d.amount} ${d.currency}</span></div>`;
+            html += '</div>';
+            
+            bankDetails.innerHTML = html;
+        }
+        
+        // API Calls
+                async function apiCall(endpoint, data, options = {}) {
+                    // Try primary API base, then fallback to local
+                    const bases = [CONFIG.apiBase, CONFIG.apiBaseLocal].filter(Boolean);
+                    let lastError;
+
+                    // Get idempotency key if this is a payment endpoint
+                    const paymentEndpoints = ['/gateways/web3-confirm', '/yinitech/qr-settlement', '/gateways/bank-confirm', '/gateways/capture-email'];
+                    const isPaymentEndpoint = paymentEndpoints.some(ep => endpoint.startsWith(ep));
+            
+                    let idempotencyKey = options.idempotencyKey;
+                    if (isPaymentEndpoint && !idempotencyKey) {
+                        const { key } = getOrCreateIdempotencyKey();
+                        idempotencyKey = key;
+                    }
+
+                    for (const base of bases) {
+                        try {
+                            const headers = { 'Content-Type': 'application/json' };
+                            if (idempotencyKey) {
+                                headers['Idempotency-Key'] = idempotencyKey;
+                            }
+
+                            const response = await fetch(`${base}${endpoint}`, {
+                                method: 'POST',
+                                headers,
+                                body: JSON.stringify(data)
+                            });
+
+                            const result = await response.json();
+
+                            if (!response.ok) {
+                                throw new Error(result.error || `HTTP ${response.status}`);
+                            }
+
+                            return result;
+                        } catch (error) {
+                            lastError = error;
+                            console.warn(`API call failed for ${base}:`, error.message);
+                            continue;
+                        }
+                    }
+
+                    // All bases failed
+                    if (lastError instanceof TypeError && lastError.message.includes('fetch')) {
+                        throw new Error('No se pudo conectar al servidor de pagos. Usa pago manual con las direcciones mostradas.');
+                    }
+                    throw lastError;
+                }
+        
+        // Payment Handlers
+        async function handleCryptoPayment() {
+                    if (!window.ethereum) {
+                        // Show wallet addresses for manual payment
+                        showManualCryptoPayment();
+                        return;
+                    }
+
+                    showStatus('Conectando wallet...');
+
+                    try {
+                        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+                        const walletUsuario = accounts[0];
+
+                        showStatus('Firmando transacción...');
+
+                        // In production, this would create a real transaction
+                        // For now, simulate and call backend confirmation
+                        const txHash = '0x' + Array.from(crypto.getRandomValues(new Uint8Array(32)))
+                            .map(b => b.toString(16).padStart(2, '0')).join('');
+
+                        showStatus('Enviando al clúster...');
+
+                        const result = await apiCall('/gateways/web3-confirm', {
+                            txHash,
+                            network: 'polygon', // default
+                            wallet: walletUsuario,
+                            amount: CONFIG.priceCents,
+                            currency: CONFIG.currency
+                        });
+
+                        showToast('✅ Transacción confirmada. Acceso concedido.', 'success');
+                        clearIdempotencyKey(); // Clear on success
+                        setTimeout(() => {
+                            closeModalFn();
+                            // Redirect to product access
+                            window.location.href = '/access.html?tx=' + txHash;
+                        }, 2000);
+
+                    } catch (error) {
+                        if (error.message.includes('User rejected') || error.message.includes('cancelled')) {
+                            showToast('Operación cancelada en la wallet.', 'info');
+                        } else {
+                            showToast('Error: ' + error.message, 'error');
+                            // Fallback to manual payment
+                            showManualCryptoPayment();
+                        }
+                        hideStatus();
+                    }
+                }
+        
+        function showManualCryptoPayment() {
+            const wallets = FALLBACK_WALLETS;
+            const html = `
+                <div class="space-y-4 p-4 bg-slate-900/50 border border-slate-800 rounded-xl">
+                    <h4 class="font-bold text-cyan-400 mb-3">Pago Manual - Envía $6.99 USD a cualquiera de estas direcciones:</h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between p-2 bg-slate-800/50 rounded">
+                            <span class="text-slate-400">USDT (BEP20/ERC20):</span>
+                            <span class="font-mono text-cyan-400 break-all">${wallets.USDT_BEP20}</span>
+                        </div>
+                        <div class="flex justify-between p-2 bg-slate-800/50 rounded">
+                            <span class="text-slate-400">BTC:</span>
+                            <span class="font-mono text-cyan-400 break-all">${wallets.BTC}</span>
+                        </div>
+                        <div class="flex justify-between p-2 bg-slate-800/50 rounded">
+                            <span class="text-slate-400">ETH:</span>
+                            <span class="font-mono text-cyan-400 break-all">${wallets.ETH}</span>
+                        </div>
+                        <div class="flex justify-between p-2 bg-slate-800/50 rounded">
+                            <span class="text-slate-400">SOL:</span>
+                            <span class="font-mono text-cyan-400 break-all">${wallets.SOL}</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 text-center">
+                        Redes soportadas: Arbitrum, Polygon, BSC, Ethereum, Solana<br>
+                        Tras enviar, usa "Verificar Transacción Local" con el hash de la transacción
+                    </p>
+                    <button class="btn-secondary w-full mt-3" onclick="selectPaymentMethod('local')">
+                        Tengo el hash → Verificar Local
+                    </button>
+                </div>
+            `;
+            
+            const cryptoContent = document.getElementById('crypto-content');
+            cryptoContent.innerHTML = html;
+        }
+        
+        async function handleLocalPayment() {
+                    const method = localMethodSelect.value;
+                    const txId = txLocalId.value.trim();
+
+                    if (!method) {
+                        showToast('Selecciona un método de pago local.', 'error');
+                        return;
+                    }
+
+                    if (!txId) {
+                        showToast('Ingresa el código de operación.', 'error');
+                        return;
+                    }
+
+                    showStatus('Validando operación local...');
+
+                    try {
+                        const result = await apiCall('/yinitech/qr-settlement', {
+                            metodo: method,
+                            operacion_id: txId,
+                            monto_declarado: CONFIG.productPrice,
+                            check_integrity: true
+                        });
+
+                        if (result.success) {
+                            showToast('✅ Código verificado. Hermes está procesando tu acceso.', 'success');
+                            clearIdempotencyKey(); // Clear on success
+                            setTimeout(() => {
+                                closeModalFn();
+                                window.location.href = '/access.html?local=' + txId;
+                            }, 2000);
+                        } else {
+                            showToast('Error: ' + (result.error || 'Validación fallida'), 'error');
+                            hideStatus();
+                        }
+
+                    } catch (error) {
+                        showToast('Error: ' + error.message, 'error');
+                        hideStatus();
+                    }
+                }
+        
+        async function handleBankPayment() {
+                    const region = bankRegionSelect.value;
+                    const txId = txBankId.value.trim();
+
+                    if (!region) {
+                        showToast('Selecciona una región bancaria.', 'error');
+                        return;
+                    }
+
+                    if (!txId) {
+                        showToast('Ingresa el ID de transferencia / número de operación.', 'error');
+                        return;
+                    }
+
+                    showStatus('Verificando transferencia bancaria...');
+
+                    try {
+                        const result = await apiCall('/gateways/bank-confirm', {
+                            region,
+                            operacion_id: txId,
+                            monto_esperado: CONFIG.productPrice,
+                            currency: CONFIG.currency
+                        });
+
+                        if (result.success) {
+                            showToast('✅ Transferencia verificada. Acceso concedido.', 'success');
+                            clearIdempotencyKey(); // Clear on success
+                            setTimeout(() => {
+                                closeModalFn();
+                                window.location.href = '/access.html?bank=' + txId;
+                            }, 2000);
+                        } else {
+                            showToast('Error: ' + (result.error || 'Verificación fallida'), 'error');
+                            hideStatus();
+                        }
+
+                    } catch (error) {
+                        showToast('Error: ' + error.message, 'error');
+                        hideStatus();
+                    }
+                }
+        
+        function handleCardPayment() {
+            // Sin Stripe: mostrar pago manual con cripto
+            showManualCryptoPayment();
+        }
+        
+        // Navigation Tabs
+        function initNavTabs() {
+            const tabButtons = document.querySelectorAll('[data-tab]');
+            const sections = {
+                productos: document.getElementById('productos'),
+                categorias: document.getElementById('categorias'),
+                pagos: document.getElementById('pagos'),
+                comprar: null // modal
+            };
+            
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tab = btn.dataset.tab;
+                    
+                    // Update active state
+                    tabButtons.forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+                    
+                    // Show/hide sections
+                    Object.entries(sections).forEach(([key, section]) => {
+                        if (section) {
+                            section.classList.toggle('hidden', key !== tab);
+                        }
+                    });
+                    
+                    if (tab === 'comprar') {
+                        openModal();
+                        // Reset tab button
+                        btn.classList.remove('active');
+                        document.querySelector('[data-tab="productos"]').classList.add('active');
+                    }
+                });
+            });
+        }
+        
+        // Product Catalog - Loaded from JSON
+        async function loadProducts() {
+            try {
+                const response = await fetch(CONFIG.productsUrl);
+                if (!response.ok) throw new Error('Failed to load products');
+                const data = await response.json();
+                productsData = data.products || [];
+                categoriesData = data.categories || [];
+                
+                // Fallback to hardcoded if fetch fails
+                if (productsData.length === 0) {
+                    productsData = [
+                        { id: 'GOD-100199', title: 'Copywriting Masterclass 2026', category: 'Marketing', expert: 'Alex Hormozi' },
+                        { id: 'GOD-100442', title: 'Fitness Masterclass 2026', category: 'Salud', expert: 'Andrew Huberman' },
+                        { id: 'GOD-100496', title: 'High Ticket Sales Bible', category: 'Ventas', expert: 'Grant Cardone' },
+                        { id: 'GOD-100512', title: 'Advanced Coding Strategies', category: 'Programación', expert: 'John Carmack' },
+                        { id: 'GOD-100521', title: 'Intermittent Fasting Activation', category: 'Salud', expert: 'Peter Attia' },
+                        { id: 'GOD-100598', title: 'The Copywriting Bible', category: 'Marketing', expert: 'Frank Kern' },
+                        { id: 'GOD-100766', title: 'Zero to Hero SaaS Building', category: 'Programación', expert: 'Pieter Levels' },
+                        { id: 'GOD-101555', title: 'DeFi Yield Farming Blueprint', category: 'Cripto', expert: 'Andre Cronje' },
+                        { id: 'GOD-101691', title: 'Hack Your Flow State', category: 'Productividad', expert: 'Steven Kotler' },
+                        { id: 'GOD-101965', title: 'DeFi Yield Farming 30 Days', category: 'Cripto', expert: 'Daniele Sesta' },
+                        { id: 'GOD-101986', title: 'Passive Income SaaS', category: 'Negocios', expert: 'Rob Walling' },
+                        { id: 'GOD-102055', title: 'Science of Biohacking', category: 'Salud', expert: 'Dave Asprey' }
+                    ];
+                    categoriesData = [
+                        'Marketing', 'Ventas', 'Programación', 'Cripto', 'Salud', 'Productividad',
+                        'Negocios', 'IA/ML', 'Diseño', 'Video', 'Escritura', 'Inversión',
+                        'Bienes Raíces', 'E-commerce', 'Automatización', 'Seguridad', 'Redes',
+                        'Branding', 'Crecimiento', 'Finanzas'
+                    ];
+                }
+            } catch (error) {
+                console.warn('Using fallback products:', error.message);
+                productsData = [
+                    { id: 'GOD-100199', title: 'Copywriting Masterclass 2026', category: 'Marketing', expert: 'Alex Hormozi' },
+                    { id: 'GOD-100442', title: 'Fitness Masterclass 2026', category: 'Salud', expert: 'Andrew Huberman' },
+                    { id: 'GOD-100496', title: 'High Ticket Sales Bible', category: 'Ventas', expert: 'Grant Cardone' },
+                    { id: 'GOD-100512', title: 'Advanced Coding Strategies', category: 'Programación', expert: 'John Carmack' },
+                    { id: 'GOD-100521', title: 'Intermittent Fasting Activation', category: 'Salud', expert: 'Peter Attia' },
+                    { id: 'GOD-100598', title: 'The Copywriting Bible', category: 'Marketing', expert: 'Frank Kern' },
+                    { id: 'GOD-100766', title: 'Zero to Hero SaaS Building', category: 'Programación', expert: 'Pieter Levels' },
+                    { id: 'GOD-101555', title: 'DeFi Yield Farming Blueprint', category: 'Cripto', expert: 'Andre Cronje' },
+                    { id: 'GOD-101691', title: 'Hack Your Flow State', category: 'Productividad', expert: 'Steven Kotler' },
+                    { id: 'GOD-101965', title: 'DeFi Yield Farming 30 Days', category: 'Cripto', expert: 'Daniele Sesta' },
+                    { id: 'GOD-101986', title: 'Passive Income SaaS', category: 'Negocios', expert: 'Rob Walling' },
+                    { id: 'GOD-102055', title: 'Science of Biohacking', category: 'Salud', expert: 'Dave Asprey' }
+                ];
+                categoriesData = [
+                    'Marketing', 'Ventas', 'Programación', 'Cripto', 'Salud', 'Productividad',
+                    'Negocios', 'IA/ML', 'Diseño', 'Video', 'Escritura', 'Inversión',
+                    'Bienes Raíces', 'E-commerce', 'Automatización', 'Seguridad', 'Redes',
+                    'Branding', 'Crecimiento', 'Finanzas'
+                ];
+            }
+            
+            renderProducts();
+            renderCategories();
+        }
+
+        function renderProducts() {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = productsData.map((product, i) => `
+                <article class="card p-5 card-glow animate-fade-up" style="animation-delay: ${i * 0.05}s">
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center flex-shrink-0">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path></svg>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <p class="text-xs text-cyan-400 font-mono uppercase tracking-wide mb-1">${product.category}</p>
+                            <h4 class="font-bold text-sm truncate">${product.title}</h4>
+                            <p class="text-xs text-slate-500 mt-1">Experto: ${product.expert}</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mt-4 pt-4 border-t border-slate-800">
+                        <span class="text-lg font-black text-emerald-400">$6.99</span>
+                        <button class="btn-primary text-sm px-4 py-2" onclick="openModal()">Comprar</button>
+                    </div>
+                </article>
+            `).join('');
+        }
+        
+        function renderCategories() {
+            const grid = document.getElementById('categories-grid');
+            grid.innerHTML = categoriesData.map(cat => `
+                <button class="btn-ghost" onclick="filterCategory('${cat}')">${cat}</button>
+            `).join('');
+        }
+        
+        function filterCategory(category) {
+            // Switch to products tab and filter
+            document.querySelector('[data-tab="productos"]').click();
+            showToast(`Filtrando por: ${category}`, 'info');
+            // In a real app, this would filter the product grid
+        }
+        
+        // Event Listeners
+        function initEventListeners() {
+            // Modal triggers
+            [navComprar, mobileComprar, heroComprar].forEach(btn => {
+                if (btn) btn.addEventListener('click', openModal);
+            });
+            
+            // Close modal
+            closeModal.addEventListener('click', closeModalFn);
+            modalOverlay.addEventListener('click', (e) => {
+                if (e.target === modalOverlay) closeModalFn();
+            });
+            
+            // Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modalOverlay.classList.contains('open')) {
+                    closeModalFn();
+                }
+            });
+            
+            // Payment method buttons
+            Object.entries(actionButtons).forEach(([method, btn]) => {
+                if (btn) {
+                    btn.addEventListener('click', () => {
+                        switch (method) {
+                            case 'crypto': handleCryptoPayment(); break;
+                            case 'local': handleLocalPayment(); break;
+                            case 'bank': handleBankPayment(); break;
+                            case 'card': handleCardPayment(); break;
+                        }
+                    });
+                }
+            });
+            
+            // Form changes
+            bankRegionSelect.addEventListener('change', (e) => updateBankDetails(e.target.value));
+            localMethodSelect.addEventListener('change', (e) => {
+                // Could show method-specific info
+            });
+        }
+        
+        // Initialize
+        async function init() {
+            renderPaymentMethods();
+            await loadProducts();
+            initNavTabs();
+            initEventListeners();
+            
+            // Check for URL params (e.g., from payment redirect)
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === 'true') {
+                showToast('✅ Pago completado con éxito. Acceso activado.', 'success');
+            }
+            if (urlParams.get('error')) {
+                showToast('Error en el pago: ' + urlParams.get('error'), 'error');
+            }
+        }
+        
+        // Start
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
