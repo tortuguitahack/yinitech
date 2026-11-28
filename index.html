@@ -751,7 +751,7 @@
                     <label class="block text-xs font-mono text-slate-400 uppercase tracking-wide">Método Local</label>
                     <select class="input-field" id="local-method">
                         <option value="">Selecciona un método</option>
-                        <option value="yape">Yape (Perú)</option>
+                        <option value="yape">Yape</option>
                         <option value="altoke">Altoke (Bolivia)</option>
                         <option value="binance-pay">Binance Pay</option>
                         <option value="wallbit">Wallbit</option>
@@ -814,8 +814,8 @@
     <script>
         // Configuration - NEW CLOUDFLARE TUNNEL
         const CONFIG = {
-            apiBase: 'https://api.yinitech.com/yinitech/api',
-            apiBaseLocal: 'http://localhost:3000',
+            apiBase: 'https://quic.a.2fb2af95-2e54-40d8-89a5-cfdd6da96e99.cfargotunnel.com/',
+            apiBaseLocal: 'http://localhost:80',
             productPrice: 6.99,
             currency: 'USD',
             priceCents: 699,
@@ -825,7 +825,7 @@
         // Payment Methods from canonical source
         const PAYMENT_METHODS = [
             { id: 'crypto', name: 'Web3 / Cripto', icon: '🌐', desc: 'MetaMask, SafePal, WalletConnect', networks: ['Arbitrum', 'Polygon', 'BSC', 'Ethereum', 'Solana'] },
-            { id: 'local', name: 'Local Fiat (Latam)', icon: '🇵🇪🇧🇴', desc: 'Yape, Altoke, Binance Pay, Wallbit, Meru' },
+            { id: 'local', name: 'Local Fiat (Latam)', icon: '🇧🇴', desc: 'Yape, Altoke, Binance Pay, Wallbit, Meru' },
             { id: 'bank', name: 'Transferencia Bancaria', icon: '🏦', desc: 'BO, US, EU - IBAN/SWIFT/Routing' },
             { id: 'card', name: 'Tarjeta / P2P Directo', icon: '💳', desc: 'Visa, Mastercard, Amex, P2P Directo' }
         ];
